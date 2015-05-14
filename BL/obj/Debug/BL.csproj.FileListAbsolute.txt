@@ -1,0 +1,9 @@
+C:\Users\Olejka\Desktop\projects\EmartWPF\BL\bin\Debug\BL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\BL\bin\Debug\BL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\BL\bin\Debug\Backend.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\BL\bin\Debug\DAL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\BL\bin\Debug\Backend.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\BL\bin\Debug\DAL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\Olejka\Desktop\projects\EmartWPF\BL\obj\Debug\BL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\BL\obj\Debug\BL.pdb
