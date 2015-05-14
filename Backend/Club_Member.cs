@@ -38,7 +38,14 @@ namespace Backend
         }
 
         public Club_Member(string id, string first, string last, string gender, string memberID, String dateOfBirth)
-            : base(id, first, last, gender)
+            : base(id, first, last, gender, Type.Customer)
+        {
+            this._memberID = memberID;
+            this._dateOfBirth = dateOfBirth;
+        }
+
+        public Club_Member(string id, string first, string last, string gender, string memberID, String dateOfBirth, Type type)
+            : base(id, first, last, gender, type)
         {
             this._memberID = memberID;
             this._dateOfBirth = dateOfBirth;
