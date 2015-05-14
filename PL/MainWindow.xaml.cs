@@ -53,5 +53,11 @@ namespace PL
             }
 
         }
+        private void newUser(object sender, RoutedEventArgs e)
+        {
+            Window signIn = new SignInMenu(BL_manager);
+            signIn.Show();
+            this.Close();
+        }
     }
 }

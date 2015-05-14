@@ -4,10 +4,11 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid ShowGridLines="True">
         <Image Margin="76,0,10,202" Source="myEmart.png" Stretch="UniformToFill" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox Name="txtUserName" HorizontalAlignment="Left" Height="22" Margin="218,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
-        <PasswordBox Name="txtPassWord" HorizontalAlignment="Left" Height="22" Margin="218,136,0,0" VerticalAlignment="Top" Width="147"/>
-        <TextBlock HorizontalAlignment="Left" Height="22" Margin="142,106,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="71" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Height="22" Margin="142,136,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="71" FontSize="14"/>
-        <Button Content="Log in" HorizontalAlignment="Left" Height="29" Margin="219,182,0,0" VerticalAlignment="Top" Width="86" Click="Login_Click" FontSize="14" FontWeight="Bold"/>
+        <TextBox Name="txtUserName" HorizontalAlignment="Left" Height="22" Margin="236,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+        <PasswordBox Name="txtPassWord" HorizontalAlignment="Left" Height="22" Margin="236,135,0,0" VerticalAlignment="Top" Width="147"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="160,105,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="71" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="160,135,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="71" FontSize="14"/>
+        <Button Content="Log in" HorizontalAlignment="Left" Height="29" Margin="184,182,0,0" VerticalAlignment="Top" Width="86" Click="Login_Click" FontSize="14" FontWeight="Bold"/>
+        <Button Content="New User" HorizontalAlignment="Left" Height="29" Margin="290,182,0,0" VerticalAlignment="Top" Width="86" Click="newUser" FontSize="14" FontWeight="Bold"/>
     </Grid>
 </Window>
