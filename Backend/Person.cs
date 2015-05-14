@@ -9,12 +9,27 @@ namespace Backend
     [Serializable]
     public class Person
     {
+        public enum Type
+        {
+            Administrator,
+            Manager,
+            Worker,
+            Customer
+        };
 
         private string _ID;
         private string _firstName;
         private string _lastName;
         private string _gender;
         private User _user;
+        private Type _type;
+
+
+        public Type type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
 
 
         public User user
@@ -58,6 +73,15 @@ namespace Backend
             this.firstName = first;
             this.lastName = last;
             this.gender = gender;
+        }
+
+        public Person(string id, string first, string last, string gender, Type type)
+        {
+            this.ID = id;
+            this.firstName = first;
+            this.lastName = last;
+            this.gender = gender;
+            this.type = type;
         }
 
         public Person(Person p)
