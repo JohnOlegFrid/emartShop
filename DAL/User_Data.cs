@@ -70,5 +70,17 @@ namespace DAL
             }
             return false;
         }
+
+        public void changePassword(User user, string newPassword) 
+        {
+            foreach (User u in DB)
+            {
+                if ((u.userName).CompareTo(user.userName) == 0 && (u.password).CompareTo((user.password)) == 0)
+                {
+                    u.password = newPassword;
+                }
+            }
+        }
+
     }
 }

@@ -47,6 +47,17 @@ namespace BL
         {
             return itsDAL.isUserNameTaken(userName);
         }
+
+        //change the password of the user
+        public void changePassword(User user, string newPassword)
+        {
+            if (exist(user))
+            {
+                itsDAL.changePassword(user, newPassword);
+            }
+        }
+
+
     }
 }
 
