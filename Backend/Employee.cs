@@ -10,9 +10,24 @@ namespace Backend
     [Serializable]
     public class Employee : Person
     {
+        public enum Type
+        {
+            Administrator,
+            Manager,
+            Worker
+        };
+
         private string _departmentID;
         private double _salary;
         private string _supervisorID;
+        private Type _type;
+
+
+        public Type type 
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
 
         public string departmentID
         {
@@ -40,6 +55,17 @@ namespace Backend
             this._salary = salary;
             this._supervisorID = supervisorID;
         }
+
+        public Employee(string id, string first, string last, string gender, string departmentID, double salary, string supervisorID, Type type)
+            : base(id, first, last, gender)
+        {
+            this._departmentID = departmentID;
+            this._salary = salary;
+            this._supervisorID = supervisorID;
+            this._type = type;
+        }
+
+
 
         public Employee(Person p)
             : base(p.ID, p.firstName, p.lastName, p.gender)

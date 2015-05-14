@@ -14,6 +14,14 @@ namespace Backend
         private string _firstName;
         private string _lastName;
         private string _gender;
+        private User _user;
+
+
+        public User user
+        {
+            get { return _user; }
+            set { _user = value; }
+        }
 
         public string ID
         {
