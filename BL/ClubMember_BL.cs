@@ -24,7 +24,7 @@ namespace BL
             return itsDAL.Contains(clubMember);
         }
         //adds a club member
-        public void Add(Club_Member clubMember)
+        public void Add(Customer clubMember)
         {
             if (!exist(clubMember.ID))
             {

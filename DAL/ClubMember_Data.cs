@@ -14,15 +14,15 @@ namespace DAL
     [Serializable]
     public class ClubMember_Data
     {
-        public List<Club_Member> DB;
+        public List<Customer> DB;
         public string path = @"clubMember.bin";
 
         public ClubMember_Data()
         {
-            DB = new List<Club_Member>();
+            DB = new List<Customer>();
         }
 
-        public ClubMember_Data(List<Club_Member> CMDB)
+        public ClubMember_Data(List<Customer> CMDB)
         {
             DB = CMDB;
             Encryption.encryption(DB, path);
@@ -31,7 +31,7 @@ namespace DAL
 
         public void Add(Object cm)
         {
-            Club_Member clubMember = (Club_Member)cm;
+            Customer clubMember = (Customer)cm;
             DB.Add(clubMember);
             Encryption.encryption(DB, path);
         }
@@ -42,7 +42,7 @@ namespace DAL
                 from c in DB
                 where c.memberID == id
                 select c;
-            foreach (Club_Member c in clubMember)
+            foreach (Customer c in clubMember)
             {
                 DB.Remove(c);
                 Encryption.encryption(DB, path);
@@ -52,7 +52,7 @@ namespace DAL
 
         public bool Contains(string id)
         {
-            foreach (Club_Member c in DB)
+            foreach (Customer c in DB)
             {
                 if ((c.memberID).CompareTo((id)) == 0) return true;
             }
@@ -102,7 +102,7 @@ namespace DAL
             {
                 return "there are no club members";
             }
-            foreach (Club_Member c in DB)
+            foreach (Customer c in DB)
             {
                 allClubMembers.Append(c.ToString());
                 allClubMembers.Append("\r\n");
@@ -122,7 +122,7 @@ namespace DAL
                 ClubMemberByName.Append("no club members by the first name ");
                 ClubMemberByName.Append(name);
             }
-            foreach (Club_Member c in firstName)
+            foreach (Customer c in firstName)
             {
                 ClubMemberByName.Append(c.ToString());
                 ClubMemberByName.Append("\r\n");
@@ -141,7 +141,7 @@ namespace DAL
                 ClubMemberByName.Append("no club members by the last name ");
                 ClubMemberByName.Append(name);
             }
-            foreach (Club_Member c in LastName)
+            foreach (Customer c in LastName)
             {
                 ClubMemberByName.Append(c.ToString());
                 ClubMemberByName.Append("\r\n");
@@ -161,7 +161,7 @@ namespace DAL
                 ClubMemberByName.Append(fname);
                 ClubMemberByName.Append(lname);
             }
-            foreach (Club_Member c in FullName)
+            foreach (Customer c in FullName)
             {
                 ClubMemberByName.Append(c.ToString());
             }
@@ -175,7 +175,7 @@ namespace DAL
                from c in DB
                where (c.ID == id)
                select c;
-            foreach (Club_Member c in clubMember)
+            foreach (Customer c in clubMember)
             {
                 ClubMemberByID.Append(c.ToString());
             }
@@ -193,7 +193,7 @@ namespace DAL
                 from t in DB
                 where t.memberID == memberID
                 select t;
-            foreach (Club_Member c in transaction)
+            foreach (Customer c in transaction)
             {
                 transactionHistory.Append(c.transaction.ToString());
             }
@@ -214,7 +214,7 @@ namespace DAL
                from c in DB
                where (c.ID == id)
                select c;
-            foreach (Club_Member c in clubMember)
+            foreach (Customer c in clubMember)
             {
                 c.firstName = firstName;
                 c.lastName = lastName;
@@ -227,7 +227,7 @@ namespace DAL
 
         public void removeTransaction(string id)
         {
-            foreach (Club_Member c in DB)
+            foreach (Customer c in DB)
             {
                 foreach (Transaction t in c.transaction)
                 {

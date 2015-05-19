@@ -33,9 +33,9 @@ namespace MainProg
             userDB = (List<User>)Encryption.Decryption(@"user.bin");
             User_Data user_data = new User_Data(userDB);
 
-            List<Club_Member> clubMemberDB = new List<Club_Member>();
+            List<Customer> clubMemberDB = new List<Customer>();
             Encryption.checkEncryption(clubMemberDB, @"clubMember.bin");
-            clubMemberDB = (List<Club_Member>)Encryption.Decryption(@"clubMember.bin");
+            clubMemberDB = (List<Customer>)Encryption.Decryption(@"clubMember.bin");
             ClubMember_Data clubMember_data = new ClubMember_Data(clubMemberDB);
 
             List<Department> departmentDB = new List<Department>();

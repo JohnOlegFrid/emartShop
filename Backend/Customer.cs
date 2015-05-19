@@ -8,17 +8,24 @@ namespace Backend
 {
     //object represantation of club member
     [Serializable]
-    public class Club_Member : Person
+    public class Customer : Person
     {
 
-        private string _memberID;
+        private string _customerID;
         private List<Transaction> _transaction = new List<Transaction>();
         private String _dateOfBirth;
+        private Boolean _clubMember;
+
+        public bool clubMember
+        {
+            get { return _clubMember; }
+            set { if (_clubMember != value) { _clubMember = value; } }       
+        }
 
         public string memberID
         {
-            get { return _memberID; }
-            set { _memberID = value; }
+            get { return _customerID; }
+            set { _customerID = value; }
         }
 
         public List<Transaction> transaction
@@ -33,25 +40,27 @@ namespace Backend
             set { _dateOfBirth = value; }
         }
 
-        public Club_Member()
+        public Customer()
         {
         }
 
-        public Club_Member(string id, string first, string last, string gender, string memberID, String dateOfBirth)
+        public Customer(string id, string first, string last, string gender, string memberID, String dateOfBirth)
             : base(id, first, last, gender, Type.Customer)
         {
-            this._memberID = memberID;
+            this._customerID = memberID;
             this._dateOfBirth = dateOfBirth;
+            this._clubMember = false;
         }
 
-        public Club_Member(string id, string first, string last, string gender, string memberID, String dateOfBirth, Type type)
-            : base(id, first, last, gender, type)
+        public Customer(string id, string first, string last, string gender, string memberID, String dateOfBirth, Boolean clubMember)
+            : base(id, first, last, gender, Type.Customer)
         {
-            this._memberID = memberID;
+            this._customerID = memberID;
             this._dateOfBirth = dateOfBirth;
+            this._clubMember = clubMember;
         }
 
-        public Club_Member(Person p)
+        public Customer(Person p)
             : base(p.ID, p.firstName, p.lastName, p.gender)
         {
         }
