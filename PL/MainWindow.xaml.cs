@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using BL;
 using Backend;
 using PL;
-
+using System.Threading;
 
 
 namespace PL
@@ -55,9 +55,12 @@ namespace PL
         }
         private void newUser(object sender, RoutedEventArgs e)
         {
+           
             Window signIn = new SignInMenu(BL_manager);
             signIn.Show();
             this.Close();
         }
+
+        
     }
 }
