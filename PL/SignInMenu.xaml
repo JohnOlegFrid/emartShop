@@ -3,11 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Sign In" Width="525" Height="350" HorizontalAlignment="Center" VerticalAlignment="Center">
     <Grid>
-        <Image Margin="94,0,102,235" Source="myEmart.png" Stretch="UniformToFill" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="85" Width="321"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160" Margin="80,107,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160" Margin="284,107,0,0" />
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160" Margin="80,163,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="80,214,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="517" Height="320">
+            <StackPanel Height="50" Orientation="Horizontal">
+                <Image Source="emart.png" HorizontalAlignment="Left" Width="162" VerticalAlignment="Center"/>
+                <TextBox TextWrapping="Wrap" Text="Get started with Emart" Width="353" Margin="0" VerticalAlignment="Bottom" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
+
+            </StackPanel>
+            <Grid Height="270" >
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FFC0D4FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"><Run FlowDirection="RightToLeft" Text="First name"/></TextBlock>
+                <TextBox HorizontalAlignment="Left" Height="25" Margin="55,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
+                <TextBlock HorizontalAlignment="Left" Height="19" Margin="285,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"><Run FlowDirection="RightToLeft" Text="Last name"/></TextBlock>
+                <TextBox HorizontalAlignment="Left" Height="25" Margin="285,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
+                <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"><Run FlowDirection="RightToLeft" Text="Email"/></TextBlock>
+                <TextBox HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="55,93,0,0" />
+                <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"><Run FlowDirection="RightToLeft" Text="Create your password"/></TextBlock>
+                <TextBox HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="55,152,0,0" TextChanged="TextBox_TextChanged" />
+                <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"><Span FlowDirection="RightToLeft"><Run Text="Create your "/><Run Text="username"/></Span></TextBlock>
+                <TextBox HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="55,207,0,0" />
+            </Grid>
+
+        </StackPanel>
+
 
     </Grid>
 </Window>
