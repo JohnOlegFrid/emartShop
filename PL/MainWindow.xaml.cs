@@ -43,6 +43,7 @@ namespace PL
 
             if (BL_manager.BL_user.exist(tmpUser)) // check if the password and username exist
             {
+               
                 Window Gm = new GeneralMenu(BL_manager);
                 Gm.Show();
                 this.Close();
@@ -50,13 +51,15 @@ namespace PL
             else
             {
                 MessageBox.Show("Wrong password or Username.");
+                txtUserName.Clear();
+                txtPassWord.Clear();
             }
 
         }
         private void newUser(object sender, RoutedEventArgs e)
         {
            
-            Window signIn = new SignInMenu(BL_manager);
+            Window signIn = new RegisterMenu(BL_manager);
             signIn.Show();
             this.Close();
         }

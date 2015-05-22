@@ -70,5 +70,9 @@ namespace DAL
             }
             return false;
         }
+        public List<User> getAllUsers()
+        {
+            return DB;
+        }
     }
 }

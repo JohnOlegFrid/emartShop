@@ -5,7 +5,7 @@
     <Grid>
         <StackPanel Width="300" HorizontalAlignment="Center">
             <StackPanel VerticalAlignment="Top" Height="100">
-                <Image Source="emart.png" Height="100"/>
+                <Image Source="emart.png" Height="100" StretchDirection="DownOnly"/>
             </StackPanel>
             <StackPanel Height="40" Orientation="Horizontal" VerticalAlignment="Center">
                 <TextBlock HorizontalAlignment="Left"  Text="User Name" VerticalAlignment="Center"  FontSize="14"/>

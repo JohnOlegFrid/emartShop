@@ -16,25 +16,27 @@ using BL;
 namespace PL
 {
     /// <summary>
-    /// Interaction logic for SignInMenu.xaml
+    /// Interaction logic for ProductsMenu.xaml
     /// </summary>
-    public partial class SignInMenu : Window
+    public partial class ProductsMenu : Window
     {
         BL_Manager BL_manager;
-        public SignInMenu(BL_Manager BL_manager)
+        public ProductsMenu(BL_Manager BL_manager)
         {
+            this.BL_manager = BL_manager;
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void printTest_Click(object sender, RoutedEventArgs e)
         {
-
+            stcTest.Children.Clear();
+            UserControl1 uc = new UserControl1(BL_manager);
+            stcTest.Children.Add(uc);
         }
 
-
-      
         
 
         
+
     }
 }

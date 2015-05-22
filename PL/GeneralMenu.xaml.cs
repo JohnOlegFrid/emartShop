@@ -33,5 +33,17 @@ namespace PL
             Mw.Show();
             this.Close();
         }
+
+        private void employeeClick(object sender, RoutedEventArgs e)
+        {
+            generalMenuPanel.Children.Clear();
+            EmployeeOptionsWindow uc = new EmployeeOptionsWindow(BL_manager);
+            generalMenuPanel.Children.Add(uc);
+        }
+
+       
+
+        
+
     }
 }
