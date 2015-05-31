@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="368" d:DesignWidth="600">
-    <Grid>
-        <StackPanel Background="White">
+    <Grid Name="grid">
+        <StackPanel Name="st" Background="White">
+            <Button Content="Add Employee" Click="Button_Click"/>
             <Button Content="Button"/>
             <Button Content="Button"/>
             <Button Content="Button"/>
             <Button Content="Button"/>
-            <Button Content="Button"/>
-
+            
         </StackPanel>
             
     </Grid>

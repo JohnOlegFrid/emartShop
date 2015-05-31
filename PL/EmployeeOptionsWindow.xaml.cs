@@ -26,5 +26,11 @@ namespace PL
             this.BL_manager=BL_manager;
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddEmployeeWindow a = new AddEmployeeWindow();
+            a.Show();
+        }
     }
 }
