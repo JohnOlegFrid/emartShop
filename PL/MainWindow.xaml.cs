@@ -30,6 +30,7 @@ namespace PL
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
         }
 
@@ -50,7 +51,8 @@ namespace PL
             }
             else
             {
-                MessageBox.Show("Wrong password or Username.");
+                //MessageBox.Show("Wrong password or Username.");
+                incorrectTextBox.Text = "Wrong password or username,try again.";
                 txtUserName.Clear();
                 txtPassWord.Clear();
             }
@@ -59,11 +61,36 @@ namespace PL
         private void newUser(object sender, RoutedEventArgs e)
         {
            
-            Window signIn = new RegisterMenu(BL_manager);
-            signIn.Show();
+            Window register = new RegisterMenu(BL_manager);
+            register.Show();
             this.Close();
         }
 
+        private void closeClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void maximaizeB_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+                this.WindowState = WindowState.Normal;
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void minimaizeClick(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+  
+
+        
+
+        
         
     }
 }

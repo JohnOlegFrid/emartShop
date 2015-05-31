@@ -23,12 +23,18 @@ namespace PL
         BL_Manager BL_manager;
         public RegisterMenu(BL_Manager BL_manager)
         {
+            this.BL_manager = BL_manager;
             InitializeComponent();
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Welcome to Emart !");
+            MainWindow mw = new MainWindow(BL_manager);
+            mw.Show();
+           
+            this.Close();
+            
 
         }
 

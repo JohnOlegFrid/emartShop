@@ -22,6 +22,10 @@ namespace PL
         public AddEmployeeWindow()
         {
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
+
+       
+        
     }
 }
