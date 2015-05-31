@@ -86,9 +86,42 @@ namespace PL
             this.WindowState = WindowState.Minimized;
         }
 
-  
+        public static Boolean isWord(String word)
+        {
+            Boolean ans=false;
+            int i=0;
+            if (word != null)
+            {
+                while ((((int)word[i] <= (int)'z' && (int)word[i] >= (int)'a') || ((int)word[i] >= (int)'A' && (int)word[i] <= (int)'Z')) && i < word.Length-1)
+                    i++;
+            }
+            
+            if (i == word.Length-1) ans = true;
 
-        
+            return ans;
+        }
+
+        public static Boolean isNumber(String number)
+        {
+            Boolean ans = true;
+            int dot=0;
+            if (number !=null && number[0].CompareTo('.') != 0 && number[number.Length - 1] != '.')
+                {
+                    for (int i = 0; i < number.Length; i++)
+                    {
+                        while(number[i].CompareTo('.')==0){
+                            i++;
+                            dot++;
+                        }
+
+                        if ((((int)number[i] < (int)'0' || (int)number[i] > (int)'9') || dot > 1)) ans = false;
+                    }
+
+                }
+            else ans = false;
+          
+            return ans;
+        }
 
         
         
