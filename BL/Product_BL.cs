@@ -60,6 +60,10 @@ namespace BL
         {
             return itsDAL.getAllProducts();
         }
+        public List<Product> getAllProductsList()
+        {
+            return itsDAL.getAllProductsList();
+        }
 
         public string Restock(string inventoryId, string addition)
         {

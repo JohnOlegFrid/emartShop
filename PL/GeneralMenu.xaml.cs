@@ -25,6 +25,7 @@ namespace PL
         {
             this.BL_manager=BL_manager;
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void goBack(object sender, RoutedEventArgs e)
@@ -33,5 +34,44 @@ namespace PL
             Mw.Show();
             this.Close();
         }
+
+        private void employeeClick(object sender, RoutedEventArgs e)
+        {
+            //mainFrame.NavigationService.Navigate(new Page1());
+            //mainFrame.NavigationService.Navigate(new Uri("Page1.xaml", UriKind.Relative));
+            var button = sender as Button;
+            dynamic chrome = VisualTreeHelper.GetChild(button, 0);
+            if (chrome != null && chrome.GetType().Name == "ButtonChrome")
+            {
+                chrome.RenderDefaulted = false;
+            }
+            generalMenuPanel.Children.Clear();
+           EmployeeOptionsWindow uc = new EmployeeOptionsWindow(BL_manager);
+            generalMenuPanel.Children.Add(uc);
+        }
+
+        private void closeClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void maximaizeB_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+                this.WindowState = WindowState.Normal;
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void minimaizeClick(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+       
+
+        
+
     }
 }

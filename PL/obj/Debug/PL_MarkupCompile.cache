@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-2-1600001355
+92097247532
 
-51336236823
+121248211915
 14-605668080
-GeneralMenu.xaml;MainWindow.xaml;
+AddEmployeeWindow.xaml;DataEnities.xaml;EditUsersMenu.xaml;EmployeeOptionsWindow.xaml;GeneralMenu.xaml;MainWindow.xaml;ProductsMenu.xaml;RegisterMenu.xaml;UserControl1.xaml;
 
 False
 

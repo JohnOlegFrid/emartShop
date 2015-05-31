@@ -49,6 +49,11 @@ namespace DAL
             }
             return allProducts.ToString();
         }
+        public List<Product> getAllProductsList()
+        {
+            return DB;
+        }
+
         public void Remove(string id)
         {
             foreach (Product p in DB)

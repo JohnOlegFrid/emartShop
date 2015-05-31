@@ -17,3 +17,17 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\GeneralMenu.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\MainWindow.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\PL_MarkupCompile.cache
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\PL.g.resources
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\DataEnities.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\DataEnities.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\ProductsMenu.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\ProductsMenu.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\UserControl1.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\UserControl1.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\EditUsersMenu.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\EditUsersMenu.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\AddEmployeeWindow.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\AddEmployeeWindow.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\RegisterMenu.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\RegisterMenu.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\EmployeeOptionsWindow.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\EmployeeOptionsWindow.g.cs

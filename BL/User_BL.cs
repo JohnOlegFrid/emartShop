@@ -47,6 +47,11 @@ namespace BL
         {
             return itsDAL.isUserNameTaken(userName);
         }
+
+        public List<User> getAllUsers()
+        {
+            return itsDAL.getAllUsers();
+        }
     }
 }
 
