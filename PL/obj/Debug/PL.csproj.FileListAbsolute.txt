@@ -31,3 +31,5 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\RegisterMenu.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\RegisterMenu.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\EmployeeOptionsWindow.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\EmployeeOptionsWindow.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\SimpleProgressBar.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\SimpleProgressBar.g.cs

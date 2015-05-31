@@ -25,6 +25,7 @@ namespace PL
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
@@ -38,7 +39,25 @@ namespace PL
 
         }
 
-        
+        private void closeClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void maximaizeB_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+                this.WindowState = WindowState.Normal;
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void minimaizeClick(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
         
     }
 }
