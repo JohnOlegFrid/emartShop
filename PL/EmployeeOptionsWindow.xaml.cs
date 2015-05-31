@@ -29,7 +29,7 @@ namespace PL
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddEmployeeWindow a = new AddEmployeeWindow();
+            AddEmployeeWindow a = new AddEmployeeWindow(BL_manager);
             a.Show();
         }
     }
