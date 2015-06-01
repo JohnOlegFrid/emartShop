@@ -17,6 +17,11 @@ namespace BL
         public Product_BL(Product_Data dl)
         {
             itsDAL = dl;
+            this.Add("tshirt", "cloths", "defult", "35", "50.6");
+            this.Add("basketball", "toys", "defult", "35", "65");
+            this.Add("laptop", "electronics", "defult", "30", "2500");
+            this.Add("apple", "food", "defult", "35", "2.5");
+            this.Add("blush", "cosmetics", "defult", "35", "129.9");
         }
 
         //adds new product to database

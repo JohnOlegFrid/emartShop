@@ -16,6 +16,7 @@ namespace BL
         public Department_BL(Department_Data dl)
         {
             itsDAL = dl;
+            itsDAL.Add("defult", "defult");
         }
 
         //checks if the club member exsist
