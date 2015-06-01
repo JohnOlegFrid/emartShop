@@ -32,7 +32,6 @@
             <Border>
                 <ListBox Name="ProductView" Loaded="loadProductView" Width="446"/>
             </Border>
-
         </DockPanel>
         
     </Grid>

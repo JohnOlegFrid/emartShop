@@ -39,12 +39,48 @@ namespace PL
         }
         private void loadProductView(object sender, RoutedEventArgs e)
         {
-            List<Product> selectedProducts = BL_manager.BL_product.getAllProductsList();
-            Console.WriteLine(selectedProducts.First());
+            //Button x = new Button();
+            //x.Content="add to cart";
+            //s.Children.Add(x);
+            ProductView.Items.Clear();
+            //ProductView.Items.Add(s);
+            List<Product> selectedProducts;
+            if(types.SelectedValue=="All")
+            {
+                selectedProducts = BL_manager.BL_product.getAllProductsList();
+            }
+            else
+            {
+                selectedProducts = BL_manager.BL_product.getProductsListByType((Product.Type)Enum.Parse(typeof(Product.Type), (string)types.SelectedValue));
+            }
+
             foreach(Product p in selectedProducts)
             {
+                StackPanel s = new StackPanel();
+                s.Orientation = Orientation.Horizontal;
+                TextBlock name = new TextBlock();
+                name.Margin = new Thickness(0,0,5,0);
+                name.Text =p.name;
+                s.Children.Add(name);
+                if(BL_manager.isABestSeller(p.name))
+                {
+                    TextBlock BestSeller = new TextBlock();
+                    BestSeller.Margin = new Thickness(5, 0, 5, 0);
+                    /**ImageBrush textImageBrush = new ImageBrush();
+                    textImageBrush.ImageSource = new BitmapImage(new Uri(@"PL/Bestseller.jpg", UriKind.Relative));
+                    textImageBrush.AlignmentX = AlignmentX.Left;
+                    textImageBrush.Stretch = Stretch.None;
+                    // Use the brush to paint the button's background.
+                    BestSeller.Background = textImageBrush;**/
+                    BestSeller.Text = "BEST SELLER!!!";
+                    s.Children.Add(BestSeller);
+                }
+                TextBlock price = new TextBlock();
+                price.Text = p.price.ToString()+"$";
+                price.Margin = new Thickness(5, 0, 0, 0);
+                s.Children.Add(price);
                 Console.WriteLine(p.name);
-                ProductView.Items.Add(p.name);
+                ProductView.Items.Add(s);
             }
             
         }
@@ -70,8 +106,21 @@ namespace PL
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Console.WriteLine(types.SelectedValue);    
+            Console.WriteLine(types.SelectedValue);
+            this.loadProductView(sender, e);
         }
 
+    }
+    public class productItem
+    {
+        private string name;
+        private double price;
+        private Button buttton;
+        productItem(string name, double price, Button button)
+        {
+            this.name = name;
+            this.price = price;
+            this.buttton = button;
+        }
     }
 }
