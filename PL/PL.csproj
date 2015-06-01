@@ -59,6 +59,9 @@
     <Compile Include="EditUsersMenu.xaml.cs">
       <DependentUpon>EditUsersMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Employees\EditEmployee.xaml.cs">
+      <DependentUpon>EditEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Employees\EmployeeOptionsWindow.xaml.cs">
       <DependentUpon>EmployeeOptionsWindow.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,9 @@
     </Compile>
     <Compile Include="Employees\RemoveEmployeeWindow.xaml.cs">
       <DependentUpon>RemoveEmployeeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\SearchEmployee.xaml.cs">
+      <DependentUpon>SearchEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneralMenu.xaml.cs">
       <DependentUpon>GeneralMenu.xaml</DependentUpon>
@@ -136,6 +142,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Employees\EditEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Employees\EmployeeOptionsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Employees\RemoveEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees\SearchEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

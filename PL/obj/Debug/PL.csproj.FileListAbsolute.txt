@@ -39,3 +39,7 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Employees\AddEmployeeCont
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Employees\AddEmployeeControl.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Employees\RemoveEmployeeWindow.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Employees\RemoveEmployeeWindow.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Employees\EditEmployee.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Employees\EditEmployee.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Employees\SearchEmployee.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Employees\SearchEmployee.g.cs
