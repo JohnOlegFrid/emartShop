@@ -47,7 +47,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee\AddEmployeeWindow.xaml.cs">
+    <Compile Include="Employees\AddEmployeeControl.xaml.cs">
+      <DependentUpon>AddEmployeeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataEnities.xaml.cs">
@@ -56,11 +59,14 @@
     <Compile Include="EditUsersMenu.xaml.cs">
       <DependentUpon>EditUsersMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employee\EmployeeOptionsWindow.xaml.cs">
+    <Compile Include="Employees\EmployeeOptionsWindow.xaml.cs">
       <DependentUpon>EmployeeOptionsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Employee\PrintEmployeeWindow.xaml.cs">
+    <Compile Include="Employees\PrintEmployeeWindow.xaml.cs">
       <DependentUpon>PrintEmployeeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\RemoveEmployeeWindow.xaml.cs">
+      <DependentUpon>RemoveEmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneralMenu.xaml.cs">
       <DependentUpon>GeneralMenu.xaml</DependentUpon>
@@ -114,7 +120,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Employee\AddEmployeeWindow.xaml">
+    <Page Include="Employees\AddEmployeeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees\AddEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,11 +136,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Employee\EmployeeOptionsWindow.xaml">
+    <Page Include="Employees\EmployeeOptionsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Employee\PrintEmployeeWindow.xaml">
+    <Page Include="Employees\PrintEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employees\RemoveEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,7 +180,7 @@
     <Resource Include="SmartShoppingLOGO.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Employee\emart.png" />
+    <Resource Include="Employees\emart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

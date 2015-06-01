@@ -1,7 +1,7 @@
 ﻿<Window x:Class="PL.GeneralMenu"
        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="GeneralMenu" Height="400" Width="800" WindowStyle="None">
+        Title="GeneralMenu" Height="420" Width="800" WindowStyle="None">
     <Grid>
 
         <DockPanel LastChildFill="False">

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
-namespace PL
+namespace PL.Employees
 {
     /// <summary>
     /// Interaction logic for EmployeeOptionsWindow.xaml
@@ -29,8 +29,10 @@ namespace PL
 
         private void addEmployeeClick(object sender, RoutedEventArgs e)
         {
-            AddEmployeeWindow a = new AddEmployeeWindow(BL_manager);
-            a.Show();
+            AddEmployeeControl a = new AddEmployeeControl(BL_manager);
+            employeePanel.Children.Add(a);
+            //AddEmployeeWindow a = new AddEmployeeWindow(BL_manager);
+            //a.Show();
         }
 
         private void printEmployeeClick(object sender, RoutedEventArgs e)
@@ -38,6 +40,12 @@ namespace PL
             PrintEmployeeWindow p = new PrintEmployeeWindow(BL_manager);
             p.Show();
 
+        }
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveEmployeeWindow r = new RemoveEmployeeWindow(BL_manager);
+            r.Show();
         }
     }
 }

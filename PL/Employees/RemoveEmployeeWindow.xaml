@@ -1,9 +1,15 @@
-﻿<Window x:Class="PL.PrintEmployeeWindow"
+﻿<Window x:Class="PL.Employees.RemoveEmployeeWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="EmployeePrintWindow" Height="400" Width="600" WindowStyle="None">
+        Title="RemoveEmployeeWindow" Height="400" Width="600">
     <Grid>
-        <DockPanel Name="dock" LastChildFill="False">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0.215"/>
+                <GradientStop Color="#FFC0D4FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DockPanel>
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Top" CanVerticallyScroll="True" FlowDirection="RightToLeft" Background="White">
                 <Button Name="closeB" Content="X" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Background="White" BorderBrush="White" Foreground="#FF1E99FF" FontWeight="Bold" Click="closeClick"/>
                 <Button Name="maximaizeB" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Background="White" BorderBrush="White" Foreground="#FF1E99FF" FontWeight="Bold" Click="maximaizeB_Click" RenderTransformOrigin="0.5,0.5" Height="22">
@@ -20,10 +26,18 @@
                 </Button>
                 <Button Name="minimaizeB" Content="_" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Background="White" BorderBrush="White" Foreground="#FF1E99FF" FontWeight="Bold" Click="minimaizeClick"/>
             </StackPanel>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="517" Height="350">
 
-            <DataGrid Name="dataGrid" DockPanel.Dock="Top" Loaded="DataGrid_Loaded" SelectionMode="Single" Background="White" BorderBrush="#FF00B9FF" BorderThickness="1" HorizontalGridLinesBrush="#FF00B9FF" VerticalGridLinesBrush="#FF00B9FF" IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0"/>
-            <StackPanel DockPanel.Dock="Top">
-                <Button Name="refreshButton" Height="26" Width="100" Content="Refresh" HorizontalAlignment="Center" Margin="0,20,0,0" Click="refreshButton_Click"/>
+                <StackPanel Height="50" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="emart.png" HorizontalAlignment="Center" Width="162" VerticalAlignment="Center" Margin="18,4,0,4"/>
+                    <TextBlock TextWrapping="Wrap" Text="Remove Employee" Width="353" Margin="0" VerticalAlignment="Bottom" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
+
+                </StackPanel>
+                <Grid Height="291" >
+                    <TextBlock HorizontalAlignment="Left" Height="19" Margin="48,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="ID number"/>
+                    <TextBox Name="IDnumbertxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="48,49,0,0" />
+                    <Button Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="124" Height="25" Margin="285,0,108,217" Click="Register_Click"/>
+                </Grid>
             </StackPanel>
         </DockPanel>
     </Grid>

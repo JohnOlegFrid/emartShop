@@ -12,38 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
+using Backend;
 
-
-namespace PL
+namespace PL.Employees
 {
     /// <summary>
-    /// Interaction logic for GeneralMenu.xaml
+    /// Interaction logic for EmployeePrintWindow.xaml
     /// </summary>
-    public partial class GeneralMenu : Window
+    public partial class PrintEmployeeWindow : Window
     {
         BL_Manager BL_manager;
-        public GeneralMenu(BL_Manager BL_manager)
+
+        public PrintEmployeeWindow(BL_Manager BL_manager)
         {
-            this.BL_manager=BL_manager;
+            this.BL_manager = BL_manager;
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
         }
 
-        private void goBack(object sender, RoutedEventArgs e)
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            Window Mw = new MainWindow(BL_manager);
-            Mw.Show();
-            this.Close();
-        }
 
-        private void employeeClick(object sender, RoutedEventArgs e)
-        {
-            //mainFrame.NavigationService.Navigate(new Page1());
-            //mainFrame.NavigationService.Navigate(new Uri("Page1.xaml", UriKind.Relative));
-           
-            generalMenuPanel.Children.Clear();
-           Employees.EmployeeOptionsWindow uc = new Employees.EmployeeOptionsWindow(BL_manager);
-           generalMenuPanel.Children.Add(uc);
+            List<Employee> listP = BL_manager.BL_employee.getAllEmployees();
+            var grid = sender as DataGrid;
+            grid.ItemsSource = listP;
         }
 
         private void closeClick(object sender, RoutedEventArgs e)
@@ -65,9 +58,15 @@ namespace PL
         {
             this.WindowState = WindowState.Minimized;
         }
-       
 
-        
+        private void refreshButton_Click(object sender, RoutedEventArgs e)
+        {
 
+            List<Employee> listP = new List<Employee>();
+            listP = BL_manager.BL_employee.getAllEmployees();
+ 
+            dataGrid.ItemsSource = listP;
+            
+        }
     }
 }

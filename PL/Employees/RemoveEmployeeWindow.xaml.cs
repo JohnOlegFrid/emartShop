@@ -12,31 +12,43 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
-using Backend;
 
-namespace PL
+namespace PL.Employees
 {
     /// <summary>
-    /// Interaction logic for EmployeePrintWindow.xaml
+    /// Interaction logic for RemoveEmployeeWindow.xaml
     /// </summary>
-    public partial class PrintEmployeeWindow : Window
+    public partial class RemoveEmployeeWindow : Window
     {
         BL_Manager BL_manager;
 
-        public PrintEmployeeWindow(BL_Manager BL_manager)
+        public RemoveEmployeeWindow(BL_Manager BL_manager)
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
-            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
         }
 
-        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        private void Register_Click(object sender, RoutedEventArgs e)
         {
+            String IDnumber=IDnumbertxt.Text;
+            if (MainWindow.isNumber(IDnumber))
+            {
+                if (BL_manager.BL_employee.Remove(IDnumber))
+                {
+                    MessageBox.Show("The employee deleted succefully", "Deleted succefully", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("The ID number doesn't exist.\nPlease try again", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
 
-            List<Employee> listP = BL_manager.BL_employee.getAllEmployees();
-            var grid = sender as DataGrid;
-            grid.ItemsSource = listP;
+            }
+            else
+            {
+                MessageBox.Show("There where a problem deleting the employee.\nPlease try again", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
         }
 
         private void closeClick(object sender, RoutedEventArgs e)
@@ -59,14 +71,11 @@ namespace PL
             this.WindowState = WindowState.Minimized;
         }
 
-        private void refreshButton_Click(object sender, RoutedEventArgs e)
-        {
+        
 
-            List<Employee> listP = new List<Employee>();
-            listP = BL_manager.BL_employee.getAllEmployees();
- 
-            dataGrid.ItemsSource = listP;
-            
-        }
+        
+
+
+
     }
 }

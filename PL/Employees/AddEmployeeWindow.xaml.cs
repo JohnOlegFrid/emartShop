@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
 
-namespace PL
+namespace PL.Employees
 {
     /// <summary>
     /// Interaction logic for AddEmployeeWindow.xaml
