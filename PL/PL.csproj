@@ -47,7 +47,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmployeeWindow.xaml.cs">
+    <Compile Include="Employee\AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataEnities.xaml.cs">
@@ -56,8 +56,11 @@
     <Compile Include="EditUsersMenu.xaml.cs">
       <DependentUpon>EditUsersMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeOptionsWindow.xaml.cs">
+    <Compile Include="Employee\EmployeeOptionsWindow.xaml.cs">
       <DependentUpon>EmployeeOptionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\PrintEmployeeWindow.xaml.cs">
+      <DependentUpon>PrintEmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneralMenu.xaml.cs">
       <DependentUpon>GeneralMenu.xaml</DependentUpon>
@@ -111,7 +114,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="AddEmployeeWindow.xaml">
+    <Page Include="Employee\AddEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,7 +126,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EmployeeOptionsWindow.xaml">
+    <Page Include="Employee\EmployeeOptionsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employee\PrintEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,6 +164,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="SmartShoppingLOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Employee\emart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

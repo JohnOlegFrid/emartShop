@@ -76,7 +76,7 @@ namespace DAL
             return EmployeeByID.ToString();
         }
 
-        public string getAllEmployees()
+        public string getAllEmployeesString()
         {
             StringBuilder allEmployees = new StringBuilder("");
             if (DB.Count() == 0)
@@ -89,6 +89,11 @@ namespace DAL
                 allEmployees.Append("\r\n");
             }
             return allEmployees.ToString();
+        }
+
+        public List<Employee> getAllEmployees()
+        {
+            return DB;
         }
 
         public string getSalaryByID(string id)

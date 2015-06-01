@@ -47,7 +47,12 @@ namespace BL
         /*
          * query functions for employee database
          */
-        public string getAllEmployees()
+        public string getAllEmployeesString()
+        {
+            return itsDAL.getAllEmployeesString();
+        }
+
+        public List<Employee> getAllEmployees()
         {
             return itsDAL.getAllEmployees();
         }
