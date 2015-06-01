@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
 
+
 namespace PL
 {
     /// <summary>
@@ -41,8 +42,8 @@ namespace PL
             //mainFrame.NavigationService.Navigate(new Uri("Page1.xaml", UriKind.Relative));
            
             generalMenuPanel.Children.Clear();
-           EmployeeOptionsWindow uc = new EmployeeOptionsWindow(BL_manager);
-            generalMenuPanel.Children.Add(uc);
+           Employees.EmployeeOptionsWindow uc = new Employees.EmployeeOptionsWindow(BL_manager);
+           generalMenuPanel.Children.Add(uc);
         }
 
         private void closeClick(object sender, RoutedEventArgs e)

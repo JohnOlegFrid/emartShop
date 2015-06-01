@@ -36,11 +36,16 @@ namespace BL
         }
 
         //removes employee from data
-        public void Remove(string id)
+        public Boolean Remove(string id)
         {
             if (exist(id))
             {
                 itsDAL.Remove(id);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
