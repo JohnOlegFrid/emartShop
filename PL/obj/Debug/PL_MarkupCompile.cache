@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-101435200595
+11125851109
 
-13-1505170422
+141944080867
 14-605668080
-AddEmployeeWindow.xaml;DataEnities.xaml;EditUsersMenu.xaml;EmployeeOptionsWindow.xaml;GeneralMenu.xaml;MainWindow.xaml;ProductsMenu.xaml;RegisterMenu.xaml;SimpleProgressBar.xaml;UserControl1.xaml;
+Employee\AddEmployeeWindow.xaml;DataEnities.xaml;EditUsersMenu.xaml;Employee\EmployeeOptionsWindow.xaml;Employee\PrintEmployeeWindow.xaml;GeneralMenu.xaml;MainWindow.xaml;ProductsMenu.xaml;RegisterMenu.xaml;SimpleProgressBar.xaml;UserControl1.xaml;
 
 False
 

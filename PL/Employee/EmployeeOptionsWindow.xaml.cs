@@ -27,10 +27,17 @@ namespace PL
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void addEmployeeClick(object sender, RoutedEventArgs e)
         {
             AddEmployeeWindow a = new AddEmployeeWindow(BL_manager);
             a.Show();
+        }
+
+        private void printEmployeeClick(object sender, RoutedEventArgs e)
+        {
+            PrintEmployeeWindow p = new PrintEmployeeWindow(BL_manager);
+            p.Show();
+
         }
     }
 }
