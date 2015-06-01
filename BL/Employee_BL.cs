@@ -67,10 +67,16 @@ namespace BL
             return itsDAL.getSalaryByID(id);
         }
 
-        public string getEmployeeByID(string id)
+        public string getEmployeeByIDString(string id)
+        {
+            return itsDAL.getEmployeeByIDString(id);
+        }
+
+        public List<Employee> getEmployeeByID(string id)
         {
             return itsDAL.getEmployeeByID(id);
         }
+
 
         public string getSupervisorByID(string id)
         {

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
+using Backend;
 
 namespace PL.Employees
 {
@@ -20,11 +21,11 @@ namespace PL.Employees
     /// </summary>
     public partial class SearchEmployee : Window
     {
-        BL_Manager Bl_manager;
+        BL_Manager BL_manager;
 
         public SearchEmployee(BL_Manager BL_manager)
         {
-            this.Bl_manager = BL_manager;
+            this.BL_manager = BL_manager;
             InitializeComponent();
         }
 
@@ -50,11 +51,19 @@ namespace PL.Employees
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
+            List<Employee> list = new List<Employee>();
             if (byIDradio.IsChecked==true)
             {
-                this.Close();
+                String id = searchtxt.Text;
+                if (MainWindow.isWord(id))
+                {
+                    list = BL_manager.BL_employee.getEmployeeByID(id);
+                    listBox.ItemsSource = list;
+                }  
             }
 
         }
+
+       
     }
 }

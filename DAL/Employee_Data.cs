@@ -56,7 +56,7 @@ namespace DAL
             }
         }
 
-        public string getEmployeeByID(string id)
+        public string getEmployeeByIDString(string id)
         {
             StringBuilder EmployeeByID = new StringBuilder("");
             var employee =
@@ -74,6 +74,19 @@ namespace DAL
                 EmployeeByID.Append("\r\n");
             }
             return EmployeeByID.ToString();
+        }
+
+        public List<Employee> getEmployeeByID(string id)
+        {
+            List<Employee> list=new List<Employee>();
+            var employee =
+                from i in DB
+                where i.ID == id
+                select i;
+           
+            foreach (Employee e in employee) list.Add(e);
+            
+            return list;
         }
 
         public string getAllEmployeesString()
