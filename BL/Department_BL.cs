@@ -16,6 +16,7 @@ namespace BL
         public Department_BL(Department_Data dl)
         {
             itsDAL = dl;
+            //itsDAL.DB.Clear();
         }
 
         //checks if the club member exsist

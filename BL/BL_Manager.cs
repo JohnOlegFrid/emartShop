@@ -60,5 +60,10 @@ namespace BL
             BL_product.RemoveDepartment(id);
             BL_employee.RemoveDepartment(id);
         }
+
+        public bool isABestSeller(string name)
+        {
+            return true;
+        }
     }
 }

@@ -245,5 +245,19 @@ namespace DAL
             }
             return product.ToString();
         }
+
+        public List<Product> getProductsListByType(Product.Type type)
+        {
+            List < Product > list= new List<Product>();
+            foreach(Product p in DB)
+            {
+                if(p.type==type)
+                {
+                    list.Add(p);                
+                }
+            }
+
+            return list;
+        }
     }
 }
