@@ -25,11 +25,11 @@ namespace BL
         }
 
         //adds a new employee
-        public bool Add(string id, string first, string last, string gender, string departmentID, string salary, string supervisorID)
+        public bool Add(string id, string first, string last, string gender, string departmentID, string salary, string supervisorID, string type)
         {
             if (!exist(id))
             {
-                itsDAL.Add(id, first, last, gender, departmentID, double.Parse(salary), supervisorID);
+                itsDAL.Add(id, first, last, gender, departmentID, double.Parse(salary), supervisorID, type);
                 return true;
             }
             return false;
@@ -108,9 +108,9 @@ namespace BL
             return itsDAL.getEmployeesByFullName(fname, lname);
         }
 
-        public bool updateEmployee(string id, string first, string last, string gender, string departmentID, string salary, string supervisorID)
+        public bool updateEmployee(string id, string first, string last, string gender, string departmentID, string salary, string supervisorID, string type)
         {
-            return itsDAL.updateEmployee(id, first, last, gender, departmentID, salary, supervisorID);
+            return itsDAL.updateEmployee(id, first, last, gender, departmentID, salary, supervisorID, type);
         }
 
         public void RemoveDepartment(string id)
