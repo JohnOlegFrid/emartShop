@@ -14,6 +14,7 @@ namespace Backend
         private string _memberID;
         private List<Transaction> _transaction = new List<Transaction>();
         private String _dateOfBirth;
+        private String _type;
 
         public string memberID
         {
@@ -42,11 +43,13 @@ namespace Backend
         {
             this._memberID = memberID;
             this._dateOfBirth = dateOfBirth;
+            this._type = "Customer";
         }
 
         public Club_Member(Person p)
             : base(p.ID, p.firstName, p.lastName, p.gender)
         {
+            this._type = "Customer";
         }
 
         public override string ToString()

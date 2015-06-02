@@ -18,16 +18,16 @@ namespace DAL
         public User_Data()
         {
             DB = new List<User>();
-            DB.Add(new User("admin", "admin"));
+            DB.Add(new User("admin", "admin", "12345", "Admin"));
             Encryption.encryption(DB, path);
         }
 
         public User_Data(List<User> UDB)
         {
             DB = UDB;
-            User admin = new User("admin", "admin");
+            User admin = new User("admin", "admin", "12345", "Admin");
             if (!Contains(admin))
-                DB.Add(new User("admin", "admin"));
+                DB.Add(new User("admin", "admin", "12345", "Admin"));
             Encryption.encryption(DB, path);
         }
 
