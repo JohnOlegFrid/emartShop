@@ -20,8 +20,6 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\MainProg\obj\Debug\Main.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\MainProg\obj\Debug\Main.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\MainProg\obj\Debug\MainProg.g.resources
 C:\Users\Gwainer\Desktop\emartwpf1\MainProg\bin\Debug\MainProg.exe.config
-C:\Users\Gwainer\Desktop\emartwpf1\MainProg\obj\Debug\MainProg.exe
-C:\Users\Gwainer\Desktop\emartwpf1\MainProg\obj\Debug\MainProg.pdb
 C:\Users\Gwainer\Desktop\emartwpf1\MainProg\bin\Debug\MainProg.exe
 C:\Users\Gwainer\Desktop\emartwpf1\MainProg\bin\Debug\MainProg.pdb
 C:\Users\Gwainer\Desktop\emartwpf1\MainProg\bin\Debug\Backend.dll
@@ -40,3 +38,5 @@ C:\Users\Gwainer\Desktop\emartwpf1\MainProg\obj\Debug\MainProg_MarkupCompile.cac
 C:\Users\Gwainer\Desktop\emartwpf1\MainProg\obj\Debug\MainProg.g.resources
 C:\Users\Gwainer\Desktop\emartwpf1\MainProg\obj\Debug\MainProg.Properties.Resources.resources
 C:\Users\Gwainer\Desktop\emartwpf1\MainProg\obj\Debug\MainProg.csproj.GenerateResource.Cache
+C:\Users\Gwainer\Desktop\emartwpf1\MainProg\obj\Debug\MainProg.exe
+C:\Users\Gwainer\Desktop\emartwpf1\MainProg\obj\Debug\MainProg.pdb

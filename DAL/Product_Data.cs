@@ -108,7 +108,7 @@ namespace DAL
             foreach (Product p in pByName)
             {
                 product.Append(p.ToString());
-                product.Append("\r\n");
+                //product.Append("\r\n");
             }
             if (product.ToString() == "")
             {

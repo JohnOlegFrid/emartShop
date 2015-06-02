@@ -129,6 +129,10 @@ namespace DAL
             Encryption.encryption(DB, path);
             return true;
         }
+        public List<Transaction> getTransactionsByMonth()
+        {
+            return DB;
+        }
 
     }
 }

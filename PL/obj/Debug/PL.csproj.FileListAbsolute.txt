@@ -48,6 +48,7 @@ C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\EditUsersMenu.baml
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\EmployeeOptionsWindow.baml
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\GeneralMenu.baml
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\MainWindow.baml
+C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\onlineStore.baml
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\ProductsMenu.baml
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\RegisterMenu.baml
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\SimpleProgressBar.baml
@@ -58,6 +59,7 @@ C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\EditUsersMenu.g.cs
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\EmployeeOptionsWindow.g.cs
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\GeneralMenu.g.cs
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\MainWindow.g.cs
+C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\onlineStore.g.cs
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\ProductsMenu.g.cs
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\RegisterMenu.g.cs
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\SimpleProgressBar.g.cs
@@ -68,5 +70,3 @@ C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\PL.Properties.Resources.resource
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\PL.csproj.GenerateResource.Cache
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\PL.dll
 C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\PL.pdb
-C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\onlineStore.baml
-C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\onlineStore.g.cs

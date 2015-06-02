@@ -9,9 +9,9 @@ namespace Backend
     [Serializable]
     public class Receipt
     {
-        private Dictionary<string, double> _products;
+        private Dictionary<string, double[]> _products;
 
-        public Dictionary<string, double> product
+        public Dictionary<string, double[]> product
         {
             get { return _products; }
             set { _products = value; }
@@ -22,7 +22,7 @@ namespace Backend
 
         }
 
-        public Receipt(Dictionary<string, double> product)
+        public Receipt(Dictionary<string, double[]> product)
         {
             _products = product;
         }
@@ -30,7 +30,7 @@ namespace Backend
         public override string ToString()
         {
             StringBuilder receipt = new StringBuilder("");
-            foreach (KeyValuePair<string, double> product in _products)
+            foreach (KeyValuePair<string, double[]> product in _products)
             {
                 receipt.Append(product.Key);
                 receipt.Append(" ");

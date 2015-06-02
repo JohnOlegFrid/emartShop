@@ -12,7 +12,7 @@ namespace BL
     [Serializable]
     public class Product_BL
     {
-        Product_Data itsDAL;
+        public Product_Data itsDAL;
 
         public Product_BL(Product_Data dl)
         {
@@ -22,7 +22,7 @@ namespace BL
             this.Add("laptop", "electronics", "defult", "30", "2500");
             this.Add("apple", "food", "defult", "35", "2.5");
             this.Add("blush", "cosmetics", "defult", "35", "129.9");**/
-            //itsDAL.DB.Clear();
+            
         }
 
         //adds new product to database
