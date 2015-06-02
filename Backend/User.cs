@@ -41,10 +41,5 @@ namespace Backend
             _password = password;
             _ID = ID;
         }
-        public User(string name, string password)
-        {
-            _userName = name;
-            _password = password;
-        }
     }
 }
