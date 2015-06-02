@@ -8,12 +8,7 @@
 	Title="Remove">
 
     <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="White" Offset="0.215"/>
-                <GradientStop Color="#FFC0D4FF" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+        
         <DockPanel>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="517" Height="350">
 

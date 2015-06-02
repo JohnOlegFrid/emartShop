@@ -5,7 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="368" d:DesignWidth="600">
+             d:DesignHeight="700" d:DesignWidth="700">
+    <UserControl.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White" Offset="0.215"/>
+            <GradientStop Color="#FFC0D4FF" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
     <Grid>
         <DockPanel LastChildFill="false" >
             <Border DockPanel.Dock="Top"  BorderThickness="1" BorderBrush="#FF00B9FF">
@@ -17,14 +23,8 @@
                     <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Search" Margin="5,0" Click="Search_Click"/>
                 </StackPanel>
             </Border>
-            <Frame beha:DisableNavigation.Disable="True" DockPanel.Dock="Top" Name="frame">
-                <Frame.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="White" Offset="0.215"/>
-                        <GradientStop Color="#FFC0D4FF" Offset="1"/>
-                    </LinearGradientBrush>
-                </Frame.Background>
-
+            <Frame  DockPanel.Dock="Top" Name="frame">
+                
             </Frame>
 
         </DockPanel>

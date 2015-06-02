@@ -62,7 +62,6 @@
     <Compile Include="Departments\Table.xaml.cs">
       <DependentUpon>Table.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DisableNavigation.cs" />
     <Compile Include="Employees\AddEmployeeControl.xaml.cs">
       <DependentUpon>AddEmployeeControl.xaml</DependentUpon>
     </Compile>
