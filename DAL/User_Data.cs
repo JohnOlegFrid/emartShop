@@ -74,5 +74,36 @@ namespace DAL
         {
             return DB;
         }
+
+        public string getUserByID(string id)
+        {
+            StringBuilder SupervisorByID = new StringBuilder("");
+
+            foreach (User e in DB)
+            {
+                if (e.ID == id)
+                {
+                    return e.userName;
+                }
+
+            }
+            return "";
+        }
+
+        public string getIDByUser (string user)
+        {
+            StringBuilder SupervisorByID = new StringBuilder("");
+
+            foreach (User e in DB)
+            {
+                if (e.userName == user)
+                {
+                    return e.ID;
+                }
+
+            }
+            return "";
+        }
+
     }
 }
