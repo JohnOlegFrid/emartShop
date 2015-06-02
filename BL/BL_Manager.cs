@@ -73,8 +73,16 @@ namespace BL
 
         public bool isABestSeller(string name)
         {
+            DateTime date = DateTime.Now;
+            List<Transaction> list = BL_transaction.getTransactionByMonth(date.Month);
+            List<Product> bestSeller;
+            foreach(Transaction t in list)
+            {
 
+            }
             return true;
         }
+
+
     }
 }
