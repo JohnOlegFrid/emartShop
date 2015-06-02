@@ -71,5 +71,19 @@ namespace BL
         {
             return itsDAL.updateTransaction(transactionID, Convert.ToDateTime(dateTime), isAReturn, (PaymentMethod)Enum.Parse(typeof(PaymentMethod), paymentMethod));
         }
+
+        public List<Transaction> getTransactionByMonth(int p)
+        {
+            var transaction =
+              from t in itsDAL.DB
+              where t.dateTime.Month == p
+              select t;
+            List<Transaction> list = new List<Transaction>();
+            foreach (Transaction t in transaction)
+            {
+                list.Add(t);
+            }
+            return list;
+        }
     }
 }
