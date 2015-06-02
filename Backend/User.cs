@@ -17,13 +17,8 @@ namespace Backend
         private string _userName;
         private string _password;
         private string _ID;
-        private string _type;
 
-        public string type
-        {
-            get { return _type; }
-            set { _type = value; }
-        }
+
         
         public string ID
         {
@@ -42,12 +37,17 @@ namespace Backend
             set { _password = value; }
         }
 
-        public User(string name, string password, string ID, string type)
+        public User(string name, string password)
+        {
+            _userName = name;
+            _password = password;
+        }
+
+        public User(string name, string password, string ID)
         {
             _userName = name;
             _password = password;
             _ID = ID;
-            _type = type;
         }
     }
 }
