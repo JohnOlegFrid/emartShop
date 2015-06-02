@@ -10,33 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
+using Backend;
 
-namespace PL
+namespace PL.Departments
 {
     /// <summary>
-    /// Interaction logic for DataEnities.xaml
+    /// Interaction logic for Table.xaml
     /// </summary>
-    public partial class DataEnities : Window
+    public partial class Table : UserControl
     {
-        BL_Manager BL_manager;
-        public DataEnities(BL_Manager BL_manager)
+        public Table(List<Department> list)
         {
-            this.BL_manager=BL_manager;
             InitializeComponent();
+           
+            dataGrid.ItemsSource = list;
+
         }
-
-        private void productsClick(object sender, RoutedEventArgs e)
-        {
-            ProductsMenu pm = new ProductsMenu(BL_manager);
-            pm.Show();
-            this.Close();
-        }
-
-
-        
-
-        
     }
 }

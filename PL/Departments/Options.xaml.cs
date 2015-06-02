@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BL;
 
 namespace PL.Departments
 {
@@ -20,9 +21,40 @@ namespace PL.Departments
     /// </summary>
     public partial class Options : UserControl
     {
-        public Options()
+        BL_Manager BL_manager;
+
+        public Options(BL_Manager BL_manager)
         {
+            this.BL_manager = BL_manager;
             InitializeComponent();
+        }
+
+        private void printClick(object sender, RoutedEventArgs e)
+        {
+            Print p = new Print(BL_manager);
+            p.Show();
+        }
+
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new Remove(BL_manager));
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addClick(object sender, RoutedEventArgs e)
+        {
+            
+            frame.Navigate(new AddDepartment(BL_manager));
         }
     }
 }

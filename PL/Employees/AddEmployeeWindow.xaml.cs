@@ -38,10 +38,7 @@ namespace PL.Employees
             String departmentID = departmentIDtxt.Text;
             String gender = (gendertxt.SelectedValue as ComboBoxItem).Content.ToString();
             Boolean goodInput=false;
-            SimpleProgressBar sb = new SimpleProgressBar();
-            //sb.Show();
-           // sb.run();
-            goodInput = (MainWindow.isWord(fname) && MainWindow.isWord(lname) && MainWindow.isNumber(IDnumber) && MainWindow.isNumber(salary) && MainWindow.isNumber(supervisorID) && MainWindow.isNumber(departmentID));
+            
             if (MainWindow.isWord(fname) && MainWindow.isWord(lname) && MainWindow.isNumber(IDnumber) && MainWindow.isNumber(salary) && MainWindow.isNumber(supervisorID) && MainWindow.isNumber(departmentID))
                 goodInput = true;
             if (goodInput && BL_manager.BL_employee.Add(IDnumber, fname, lname, gender, departmentID, salary, supervisorID))

@@ -47,20 +47,27 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Departments\AddDepartment.xaml.cs">
+      <DependentUpon>AddDepartment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Departments\Options.xaml.cs">
       <DependentUpon>Options.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Departments\Print.xaml.cs">
+      <DependentUpon>Print.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Departments\Remove.xaml.cs">
+      <DependentUpon>Remove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Departments\Table.xaml.cs">
+      <DependentUpon>Table.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisableNavigation.cs" />
     <Compile Include="Employees\AddEmployeeControl.xaml.cs">
       <DependentUpon>AddEmployeeControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Employees\AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DataEnities.xaml.cs">
-      <DependentUpon>DataEnities.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="EditUsersMenu.xaml.cs">
-      <DependentUpon>EditUsersMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Employees\EditEmployee.xaml.cs">
       <DependentUpon>EditEmployee.xaml</DependentUpon>
@@ -132,7 +139,23 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Departments\AddDepartment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Departments\Options.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Departments\Print.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Departments\Remove.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Departments\Table.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,14 +164,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Employees\AddEmployeeWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DataEnities.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EditUsersMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
