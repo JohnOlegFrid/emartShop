@@ -31,6 +31,8 @@ namespace PL
             this.BL_manager = BL_manager;
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            onlineStore f = new onlineStore(BL_manager);
+            f.Show();
 
         }
 

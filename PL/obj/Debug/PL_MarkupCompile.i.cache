@@ -4,17 +4,25 @@
 library
 C#
 .cs
-C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\
+C:\Users\Gwainer\Desktop\emartwpf1\PL\obj\Debug\
 PL
 none
 false
 DEBUG;TRACE
 
+<<<<<<< HEAD
 15-589793897
 
 22-1313331512
 14-605668080
 Employees\AddEmployeeControl.xaml;Employees\AddEmployeeWindow.xaml;DataEnities.xaml;EditUsersMenu.xaml;Employees\EditEmployee.xaml;Employees\EmployeeOptionsWindow.xaml;Employees\PrintEmployeeWindow.xaml;Employees\RemoveEmployeeWindow.xaml;Employees\SearchEmployee.xaml;GeneralMenu.xaml;MainWindow.xaml;ProductsMenu.xaml;RegisterMenu.xaml;SimpleProgressBar.xaml;UserControl1.xaml;
+=======
+11585167626
+
+18-90842680
+14-1964175373
+AddEmployeeWindow.xaml;DataEnities.xaml;EditUsersMenu.xaml;EmployeeOptionsWindow.xaml;GeneralMenu.xaml;MainWindow.xaml;onlineStore.xaml;ProductsMenu.xaml;RegisterMenu.xaml;SimpleProgressBar.xaml;UserControl1.xaml;
+>>>>>>> store
 
 False
 
