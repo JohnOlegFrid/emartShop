@@ -65,5 +65,19 @@ namespace BL
         {
             return true;
         }
+
+        public string getType(string ID)
+        {
+            if (BL_clubMember.exist(ID)) 
+            {
+                return "Customer"; 
+            }
+            else if (BL_employee.exist(ID))
+            {
+                return BL_employee.getType(ID);
+            }
+            else return "Error"; 
+        }
+
     }
 }

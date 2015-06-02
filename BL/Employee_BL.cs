@@ -87,7 +87,7 @@ namespace BL
         {
             return itsDAL.getEmployeesByFirstNameString(name);
         }
-
+        
         public List<Employee> getEmployeesByFirstName(string name)
         {
             return itsDAL.getEmployeesByFirstName(name);
@@ -116,6 +116,11 @@ namespace BL
         public void RemoveDepartment(string id)
         {
             itsDAL.RemoveDepartment(id);
+        }
+
+        public string getType(string ID)
+        {
+            return itsDAL.getType(ID);
         }
 
     }
