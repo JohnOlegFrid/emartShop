@@ -36,9 +36,9 @@ namespace DAL
             return false;
         }
 
-        public void Add(string id, string first, string last, string gender, string departmentID, double salary, string supervisorID)
+        public void Add(string id, string first, string last, string gender, string departmentID, double salary, string supervisorID, string type)
         {
-            DB.Add(new Employee(id, first, last, gender, departmentID, salary, supervisorID,"Worker"));
+            DB.Add(new Employee(id, first, last, gender, departmentID, salary, supervisorID, type));
             Encryption.encryption(DB, path);
         }
 
@@ -242,7 +242,7 @@ namespace DAL
             return EmployeeByName.ToString();
         }
 
-        public bool updateEmployee(string id, string first, string last, string gender, string departmentID, string salary, string supervisorID)
+        public bool updateEmployee(string id, string first, string last, string gender, string departmentID, string salary, string supervisorID, string type)
         {
             if (!Contains(id))
             {
@@ -260,6 +260,7 @@ namespace DAL
                 e.departmentID = departmentID;
                 e.salary = double.Parse(salary);
                 e.supervisorID = supervisorID;
+                e.type = type;
             }
             Encryption.encryption(DB, path);
             return true;

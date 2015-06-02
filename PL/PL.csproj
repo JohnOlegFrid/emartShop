@@ -201,11 +201,6 @@
     <Resource Include="SmartShoppingLOGO.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Resource Include="Employees\emart.png" />
-=======
-    <Resource Include="BestSeller.jpg" />
->>>>>>> store
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
