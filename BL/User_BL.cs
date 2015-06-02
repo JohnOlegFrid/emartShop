@@ -52,6 +52,16 @@ namespace BL
         {
             return itsDAL.getAllUsers();
         }
+
+        public string getUserByID (string ID) 
+        {
+            return itsDAL.getUserByID(ID);
+        }
+
+        public string getIDByUser(string user)
+        {
+            return itsDAL.getIDByUser(user);
+        }
     }
 }
 
