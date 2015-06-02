@@ -28,16 +28,14 @@ namespace PL.Employees
             this.BL_manager = BL_manager;
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
-        }
-
-        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
-        {
-
             List<Employee> listP = BL_manager.BL_employee.getAllEmployees();
-            var grid = sender as DataGrid;
-            grid.ItemsSource = listP;
+
+            dataGrid.ItemsSource = listP;
+
+
         }
+
+       
 
         private void closeClick(object sender, RoutedEventArgs e)
         {
@@ -61,11 +59,11 @@ namespace PL.Employees
 
         private void refreshButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
             List<Employee> listP = new List<Employee>();
             listP = BL_manager.BL_employee.getAllEmployees();
  
-            dataGrid.ItemsSource = listP;
+            dataGrid.ItemsSource=listP;
             
         }
     }

@@ -40,7 +40,9 @@
                     <RadioButton Name="byIDradio" Content="by ID" GroupName="search"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,51,0,0"/>
                     <RadioButton Name="byLastNameradio" Content="By last name" GroupName="search" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="86,51,0,0"/>
                     <RadioButton Name="byNameradio" Content="By name" GroupName="search" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,51,0,0"/>
-                    <ListBox HorizontalAlignment="Left" Height="165" Margin="10,116,0,0" VerticalAlignment="Top" Width="497"/>
+                    <DataGrid Name="searchResult" Margin="0,94,0,10" GridLinesVisibility="None" />
+
+
                 </Grid>
             </StackPanel>
         </DockPanel>

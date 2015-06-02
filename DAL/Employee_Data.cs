@@ -56,7 +56,7 @@ namespace DAL
             }
         }
 
-        public string getEmployeeByID(string id)
+        public string getEmployeeByIDString(string id)
         {
             StringBuilder EmployeeByID = new StringBuilder("");
             var employee =
@@ -74,6 +74,19 @@ namespace DAL
                 EmployeeByID.Append("\r\n");
             }
             return EmployeeByID.ToString();
+        }
+
+        public List<Employee> getEmployeeByID(string id)
+        {
+            List<Employee> list=new List<Employee>();
+            var employee =
+                from i in DB
+                where i.ID == id
+                select i;
+           
+            foreach (Employee e in employee) list.Add(e);
+            
+            return list;
         }
 
         public string getAllEmployeesString()
@@ -136,7 +149,7 @@ namespace DAL
             return SupervisorByID.ToString();
         }
 
-        public string getEmployeesByFirstName(string name)
+        public string getEmployeesByFirstNameString(string name)
         {
             StringBuilder EmployeeByName = new StringBuilder("");
             var firstName =
@@ -156,7 +169,22 @@ namespace DAL
             return EmployeeByName.ToString();
         }
 
-        public string getEmployeesBylastName(string name)
+        public List<Employee> getEmployeesByFirstName(string name)
+        {
+            List<Employee> list = new List<Employee>();
+            var firstName =
+                from i in DB
+                where i.firstName == name
+                select i;
+            
+            foreach (Employee e in firstName)
+            {
+                list.Add(e);
+            }
+            return list;
+        }
+
+        public string getEmployeesByLastNameString(string name)
         {
             StringBuilder EmployeeByName = new StringBuilder("");
             var lastName =
@@ -174,6 +202,22 @@ namespace DAL
                 EmployeeByName.Append("\r\n");
             }
             return EmployeeByName.ToString();
+        }
+
+
+        public List<Employee> getEmployeesByLastName(string name)
+        {
+            List<Employee> list = new List<Employee>();
+            var LastName =
+                from i in DB
+                where i.lastName == name
+                select i;
+
+            foreach (Employee e in LastName)
+            {
+                list.Add(e);
+            }
+            return list;
         }
 
         public string getEmployeesByFullName(string fname, string lname)

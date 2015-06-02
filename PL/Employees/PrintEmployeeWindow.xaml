@@ -21,7 +21,7 @@
                 <Button Name="minimaizeB" Content="_" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Background="White" BorderBrush="White" Foreground="#FF1E99FF" FontWeight="Bold" Click="minimaizeClick"/>
             </StackPanel>
 
-            <DataGrid Name="dataGrid" DockPanel.Dock="Top" Loaded="DataGrid_Loaded" SelectionMode="Single" Background="White" BorderBrush="#FF00B9FF" BorderThickness="1" HorizontalGridLinesBrush="#FF00B9FF" VerticalGridLinesBrush="#FF00B9FF" IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0"/>
+            <DataGrid Name="dataGrid" DockPanel.Dock="Top"  Background="White" BorderBrush="#FF00B9FF" BorderThickness="1" HorizontalGridLinesBrush="#FF00B9FF" VerticalGridLinesBrush="#FF00B9FF" IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0"/>
             <StackPanel DockPanel.Dock="Top">
                 <Button Name="refreshButton" Height="26" Width="100" Content="Refresh" HorizontalAlignment="Center" Margin="0,20,0,0" Click="refreshButton_Click"/>
             </StackPanel>
