@@ -51,6 +51,11 @@
                     <TextBox Name="supervisorIDtxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="285,152,0,0" />
                     <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="Department ID"/>
                     <TextBox Name="departmentIDtxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="55,213,0,0" />
+                    <TextBlock HorizontalAlignment="Left" Height="19" Margin="285,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="Type"/>
+                    <ComboBox Name="typetxt" HorizontalAlignment="Left" Height="25" Width="90" Margin="285,213,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White" SelectedIndex="0" >
+                        <ComboBoxItem>Worker</ComboBoxItem>
+                        <ComboBoxItem>Manager</ComboBoxItem>
+                    </ComboBox>
                     <Button Content="Register" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="136" Height="37" Margin="214,0,167,0" Click="Register_Click"/>
                 </Grid>
             </StackPanel>

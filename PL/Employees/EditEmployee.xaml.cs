@@ -36,6 +36,7 @@ namespace PL.Employees
             String supervisorID = supervisorIDtxt.Text;
             String departmentID = departmentIDtxt.Text;
             String gender = (gendertxt.SelectedValue as ComboBoxItem).Content.ToString();
+            String type = (typetxt.SelectedValue as ComboBoxItem).Content.ToString(); 
             Boolean goodInput = false;
           
             if (MainWindow.isWord(fname) && MainWindow.isWord(lname) && MainWindow.isNumber(IDnumber) && MainWindow.isNumber(salary) && MainWindow.isNumber(supervisorID) && MainWindow.isNumber(departmentID))
@@ -47,7 +48,7 @@ namespace PL.Employees
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    BL_manager.BL_employee.updateEmployee(IDnumber, fname, lname, gender, departmentID, salary, supervisorID);
+                    BL_manager.BL_employee.updateEmployee(IDnumber, fname, lname, gender, departmentID, salary, supervisorID, type);
                 }
                 MessageBox.Show("The employee " + fname + " " + lname + " updated succefully", "updated succefully", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
