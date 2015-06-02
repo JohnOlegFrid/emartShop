@@ -55,14 +55,36 @@ namespace PL.Employees
             if (byIDradio.IsChecked==true)
             {
                 String id = searchtxt.Text;
-                if (MainWindow.isWord(id))
+                if (MainWindow.isNumber(id))
                 {
                     list = BL_manager.BL_employee.getEmployeeByID(id);
-                    listBox.ItemsSource = list;
+                    searchResult.ItemsSource = list;
+                    
                 }  
             }
+            else if (byNameradio.IsChecked == true)
+            {
+                String name = searchtxt.Text;
+                if (MainWindow.isWord(name))
+                {
+                    list = BL_manager.BL_employee.getEmployeesByFirstName(name);
+                    searchResult.ItemsSource = list;
 
+                }
+            }
+            else if (byLastNameradio.IsChecked == true)
+            {
+                String lastName = searchtxt.Text;
+                if (MainWindow.isWord(lastName))
+                {
+                    list = BL_manager.BL_employee.getEmployeesByLastName(lastName);
+                    searchResult.ItemsSource = list;
+
+                }
+            }
         }
+
+        
 
        
     }

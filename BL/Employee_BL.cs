@@ -83,14 +83,24 @@ namespace BL
             return itsDAL.getSupervisorByID(id);
         }
 
-        public string getEmployeesByFirstName(string name)
+        public string getEmployeesByFirstNameString(string name)
+        {
+            return itsDAL.getEmployeesByFirstNameString(name);
+        }
+
+        public List<Employee> getEmployeesByFirstName(string name)
         {
             return itsDAL.getEmployeesByFirstName(name);
         }
 
-        public string getEmployeesBylastName(string name)
+        public string getEmployeesByLastNameString(string name)
         {
-            return itsDAL.getEmployeesBylastName(name);
+            return itsDAL.getEmployeesByLastNameString(name);
+        }
+
+        public List<Employee> getEmployeesByLastName(string name)
+        {
+            return itsDAL.getEmployeesByLastName(name);
         }
 
         public string getEmployeesByFullName(string fname, string lname)
