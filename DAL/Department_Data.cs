@@ -29,6 +29,7 @@ namespace DAL
             Encryption.encryption(DB, path);
         }
 
+
         public bool contains(string id)
         {
             foreach (Department d in DB)
@@ -59,6 +60,18 @@ namespace DAL
             foreach (Department d in DB)
             {
                 if (d.ID == id)
+                {
+                    DB.Remove(d);
+                    Encryption.encryption(DB, path);
+                    return;
+                }
+            }
+        }
+        public void RemoveByName(String name)
+        {
+            foreach (Department d in DB)
+            {
+                if (d.name == name)
                 {
                     DB.Remove(d);
                     Encryption.encryption(DB, path);
@@ -104,7 +117,7 @@ namespace DAL
             }
             return department.ToString();
         }
-        public string getAllDepartment()
+        public string getAllDepartmentString()
         {
             StringBuilder AllDepartment = new StringBuilder("");
             if (DB.Count() == 0)
@@ -117,6 +130,16 @@ namespace DAL
                 AllDepartment.Append("\r\n");
             }
             return AllDepartment.ToString();
+        }
+
+        public List<Department> getAllDepartment()
+        {
+            List<Department> list = new List<Department>();
+            foreach (Department d in DB)
+            {
+                list.Add(d);
+            }
+            return list;
         }
     }
 }

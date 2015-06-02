@@ -1,10 +1,3 @@
-C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\bin\Debug\DAL.dll
-C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\bin\Debug\DAL.pdb
-C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\bin\Debug\Backend.dll
-C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\bin\Debug\Backend.pdb
-C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\obj\Debug\DAL.dll
-C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\obj\Debug\DAL.pdb
 C:\Users\Gwainer\Desktop\emartwpf1\DAL\bin\Debug\DAL.dll
 C:\Users\Gwainer\Desktop\emartwpf1\DAL\bin\Debug\DAL.pdb
 C:\Users\Gwainer\Desktop\emartwpf1\DAL\bin\Debug\Backend.dll
@@ -12,3 +5,10 @@ C:\Users\Gwainer\Desktop\emartwpf1\DAL\bin\Debug\Backend.pdb
 C:\Users\Gwainer\Desktop\emartwpf1\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Gwainer\Desktop\emartwpf1\DAL\obj\Debug\DAL.dll
 C:\Users\Gwainer\Desktop\emartwpf1\DAL\obj\Debug\DAL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\bin\Debug\DAL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\bin\Debug\DAL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\bin\Debug\Backend.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\bin\Debug\Backend.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\obj\Debug\DAL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\DAL\obj\Debug\DAL.pdb

@@ -55,13 +55,27 @@ namespace BL
             }
         }
 
+        public void RemoveByName(string name)
+        {
+            if (isNameTaken(name))
+            {
+                itsDAL.RemoveByName(name);
+            }
+        }
+
         /*
          * query functions for department
          */
-        public string getAllDepartments()
+        public string getAllDepartmentsString()
+        {
+            return itsDAL.getAllDepartmentString();
+        }
+
+        public List<Department> getAllDepartments()
         {
             return itsDAL.getAllDepartment();
         }
+
 
         public string getDepartmentByName(string name)
         {

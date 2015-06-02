@@ -27,11 +27,11 @@
                 <StackPanel DockPanel.Dock="Left" Width="200" >
                     <Image Source="emart.png" Margin="0,0,0,20"/>
                     <Button Content="Employee"   Name="employeeButton" Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="employeeClick"  />
-                    <Button Content="Products"  Background="White" BorderBrush="#FF00B9FF" Margin="5" />
-                    <Button Content="Transaction"  Background="White" BorderBrush="#FF00B9FF" Margin="5" />
-                    <Button Content="Customers"  Background="White" BorderBrush="#FF00B9FF" Margin="5" />
-                    <Button Content="Departments"  Background="White" BorderBrush="#FF00B9FF" Margin="5" />
-                    <Button Content="Users" Background="White" BorderBrush="#FF00B9FF" Margin="5" />
+                    <Button Content="Products"  Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="productClick" />
+                    <Button Content="Transaction"  Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="transactionClick" />
+                    <Button Content="Customers"  Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="customersClick" />
+                    <Button Content="Departments"  Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="departmentClick" />
+                    <Button Content="Users" Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="usersClick" />
                     <Image Source="SmartShoppingLOGO.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="97"/>
                 </StackPanel>
             </Border>

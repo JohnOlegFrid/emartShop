@@ -40,10 +40,6 @@ namespace PL.Employees
             Boolean goodInput=false;
             String type = (typetxt.SelectedValue as ComboBoxItem).Content.ToString(); 
 
-            SimpleProgressBar sb = new SimpleProgressBar();
-            //sb.Show();
-           // sb.run();
-            goodInput = (MainWindow.isWord(fname) && MainWindow.isWord(lname) && MainWindow.isNumber(IDnumber) && MainWindow.isNumber(salary) && MainWindow.isNumber(supervisorID) && MainWindow.isNumber(departmentID));
             if (MainWindow.isWord(fname) && MainWindow.isWord(lname) && MainWindow.isNumber(IDnumber) && MainWindow.isNumber(salary) && MainWindow.isNumber(supervisorID) && MainWindow.isNumber(departmentID))
                 goodInput = true;
             if (goodInput && BL_manager.BL_employee.Add(IDnumber, fname, lname, gender, departmentID, salary, supervisorID,type))

@@ -65,6 +65,34 @@ namespace PL
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        private void productClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void transactionClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void customersClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void departmentClick(object sender, RoutedEventArgs e)
+        {
+            Departments.Options o = new Departments.Options(BL_manager);
+            generalMenuPanel.Children.Clear();
+            generalMenuPanel.Children.Add(o);
+
+        }
+
+        private void usersClick(object sender, RoutedEventArgs e)
+        {
+
+        }
        
 
         
