@@ -38,7 +38,7 @@ namespace DAL
 
         public void Add(string id, string first, string last, string gender, string departmentID, double salary, string supervisorID)
         {
-            DB.Add(new Employee(id, first, last, gender, departmentID, salary, supervisorID));
+            DB.Add(new Employee(id, first, last, gender, departmentID, salary, supervisorID,"Worker"));
             Encryption.encryption(DB, path);
         }
 
@@ -275,5 +275,31 @@ namespace DAL
 
             }
         }
+
+        public string getType(string id)
+        {
+            StringBuilder SupervisorByID = new StringBuilder("");
+            var type =
+                from i in DB
+                where i.ID == id
+                select i;
+            if (type.Count() == 0)
+            {
+                SupervisorByID.Append("no employees by this id ");
+                SupervisorByID.Append(id);
+            }
+            foreach (Employee e in type)
+            {
+                SupervisorByID.Append(e.type);
+                SupervisorByID.Append("\r\n");
+            }
+            return SupervisorByID.ToString();
+
+        
+        
+        }
+
+
+
     }
 }
