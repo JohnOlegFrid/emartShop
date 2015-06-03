@@ -125,6 +125,22 @@ namespace PL
             return ans;
         }
 
+        private void m(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            incorrectTextBox.Text = "";
+        }
+
+        private void p(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            incorrectTextBox.Text = "";
+        }
+
+       
+
+      
+
+        
+
         
         
     }
