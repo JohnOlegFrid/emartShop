@@ -1,7 +1,7 @@
 ﻿<Window x:Class="PL.Employees.PrintEmployeeWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="EmployeePrintWindow" Height="400" Width="600" WindowStyle="None">
+        Title="EmployeePrintWindow" Height="400" Width="600" WindowStyle="SingleBorderWindow">
     <Grid>
         <DockPanel Name="dock" LastChildFill="False">
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Top" CanVerticallyScroll="True" FlowDirection="RightToLeft" Background="White">

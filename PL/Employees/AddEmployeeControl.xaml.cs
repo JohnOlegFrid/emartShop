@@ -49,7 +49,9 @@ namespace PL.Employees
             if (goodInput && BL_manager.BL_employee.Add(IDnumber, fname, lname, gender, departmentID, salary, supervisorID,type))
             {
                 MessageBox.Show("The employee " + fname + " " + lname + " added succefully", "Added succefully", MessageBoxButton.OK, MessageBoxImage.Information);
-                
+                User addedNow = new User(IDnumber, "0", IDnumber);
+                BL_manager.BL_user.Add(addedNow);
+                MessageBox.Show("User name : " + IDnumber + "\nPassword: '0', ", "User name and Password", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
