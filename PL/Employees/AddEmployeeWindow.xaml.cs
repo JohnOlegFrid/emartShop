@@ -79,12 +79,6 @@ namespace PL.Employees
             this.WindowState = WindowState.Minimized;
         }
 
-        private void LoadDepartments(object sender, RoutedEventArgs e)
-        {
-            List<Department> list = BL_manager.BL_department.getAllDepartments();
-            departmentIDtxt.ItemsSource = list;
-        }
-
 
        
         

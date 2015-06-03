@@ -103,6 +103,14 @@ namespace PL.Employees {
         #line default
         #line hidden
         
+        
+        #line 43 "..\..\..\Employees\AddEmployeeControl.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.ComboBox typetxt;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
