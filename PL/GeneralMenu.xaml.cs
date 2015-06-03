@@ -88,6 +88,10 @@ namespace PL
             generalMenuPanel.Children.Add(o);
 
         }
+        private void usersClick(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void storeClick(object sender, RoutedEventArgs e)
         {
