@@ -10,17 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Threading;
+using System.Windows;
+
 
 namespace PL
 {
     /// <summary>
     /// Logique d'interaction pour ProgressBar.xaml
     /// </summary>
-    public partial class ProgressBar : Page
+    public partial class ProgressBar : Window
     {
         public ProgressBar()
         {
@@ -34,11 +35,13 @@ namespace PL
             worker.DoWork += worker_DoWork;
             worker.ProgressChanged += worker_ProgressChanged;
 
+
             worker.RunWorkerAsync();
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
+
             for (int i = 0; i < 101; i++)
             {
                 (sender as BackgroundWorker).ReportProgress(i);
@@ -50,5 +53,8 @@ namespace PL
         {
             pbStatus.Value = e.ProgressPercentage;
         }
+
+
+
     }
 }
