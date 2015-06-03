@@ -43,9 +43,13 @@
                     </StackPanel>
                 </StackPanel>
             </Border>
-            <StackPanel Name="generalMenuPanel" DockPanel.Dock="Top" HorizontalAlignment="Stretch">
-                <Frame Name="mainFrame" />
-
+            <StackPanel Name="generalMenuPanel" Height="750" DockPanel.Dock="Top" HorizontalAlignment="Stretch">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.215"/>
+                        <GradientStop Color="#FFC0D4FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
 
             </StackPanel>
 

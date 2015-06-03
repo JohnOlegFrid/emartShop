@@ -95,7 +95,8 @@ namespace PL
 
         private void storeClick(object sender, RoutedEventArgs e)
         {
-
+            onlineStore s = new onlineStore(BL_manager);
+            s.Show();
         }
 
         private void logoutClick(object sender, RoutedEventArgs e)
