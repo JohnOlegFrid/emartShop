@@ -46,11 +46,6 @@ namespace PL
         }
         private void loadProductView(object sender, RoutedEventArgs e)
         {
-            //Button x = new Button();
-            //x.Content="add to cart";
-            //s.Children.Add(x);
-            ProductView.Items.Clear();
-            //ProductView.Items.Add(s);
             List<Product> selectedProducts;
             if(types.SelectedValue=="All")
             {
@@ -60,39 +55,12 @@ namespace PL
             {
                 selectedProducts = BL_manager.BL_product.getProductsListByType((Product.Type)Enum.Parse(typeof(Product.Type), (string)types.SelectedValue));
             }
-
-            foreach(Product p in selectedProducts)
-            {
-                StackPanel s = new StackPanel();
-                s.Orientation = Orientation.Horizontal;
-                TextBlock name = new TextBlock();
-                name.Margin = new Thickness(0,0,5,0);
-                name.Text =p.name;
-                s.Children.Add(name);
-                if(BL_manager.getBestSeller().Contains(p.name))
-                {
-                    TextBlock BestSeller = new TextBlock();
-                    BestSeller.Margin = new Thickness(5, 0, 5, 0);
-                    /**ImageBrush textImageBrush = new ImageBrush();
-                    textImageBrush.ImageSource = new BitmapImage(new Uri(@"PL/Bestseller.jpg", UriKind.Relative));
-                    textImageBrush.AlignmentX = AlignmentX.Left;
-                    textImageBrush.Stretch = Stretch.None;
-                    // Use the brush to paint the button's background.
-                    BestSeller.Background = textImageBrush;**/
-                    BestSeller.Text = "BEST SELLER!!!";
-                    s.Children.Add(BestSeller);
-                }
-                TextBlock price = new TextBlock();
-                price.Text = p.price.ToString()+"$";
-                price.Margin = new Thickness(5, 0, 0, 0);
-                s.Children.Add(price);
-                Console.WriteLine(p.name);
-                ProductView.Items.Add(s);
-                Button addToCart = new Button();
-                
-            }
+            ObservableCollection<Product> myCollection = new ObservableCollection<Product>(selectedProducts);
+            BL_manager.updatebestSeller();
+            ProductView.ItemsSource=myCollection;
             
         }
+       
         private void closeClick(object sender, RoutedEventArgs e)
         {
             this.Close();

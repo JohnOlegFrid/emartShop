@@ -26,6 +26,7 @@ namespace Backend
         private bool _inStock;
         private int _stockCount;
         private double _price;
+        private bool _isBestSeller;
 
         public string name
         {
@@ -66,6 +67,12 @@ namespace Backend
             set { _price = value; }
         }
 
+        public bool isBestSeller
+        {
+            get { return _isBestSeller; }
+            set { _isBestSeller = value; }
+        }
+
         public Product()
         {
 
@@ -80,6 +87,7 @@ namespace Backend
             _inStock = inStock;
             _stockCount = stockCount;
             _price = price;
+            _isBestSeller = false;
         }
 
         public override string ToString()
@@ -87,15 +95,12 @@ namespace Backend
             StringBuilder product = new StringBuilder("");
             product.Append(name);
             product.Append(" ");
-            product.Append(type);
-            product.Append(" ");
-            product.Append(inventoryID);
-            product.Append(" ");
-            product.Append(departmentID);
-            product.Append(" ");
-            product.Append(stockCount);
-            product.Append(" left in stock , price is: ");
             product.Append(price);
+            product.Append("$ ");
+            if(_isBestSeller)
+            {
+                product.Append(" BEST SELLER!!!!!");
+            }
             return product.ToString();
         }
     }

@@ -7,4 +7,8 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\Backend\bin\Debug\Backend.dll
 C:\Users\Olejka\Desktop\projects\EmartWPF\Backend\bin\Debug\Backend.pdb
 C:\Users\Olejka\Desktop\projects\EmartWPF\Backend\obj\Debug\Backend.dll
 C:\Users\Olejka\Desktop\projects\EmartWPF\Backend\obj\Debug\Backend.pdb
-C:\Users\Olejka\Desktop\projects\EmartWPF\Backend\obj\Debug\Backend.csprojResolveAssemblyReference.cache
+C:\Users\Gwainer\Desktop\emartwpf6\Backend\bin\Debug\Backend.dll
+C:\Users\Gwainer\Desktop\emartwpf6\Backend\bin\Debug\Backend.pdb
+C:\Users\Gwainer\Desktop\emartwpf6\Backend\obj\Debug\Backend.dll
+C:\Users\Gwainer\Desktop\emartwpf6\Backend\obj\Debug\Backend.pdb
+C:\Users\Gwainer\Desktop\emartwpf6\Backend\obj\Debug\Backend.csprojResolveAssemblyReference.cache

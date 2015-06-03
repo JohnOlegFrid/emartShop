@@ -24,7 +24,7 @@ namespace BL
         {
             if(existByName(name))
             {
-                itsDAL.Restock(this.getProductsInStockByName(name), stockCount);
+                itsDAL.Restock(this.getProductsInStockByName(name).name, stockCount);
                 return "";
             }
             string id = generateID();
@@ -103,7 +103,7 @@ namespace BL
             return itsDAL.Restock(inventoryId, addition);
         }
 
-        public string getProductsInStockByName(string name)
+        public Product getProductsInStockByName(string name)
         {
             return itsDAL.getProductsInStockByName(name);
         }
