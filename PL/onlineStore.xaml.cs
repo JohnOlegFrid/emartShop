@@ -82,6 +82,8 @@ namespace PL
                 s.Children.Add(price);
                 Console.WriteLine(p.name);
                 ProductView.Items.Add(s);
+                Button addToCart = new Button();
+                
             }
             
         }
@@ -112,16 +114,5 @@ namespace PL
         }
 
     }
-    public class productItem
-    {
-        private string name;
-        private double price;
-        private Button buttton;
-        productItem(string name, double price, Button button)
-        {
-            this.name = name;
-            this.price = price;
-            this.buttton = button;
-        }
-    }
+    
 }
