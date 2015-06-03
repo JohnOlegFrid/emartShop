@@ -42,7 +42,7 @@ namespace PL
             String PassWord = txtPassWord.Password;
             String pass = txtPassWord.Password;
 
-            User tmpUser = new User(userName, PassWord);
+            User tmpUser = new User(userName, PassWord,"12345");
 
             if (BL_manager.BL_user.exist(tmpUser)) // check if the password and username exist
             {
@@ -92,7 +92,7 @@ namespace PL
         {
             Boolean ans=false;
             int i=0;
-            if (word != null)
+            if (word != null && word.CompareTo("")!=0)
             {
                 while ((((int)word[i] <= (int)'z' && (int)word[i] >= (int)'a') || ((int)word[i] >= (int)'A' && (int)word[i] <= (int)'Z')) && i < word.Length-1)
                     i++;
@@ -107,7 +107,7 @@ namespace PL
         {
             Boolean ans = true;
             int dot=0;
-            if (number !=null && number[0].CompareTo('.') != 0 && number[number.Length - 1] != '.')
+            if (number !=null && number.CompareTo("")!=0 && number[0].CompareTo('.') != 0 && number[number.Length - 1] != '.')
                 {
                     for (int i = 0; i < number.Length; i++)
                     {

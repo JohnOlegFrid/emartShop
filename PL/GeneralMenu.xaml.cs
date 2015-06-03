@@ -89,10 +89,19 @@ namespace PL
 
         }
 
-        private void usersClick(object sender, RoutedEventArgs e)
+        private void storeClick(object sender, RoutedEventArgs e)
         {
 
         }
+
+        private void logoutClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow m = new MainWindow(BL_manager);
+            m.Show();
+            this.Close();
+        }
+
+        
        
 
         

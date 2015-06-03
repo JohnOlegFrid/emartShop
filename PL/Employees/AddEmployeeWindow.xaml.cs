@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
+using Backend;
 
 namespace PL.Employees
 {
@@ -45,6 +46,9 @@ namespace PL.Employees
             if (goodInput && BL_manager.BL_employee.Add(IDnumber, fname, lname, gender, departmentID, salary, supervisorID,type))
             {
                 MessageBox.Show("The employee "+fname+" "+lname+" added succefully", "Added succefully", MessageBoxButton.OK, MessageBoxImage.Information);
+                User addedNow = new User(IDnumber, "0", IDnumber);
+                MessageBox.Show("User name : "+IDnumber+"\nPassword: '0', ","User name and Password", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 this.Close();
             }
             else
@@ -73,6 +77,12 @@ namespace PL.Employees
         private void minimaizeClick(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+
+        private void LoadDepartments(object sender, RoutedEventArgs e)
+        {
+            List<Department> list = BL_manager.BL_department.getAllDepartments();
+            departmentIDtxt.ItemsSource = list;
         }
 
 
