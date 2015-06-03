@@ -19,6 +19,7 @@ namespace PL.Employees
     /// <summary>
     /// Interaction logic for AddEmployeeControl.xaml
     /// </summary>
+    [Serializable]
     public partial class AddEmployeeControl : UserControl
     {
         BL_Manager BL_manager;

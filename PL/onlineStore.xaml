@@ -30,7 +30,10 @@
                 </StackPanel>
             </Border>
             <Border>
-                <ListBox Name="ProductView" Loaded="loadProductView" Width="446"/>
+                <StackPanel Width="446">
+                    <ListBox Name="ProductView" Loaded="loadProductView" Width="300" HorizontalAlignment="Left"/>
+                    <ListBox Name="ShoppingCart" Width="300" HorizontalAlignment="Right"/>
+                </StackPanel>
             </Border>
         </DockPanel>
         
