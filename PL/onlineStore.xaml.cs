@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel; // ariel
+using System.Collections; // ariel
+
 using Backend;
 using BL;
 namespace PL
@@ -22,6 +25,9 @@ namespace PL
     public partial class onlineStore : Window
     {
         BL_Manager BL_manager;
+        ObservableCollection<string> zoneList = new ObservableCollection<string>(); // ariel
+        ListBox dragSource = null; // ariel
+
         public onlineStore(BL_Manager BL_manager)
         {
             this.BL_manager=BL_manager;
@@ -112,6 +118,59 @@ namespace PL
             Console.WriteLine(types.SelectedValue);
             this.loadProductView(sender, e);
         }
+
+        private void ListBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) ///// ariel
+        {
+            ListBox parent = (ListBox)sender;
+            dragSource = parent;
+            object data = GetDataFromListBox(dragSource, e.GetPosition(parent));
+
+            if (data != null)
+            {
+                DragDrop.DoDragDrop(parent, data, DragDropEffects.Move);
+            }
+        }
+
+        private void ListBox_Drop(object sender, DragEventArgs e)
+        {
+            ListBox parent = (ListBox)sender;
+            object data = e.Data.GetData(typeof(string));
+            ((IList)dragSource.ItemsSource).Remove(data);
+            parent.Items.Add(data);
+        }
+
+        #region GetDataFromListBox(ListBox,Point)
+        private static object GetDataFromListBox(ListBox source, Point point)
+        {
+            UIElement element = source.InputHitTest(point) as UIElement;
+            if (element != null)
+            {
+                object data = DependencyProperty.UnsetValue;
+                while (data == DependencyProperty.UnsetValue)
+                {
+                    data = source.ItemContainerGenerator.ItemFromContainer(element);
+                    if (data == DependencyProperty.UnsetValue)
+                    {
+                        element = VisualTreeHelper.GetParent(element) as UIElement;
+                    }
+                    if (element == source)
+                    {
+                        return null;
+                    }
+                }
+                if (data != DependencyProperty.UnsetValue)
+                {
+                    return data;
+                }
+            }
+            return null;
+        }
+
+        #endregion
+
+
+
+
 
     }
     
