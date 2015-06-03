@@ -89,7 +89,7 @@ namespace PL
 
         }
 
-        private void usersClick(object sender, RoutedEventArgs e)
+        private void storeClick(object sender, RoutedEventArgs e)
         {
 
         }
@@ -100,6 +100,8 @@ namespace PL
             m.Show();
             this.Close();
         }
+
+        
        
 
         
