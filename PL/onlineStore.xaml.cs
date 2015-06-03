@@ -18,6 +18,7 @@ namespace PL
     /// <summary>
     /// Interaction logic for onlineStore.xaml
     /// </summary>
+    [Serializable]
     public partial class onlineStore : Window
     {
         BL_Manager BL_manager;
@@ -62,7 +63,7 @@ namespace PL
                 name.Margin = new Thickness(0,0,5,0);
                 name.Text =p.name;
                 s.Children.Add(name);
-                if(BL_manager.isABestSeller(p.name))
+                if(BL_manager.getBestSeller().Contains(p.name))
                 {
                     TextBlock BestSeller = new TextBlock();
                     BestSeller.Margin = new Thickness(5, 0, 5, 0);

@@ -11,13 +11,11 @@ namespace BL
     [Serializable]
     public class Transaction_BL
     {
-        Transaction_Data itsDAL;
+        public Transaction_Data itsDAL;
 
         public Transaction_BL(Transaction_Data dl)
         {
             itsDAL = dl;
-           // this.Add(false, new Dictionary<string, double> { { "apple", 2.4 }, { "blush", 50 } }, "CreditCard");
-           // this.Add(false, new Dictionary<string, double> { { "shirt", 99.9 }, { "laptop", 3000 } }, "CreditCard");
         }
 
         //checks if transaction exsist in database

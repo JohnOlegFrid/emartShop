@@ -30,6 +30,7 @@ namespace BL
             BL_employee = new Employee_BL(dal_manager.employeeData);
             BL_product = new Product_BL(dal_manager.productData);
             BL_transaction = new Transaction_BL(dal_manager.transactionData);
+           
         }
         //this function updates the database in the relevet places after addition of a transaction (adding/ removing products)
         public void addTransaction(Dictionary<string, double> recipt, bool isAReturn)
@@ -61,16 +62,34 @@ namespace BL
             BL_employee.RemoveDepartment(id);
         }
 
-        public bool isABestSeller(string name)
+        public List<string> getBestSeller()
         {
             DateTime date = DateTime.Now;
             List<Transaction> list = BL_transaction.getTransactionByMonth(date.Month);
             //List<Product> bestSeller;
+            Dictionary<string, int> products=new Dictionary<string, int>();
             foreach (Transaction t in list)
             {
-
+                Console.Write("11111 " + t.ToString());
+                foreach (KeyValuePair<string, double> p in t.receipt.product)
+                {
+                      if(products.ContainsKey(p.Key))
+                      {
+                          products[p.Key]++;
+                      }
+                    else
+                      {
+                          products.Add(p.Key, 1);
+                      }
+                }
             }
-            return true;
+            var items = from pair in products
+                        orderby pair.Value ascending
+                        select pair;
+            List<string> l = new List<string>();
+            l.Add(items.First().Key);
+            l.Add(items.ElementAt(2).Key);
+            return l;
         }
 
 
