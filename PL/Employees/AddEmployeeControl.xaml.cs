@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
+using Backend;
 
 namespace PL.Employees
 {
@@ -26,6 +27,8 @@ namespace PL.Employees
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
+            List<Department> list = BL_manager.BL_department.getAllDepartments();
+            departmentIDtxt.ItemsSource = list;
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
@@ -35,13 +38,12 @@ namespace PL.Employees
             String IDnumber = IDnumbertxt.Text;
             String salary = salarytxt.Text;
             String supervisorID = supervisorIDtxt.Text;
-            String departmentID = departmentIDtxt.Text;
+            String departmentID = (departmentIDtxt.SelectedValue as Department).ID.ToString();
             String gender = (gendertxt.SelectedValue as ComboBoxItem).Content.ToString();
             String type = (typetxt.SelectedValue as ComboBoxItem).Content.ToString();
+            
             Boolean goodInput = false;
-            //sb.Show();
-            // sb.run();
-            goodInput = (MainWindow.isWord(fname) && MainWindow.isWord(lname) && MainWindow.isNumber(IDnumber) && MainWindow.isNumber(salary) && MainWindow.isNumber(supervisorID) && MainWindow.isNumber(departmentID));
+            
             if (MainWindow.isWord(fname) && MainWindow.isWord(lname) && MainWindow.isNumber(IDnumber) && MainWindow.isNumber(salary) && MainWindow.isNumber(supervisorID) && MainWindow.isNumber(departmentID))
                 goodInput = true;
             if (goodInput && BL_manager.BL_employee.Add(IDnumber, fname, lname, gender, departmentID, salary, supervisorID,type))
@@ -57,7 +59,11 @@ namespace PL.Employees
 
         }
 
-        
+        private void LoadDepartments(object sender, RoutedEventArgs e)
+        {
+            List<Department> list = BL_manager.BL_department.getAllDepartments();
+            departmentIDtxt.ItemsSource = list;
+        }
 
 
 

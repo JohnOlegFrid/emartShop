@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace Backend
 {
-    //object representataion of a sestem user
+    //object representataion of a system user
     [Serializable]
     public class User
     {
@@ -35,11 +35,6 @@ namespace Backend
             set { _password = value; }
         }
 
-        public User(string name, string password, string ID)
-        {
-            _userName = name;
-            _password = password;
-        }
 
         public User(string name, string password, string ID)
         {

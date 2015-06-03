@@ -40,7 +40,7 @@ namespace Backend
         {
         }
 
-        public Employee(string id, string first, string last, string gender, string departmentID, double salary, string supervisorID)
+        public Employee(string id, string first, string last, string gender, string departmentID, double salary, string supervisorID,String type)
             : base(id, first, last, gender)
         {
             this._departmentID = departmentID;
