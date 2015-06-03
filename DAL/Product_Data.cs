@@ -32,7 +32,7 @@ namespace DAL
             DB.Add(new Product(name, type, id, departmentID, inStock, stockCount, price));
             Encryption.encryption(DB, path);
 
-            return "new product was added, inventory ID is: " + id;
+            return id;
         }
 
         public string getAllProducts()

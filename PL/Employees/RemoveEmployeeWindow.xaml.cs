@@ -28,7 +28,7 @@ namespace PL.Employees
             InitializeComponent();
         }
 
-        private void Register_Click(object sender, RoutedEventArgs e)
+        private void RemoveClick(object sender, RoutedEventArgs e)
         {
             String IDnumber=IDnumbertxt.Text;
             if (MainWindow.isNumber(IDnumber))

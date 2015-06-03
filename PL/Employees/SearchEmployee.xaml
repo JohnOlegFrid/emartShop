@@ -29,8 +29,7 @@
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="517" Height="350">
 
                 <StackPanel Height="50" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="emart.png" HorizontalAlignment="Center" Width="162" VerticalAlignment="Center" Margin="18,4,0,4"/>
-                    <TextBlock TextWrapping="Wrap" Text="Remove Employee" Width="353" Margin="0" VerticalAlignment="Bottom" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
+                    <TextBlock TextWrapping="Wrap" Text="Search Employee" Width="353" Margin="0" VerticalAlignment="Bottom" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
 
                 </StackPanel>
                 <Grid Height="291" >

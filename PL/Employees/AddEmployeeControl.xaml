@@ -43,7 +43,7 @@
                         <ComboBoxItem>Worker</ComboBoxItem>
                         <ComboBoxItem>Manager</ComboBoxItem>
                     </ComboBox>
-                    <Button Content="Register" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="136" Height="37"  Click="Register_Click"/>
+                    <Button Content="Add Employee" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="136" Height="37"  Click="AddClick"/>
                 </Grid>
             </StackPanel>
         </DockPanel>
