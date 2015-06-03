@@ -65,12 +65,14 @@ namespace BL
         }
 
         //removes product from database
-        public void Remove(string productId)
+        public Boolean Remove(string productId)
         {
             if (exist(productId))
             {
                 itsDAL.Remove(productId);
+                return true;
             }
+            return false;
         }
 
         /*
@@ -84,6 +86,20 @@ namespace BL
         {
             return itsDAL.getAllProductsList();
         }
+        public List<Product> getAllProductsListByDepartmentID(String ID)
+        {
+            List<Product> ans=new List<Product>();
+            List<Product> list= itsDAL.getAllProductsList();
+            foreach (Product p in list)
+            {
+                if (p.departmentID == ID)
+                {
+                    ans.Add(p);
+                }
+            }
+            return ans;
+        }
+
         public List<Product> getProductsListByType(Product.Type type)
         {
             return itsDAL.getProductsListByType(type);

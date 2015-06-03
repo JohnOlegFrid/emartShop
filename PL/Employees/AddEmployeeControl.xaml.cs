@@ -31,7 +31,7 @@ namespace PL.Employees
             departmentIDtxt.ItemsSource = list;
         }
 
-        private void Register_Click(object sender, RoutedEventArgs e)
+        private void AddClick(object sender, RoutedEventArgs e)
         {
             String fname = firstNametxt.Text;
             String lname = lastNametxt.Text;
@@ -61,11 +61,6 @@ namespace PL.Employees
 
         }
 
-        private void LoadDepartments(object sender, RoutedEventArgs e)
-        {
-            List<Department> list = BL_manager.BL_department.getAllDepartments();
-            departmentIDtxt.ItemsSource = list;
-        }
 
 
 

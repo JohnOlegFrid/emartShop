@@ -51,3 +51,15 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Departments\AddDepartment
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Departments\AddDepartment.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Departments\Remove.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Departments\Remove.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\ProgressBar.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\ProgressBar.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\AddProducts.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Options.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\AddProducts.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Options.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Print.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Table.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Print.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Table.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Remove.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Remove.g.cs

@@ -29,14 +29,13 @@
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="517" Height="350">
 
                 <StackPanel Height="50" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="emart.png" HorizontalAlignment="Center" Width="162" VerticalAlignment="Center" Margin="18,4,0,4"/>
                     <TextBlock TextWrapping="Wrap" Text="Remove Employee" Width="353" Margin="0" VerticalAlignment="Bottom" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
 
                 </StackPanel>
                 <Grid Height="291" >
                     <TextBlock HorizontalAlignment="Left" Height="19" Margin="48,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="ID number"/>
                     <TextBox Name="IDnumbertxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="48,49,0,0" />
-                    <Button Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="124" Height="25" Margin="285,0,108,217" Click="Register_Click"/>
+                    <Button Content="Remove" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="124" Height="25" Margin="285,0,108,217" Click="RemoveClick"/>
                 </Grid>
             </StackPanel>
         </DockPanel>

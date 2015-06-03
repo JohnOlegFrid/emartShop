@@ -13,7 +13,7 @@
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="517" Height="350">
 
                 <StackPanel Height="50" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock TextWrapping="Wrap" Text="Add Department" Width="353" Margin="0" VerticalAlignment="Bottom" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
+                    <TextBlock TextWrapping="Wrap" Text="Remove Department" Width="353" Margin="0" VerticalAlignment="Bottom" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
 
                 </StackPanel>
                 <Grid Height="291" >

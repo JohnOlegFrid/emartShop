@@ -94,7 +94,7 @@ namespace PL
             int i=0;
             if (word != null && word.CompareTo("")!=0)
             {
-                while ((((int)word[i] <= (int)'z' && (int)word[i] >= (int)'a') || ((int)word[i] >= (int)'A' && (int)word[i] <= (int)'Z')) && i < word.Length-1)
+                while ((((int)word[i] <= (int)'z' && (int)word[i] >= (int)'a') || ((int)word[i] >= (int)'A' && (int)word[i] <= (int)'Z')|| word[i].CompareTo(' ')==0) && i < word.Length-1)
                     i++;
             }
             
@@ -124,6 +124,22 @@ namespace PL
           
             return ans;
         }
+
+        private void m(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            incorrectTextBox.Text = "";
+        }
+
+        private void p(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            incorrectTextBox.Text = "";
+        }
+
+       
+
+      
+
+        
 
         
         

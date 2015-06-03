@@ -95,6 +95,21 @@
     <Compile Include="ProductsMenu.xaml.cs">
       <DependentUpon>ProductsMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Products\AddProducts.xaml.cs">
+      <DependentUpon>AddProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\Print.xaml.cs">
+      <DependentUpon>Print.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\Remove.xaml.cs">
+      <DependentUpon>Remove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\Table.xaml.cs">
+      <DependentUpon>Table.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProgressBar.xaml.cs">
       <DependentUpon>ProgressBar.xaml</DependentUpon>
     </Compile>
@@ -204,6 +219,26 @@
     <Page Include="ProductsMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\AddProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\Options.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\Print.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\Remove.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\Table.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ProgressBar.xaml">
       <SubType>Designer</SubType>
