@@ -98,7 +98,7 @@ namespace DAL
             return "stock was added";
         }
 
-        public string getProductsInStockByName(string name)
+        public Product getProductsInStockByName(string name)
         {
             StringBuilder product = new StringBuilder("");
             var pByName =
@@ -107,13 +107,9 @@ namespace DAL
                 select i;
             foreach (Product p in pByName)
             {
-                product.Append(p.name);
+                return p;
             }
-            if (product.ToString() == "")
-            {
-                product.Append("no product by this name");
-            }
-            return product.ToString();
+            return null;
         }
 
         public string getProductsInStockByID(string id)

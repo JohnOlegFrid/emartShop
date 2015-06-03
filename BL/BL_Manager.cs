@@ -62,7 +62,7 @@ namespace BL
             BL_employee.RemoveDepartment(id);
         }
 
-        public List<string> getBestSeller()
+        public void updatebestSeller()
         {
             DateTime date = DateTime.Now;
             List<Transaction> list = BL_transaction.getTransactionByMonth(date.Month);
@@ -86,10 +86,9 @@ namespace BL
             var items = from pair in products
                         orderby pair.Value ascending
                         select pair;
-            List<string> l = new List<string>();
-            l.Add(items.First().Key);
-            l.Add(items.ElementAt(2).Key);
-            return l;
+            BL_product.getProductsInStockByName(items.First().Key).isBestSeller = true;
+            BL_product.getProductsInStockByName(items.ElementAt(1).Key).isBestSeller = true;
+            //BL_product.getProductsInStockByName(items.ElementAt(2).Key).isBestSeller = true;
         }
 
 

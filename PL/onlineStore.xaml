@@ -31,8 +31,8 @@
             </Border>
             <Border>
                 <StackPanel Width="446">
-                    <ListBox Name="ProductView" Loaded="loadProductView" Width="300" HorizontalAlignment="Left"/>
-                    <ListBox Name="ShoppingCart" Width="300" HorizontalAlignment="Right"/>
+                    <ListBox Name="ProductView" SelectedItem="addSlectedItemToCart" Loaded="loadProductView" Width="223" HorizontalAlignment="Left"/>
+                    <ListBox Name="ShoppingCart" Width="223" HorizontalAlignment="Right"/>
                 </StackPanel>
             </Border>
         </DockPanel>
