@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Threading;
-using System.Windows;
+using BL;
 
 
 namespace PL
@@ -23,9 +23,12 @@ namespace PL
     /// </summary>
     public partial class ProgressBar : Window
     {
-        public ProgressBar()
+        BL_Manager bl_manager;
+
+        public ProgressBar(BL_Manager bl_manager)
         {
             InitializeComponent();
+            this.bl_manager = bl_manager;
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)
@@ -34,7 +37,6 @@ namespace PL
             worker.WorkerReportsProgress = true;
             worker.DoWork += worker_DoWork;
             worker.ProgressChanged += worker_ProgressChanged;
-
 
             worker.RunWorkerAsync();
         }
