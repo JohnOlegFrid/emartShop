@@ -60,6 +60,10 @@ namespace PL
 
                          break;
                     case "Customer":
+                         Club_Member cm = (Club_Member)p;
+                         Window ww = new GeneralMenuCustomer(BL_manager,cm);
+                         ww.Show();
+                         this.Close();
                          break;
                     case "Admin":
                         Window Gm= new GeneralMenu(BL_manager);
