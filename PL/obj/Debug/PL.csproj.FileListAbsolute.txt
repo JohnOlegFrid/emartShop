@@ -179,3 +179,9 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Remove.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Table.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Add.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Add.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\GeneralMenuCustomer.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\GeneralMenuCustomer.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\CustomerMenu\Edit.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\CustomerMenu\Edit.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\CustomerMenu\ChangePass.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\CustomerMenu\ChangePass.g.cs
