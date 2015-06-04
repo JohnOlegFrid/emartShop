@@ -35,7 +35,7 @@ namespace PL.Products
 
         private void PrintClick(object sender, RoutedEventArgs e)
         {
-            Print p = new Print(BL_manager);
+            ProductBar p = new ProductBar(BL_manager);
             p.Show();
         }
         private void EditClick(object sender, RoutedEventArgs e)

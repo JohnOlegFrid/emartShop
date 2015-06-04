@@ -120,6 +120,9 @@
     <Compile Include="Employees\EmployeeOptionsWindow.xaml.cs">
       <DependentUpon>EmployeeOptionsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Employees\EmployeeProgress.xaml.cs">
+      <DependentUpon>EmployeeProgress.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Employees\PrintEmployeeWindow.xaml.cs">
       <DependentUpon>PrintEmployeeWindow.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,9 @@
     </Compile>
     <Compile Include="Products\Print.xaml.cs">
       <DependentUpon>Print.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products\ProductBar.xaml.cs">
+      <DependentUpon>ProductBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Products\Remove.xaml.cs">
       <DependentUpon>Remove.xaml</DependentUpon>
@@ -316,6 +322,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Employees\EmployeeProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Employees\PrintEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -357,6 +367,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Products\Print.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Products\ProductBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
