@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
 
-namespace PL.Users
+namespace PL.Customers
 {
     /// <summary>
     /// Interaction logic for Remove.xaml
@@ -30,23 +30,23 @@ namespace PL.Users
 
         private void removeClick(object sender, RoutedEventArgs e)
         {
-            String name = nametxt.Text;
-            if (MainWindow.isWord(name))
+            String ID = IDtxt.Text;
+            if (MainWindow.isNumber(ID))
             {
-                if (BL_manager.BL_user.isUserNameTaken(name))
+                if (BL_manager.BL_clubMember.getClubMemberByID(ID)!=null)
                 {
-                    BL_manager.BL_user.RemoveByUserName(name);
-                    MessageBox.Show("The User " + name + " Removed succefully.", "Removed succefully", MessageBoxButton.OK, MessageBoxImage.Information);
+                    BL_manager.BL_clubMember.Remove(ID);
+                    MessageBox.Show("The customer with the ID : " + ID + " Removed succefully.", "Removed succefully", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 }
                 else
                 {
-                    MessageBox.Show("User with that name doesn't exist, please try other User name.", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Customer with that ID doesn't exist, please try again.", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Incorrect name, please try again.", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Incorrect input, please try again.", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             }
         }

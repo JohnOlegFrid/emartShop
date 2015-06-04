@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
 
-namespace PL.Users
+namespace PL.Customers
 {
     /// <summary>
     /// Interaction logic for Options.xaml
@@ -44,6 +44,11 @@ namespace PL.Users
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             frame.Navigate(new Edit(BL_manager));
+        }
+
+        private void AddClick(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new Add(BL_manager));
         }
 
        

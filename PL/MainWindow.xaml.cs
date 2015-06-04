@@ -84,7 +84,6 @@ namespace PL
            
             Window register = new RegisterMenu(BL_manager);
             register.Show();
-            this.Close();
         }
 
         private void closeClick(object sender, RoutedEventArgs e)

@@ -81,7 +81,9 @@ namespace PL
 
         private void customersClick(object sender, RoutedEventArgs e)
         {
-
+            Customers.Options o = new Customers.Options(BL_manager);
+            generalMenuPanel.Children.Clear();
+            generalMenuPanel.Children.Add(o);
         }
 
         private void departmentClick(object sender, RoutedEventArgs e)

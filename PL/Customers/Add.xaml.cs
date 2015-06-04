@@ -10,23 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
 using Backend;
 
-namespace PL
+namespace PL.Customers
 {
     /// <summary>
-    /// Interaction logic for SignInMenu.xaml
+    /// Interaction logic for Add.xaml
     /// </summary>
-    public partial class RegisterMenu : Window
+    public partial class Add : Page
     {
+
         BL_Manager BL_manager;
-        public RegisterMenu(BL_Manager BL_manager)
+        public Add(BL_Manager BL_manager)
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
-            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+          
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
@@ -54,7 +56,7 @@ namespace PL
                 MainWindow mw = new MainWindow(BL_manager);
                 mw.Show();
 
-                this.Close();
+            
             }
             else
             {
@@ -64,25 +66,5 @@ namespace PL
 
         }
 
-        private void closeClick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void maximaizeB_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.WindowState == WindowState.Maximized)
-                this.WindowState = WindowState.Normal;
-            else
-            {
-                this.WindowState = WindowState.Maximized;
-            }
-        }
-
-        private void minimaizeClick(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }
-        
     }
 }
