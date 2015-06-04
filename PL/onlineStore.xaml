@@ -32,6 +32,15 @@
             <Border>
                 <StackPanel Width="446">
                     <ListBox x:Name="ProductView" PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonDown" Loaded="loadProductView" Width="300" HorizontalAlignment="Left"/>
+                    <StackPanel Width="70" Orientation="Horizontal">
+                        <TextBlock x:Name="amount" Width="35"></TextBlock>
+                        <StackPanel Width="35">
+                            <Button x:Name="increase" Height="10" Click="increase_Click"></Button>
+                            <Button x:Name="decrease" Height="10" Click="decrease_Click"></Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button x:Name="addToCart" Content="Add To Cart" Width="70" Click="addToCart_Click"/>
+                    <Button x:Name="buy" Content="buy" Width="70" Click="buy_Click"/>
                     <ListBox x:Name="ShoppingCart" Drop="ListBox_Drop" AllowDrop="True" Width="203" Height="180" HorizontalAlignment="Right"/>
                 </StackPanel>
             </Border>

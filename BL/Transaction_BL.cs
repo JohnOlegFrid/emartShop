@@ -32,9 +32,9 @@ namespace BL
             return uniqueID;
         }
 
-        public void Add(bool isAReturn, Dictionary<string, double> receipt, string paymentMethod)
+        public void Add(bool isAReturn, Dictionary<string, int> receiptamount, Dictionary<string, double> receipt, string paymentMethod)
         {
-            itsDAL.Add(generateID(), DateTime.Now, isAReturn, new Receipt(receipt), (PaymentMethod)Enum.Parse(typeof(PaymentMethod), paymentMethod));
+            itsDAL.Add(generateID(), DateTime.Now, isAReturn, new Receipt(receipt,receiptamount), (PaymentMethod)Enum.Parse(typeof(PaymentMethod), paymentMethod));
         }
 
         public void Remove(string id)

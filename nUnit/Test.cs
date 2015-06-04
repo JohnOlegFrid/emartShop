@@ -77,13 +77,13 @@ namespace nUnit
         }
 
         // [Test] // #7
-        public void checkDepartment()
+       /** public void checkDepartment()
         { //@ Add a department and check if he existing
             Department dp = new Department("food", "1212");
             Department_Data dt = new Department_Data();
             dt.Add("food", "1212");
             //Assert.IsTrue(dt.Contains(dp));
-        }
+        }**/
 
 
 
