@@ -17,3 +17,7 @@ C:\Users\Airel\Desktop\emartmafrid\Backend\bin\Debug\Backend.pdb
 C:\Users\Airel\Desktop\emartmafrid\Backend\obj\Debug\Backend.csprojResolveAssemblyReference.cache
 C:\Users\Airel\Desktop\emartmafrid\Backend\obj\Debug\Backend.dll
 C:\Users\Airel\Desktop\emartmafrid\Backend\obj\Debug\Backend.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\Backend\bin\Debug\Backend.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\Backend\bin\Debug\Backend.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\Backend\obj\Debug\Backend.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\Backend\obj\Debug\Backend.pdb
