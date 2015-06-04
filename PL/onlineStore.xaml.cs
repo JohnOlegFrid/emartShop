@@ -145,6 +145,8 @@ namespace PL
 
         private void buy_Click(object sender, RoutedEventArgs e)
         {
+            Window1 a = new Window1(BL_manager);
+            a.Show();
             List<Tuple<Product,int>> list = ShoppingCart.Items.OfType<Tuple<Product,int>>().ToList();
             Dictionary<string, int> receipt = new Dictionary<string, int>();
             Dictionary<string, double> products = new Dictionary<string, double>();
