@@ -71,23 +71,16 @@ namespace BL
             foreach (Transaction t in list)
             {
                 Console.Write("11111 " + t.ToString());
-                foreach (KeyValuePair<string, double> p in t.receipt.product)
+                foreach (KeyValuePair<string, int> p in t.receipt.amount)
                 {
-                      if(products.ContainsKey(p.Key))
-                      {
-                          products[p.Key]++;
-                      }
-                    else
-                      {
-                          products.Add(p.Key, 1);
-                      }
+                          products.Add(p.Key, p.Value);
                 }
             }
             var items = from pair in products
                         orderby pair.Value ascending
                         select pair;
-            BL_product.getProductsInStockByName(items.First().Key).isBestSeller = true;
-            BL_product.getProductsInStockByName(items.ElementAt(1).Key).isBestSeller = true;
+            //BL_product.getProductsInStockByName(items.First().Key).isBestSeller = true;
+            //BL_product.getProductsInStockByName(items.ElementAt(1).Key).isBestSeller = true;
             //BL_product.getProductsInStockByName(items.ElementAt(2).Key).isBestSeller = true;
         }
 

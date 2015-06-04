@@ -56,8 +56,9 @@ namespace PL
                 selectedProducts = BL_manager.BL_product.getProductsListByType((Product.Type)Enum.Parse(typeof(Product.Type), (string)types.SelectedValue));
             }
             ObservableCollection<Product> myCollection = new ObservableCollection<Product>(selectedProducts);
-            BL_manager.updatebestSeller();
+            //BL_manager.updatebestSeller();
             ProductView.ItemsSource=myCollection;
+            amount.Text = "1";
             
         }
        
@@ -102,7 +103,7 @@ namespace PL
         private void ListBox_Drop(object sender, DragEventArgs e)
         {
             ListBox parent = (ListBox)sender;
-            object data = e.Data.GetData(typeof(string));
+            object data = e.Data.GetData(typeof(Product));
             ((IList)dragSource.ItemsSource).Remove(data);
             parent.Items.Add(data);
         }
@@ -136,8 +137,52 @@ namespace PL
 
         #endregion
 
+        private void addToCart_Click(object sender, RoutedEventArgs e)
+        {
+            Tuple<Product, int> item = new Tuple<Product, int>((ProductView.SelectedItem as Product), int.Parse(amount.Text));
+            ShoppingCart.Items.Add(item);
+        }
 
+        private void buy_Click(object sender, RoutedEventArgs e)
+        {
+            List<Tuple<Product,int>> list = ShoppingCart.Items.OfType<Tuple<Product,int>>().ToList();
+            Dictionary<string, int> receipt = new Dictionary<string, int>();
+            Dictionary<string, double> products = new Dictionary<string, double>();
+            foreach (Tuple<Product,int> p in list)
+            {
+                if(receipt.ContainsKey(p.Item1.name))
+                {
+                    receipt[p.Item1.name]+=p.Item2;
+                }
+                else
+                {
+                    receipt.Add(p.Item1.name, p.Item2);
+                    products.Add(p.Item1.name, p.Item1.price);
+                }
+                
+            }
+            BL_manager.BL_transaction.Add(false, receipt, products, "CreditCard");
+        }
 
+        private void increase_Click(object sender, RoutedEventArgs e)
+        {
+            if ((ProductView.SelectedItem as Product).stockCount > int.Parse(amount.Text))
+            {
+                int num = int.Parse(amount.Text);
+                num++;
+                amount.Text = Convert.ToString(num);
+            }
+
+        }
+        private void decrease_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.Parse(amount.Text) > 0)
+            {
+                int num = int.Parse(amount.Text);
+                num--;
+                amount.Text = Convert.ToString(num);
+            }
+        }
 
 
     }
