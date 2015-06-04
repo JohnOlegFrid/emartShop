@@ -224,7 +224,6 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Table.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\ProgressBar.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\RegisterMenu.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\SimpleProgressBar.baml
-C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\UserControl1.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Edit.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Options.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Print.baml
@@ -273,7 +272,6 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Table.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\ProgressBar.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\RegisterMenu.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\SimpleProgressBar.g.cs
-C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\UserControl1.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Edit.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Options.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Print.g.cs
@@ -284,3 +282,17 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\PL_MarkupCompile.cache
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\PL.g.resources
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\PL.Properties.Resources.resources
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\PL.csproj.GenerateResource.Cache
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\bin\Debug\PL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\bin\Debug\PL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\bin\Debug\Backend.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\bin\Debug\BL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\bin\Debug\DAL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\bin\Debug\Backend.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\bin\Debug\BL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\bin\Debug\DAL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\PL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\PL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Search.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Products\Search.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\CustomerMenu\Options.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\CustomerMenu\Options.g.cs
