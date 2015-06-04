@@ -17,8 +17,6 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\GeneralMenu.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\MainWindow.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\PL_MarkupCompile.cache
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\PL.g.resources
-C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\ProductsMenu.baml
-C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\ProductsMenu.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\UserControl1.baml
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\UserControl1.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\RegisterMenu.baml
@@ -167,3 +165,17 @@ C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Options.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Print.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Remove.g.cs
 C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Table.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Edit.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Users\Edit.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Edit.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Options.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Print.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Remove.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Table.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Edit.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Options.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Print.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Remove.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Table.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Add.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Customers\Add.g.cs
