@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 using BL;
 using Backend;
 
-namespace PL.Products
+namespace PL.Transactions
 {
     /// <summary>
     /// Interaction logic for Table.xaml
     /// </summary>
     public partial class Table : UserControl
     {
-        public Table(List<Product> list)
+        public Table(List<Transaction> list)
         {
             InitializeComponent();
            

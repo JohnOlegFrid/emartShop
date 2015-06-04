@@ -14,14 +14,15 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
 
-namespace PL.Products
+namespace PL.Transactions
 {
     /// <summary>
-    /// Interaction logic for Options.xaml
+    /// Interaction logic for Transactions.Options.xaml
     /// </summary>
     public partial class Options : UserControl
     {
         BL_Manager BL_manager;
+
         public Options(BL_Manager BL_manager)
         {
             this.BL_manager = BL_manager;
@@ -35,7 +36,7 @@ namespace PL.Products
 
         private void PrintClick(object sender, RoutedEventArgs e)
         {
-            ProductBar p = new ProductBar(BL_manager);
+            TransactionsBar p = new TransactionsBar(BL_manager);
             p.Show();
         }
         private void EditClick(object sender, RoutedEventArgs e)

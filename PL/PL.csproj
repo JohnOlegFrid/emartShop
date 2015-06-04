@@ -197,8 +197,8 @@
     <Compile Include="SimpleProgressBar.xaml.cs">
       <DependentUpon>SimpleProgressBar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Transactions\AddProducts.xaml.cs">
-      <DependentUpon>AddProducts.xaml</DependentUpon>
+    <Compile Include="Transactions\AddTransactions.xaml.cs">
+      <DependentUpon>AddTransactions.xaml</DependentUpon>
     </Compile>
     <Compile Include="Transactions\Options.xaml.cs">
       <DependentUpon>Options.xaml</DependentUpon>
@@ -433,7 +433,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Transactions\AddProducts.xaml">
+    <Page Include="Transactions\AddTransactions.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

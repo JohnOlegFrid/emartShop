@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 using BL;
 using Backend;
 
-namespace PL.Products
+namespace PL.Transactions
 {
     /// <summary>
-    /// Interaction logic for AddProducts.xaml
+    /// Interaction logic for AddTransactions.xaml
     /// </summary>
-    public partial class AddProducts : Page
+    public partial class AddTransactions : Page
     {
         BL_Manager BL_manager;
 
-        public AddProducts(BL_Manager BL_manager)
+        public AddTransactions(BL_Manager BL_manager)
         {
             this.BL_manager = BL_manager;
             InitializeComponent();

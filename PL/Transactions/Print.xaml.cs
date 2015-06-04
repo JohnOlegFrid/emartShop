@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using BL;
 using Backend;
 
-namespace PL.Products
+namespace PL.Transactions
 {
     /// <summary>
     /// Interaction logic for Print.xaml
@@ -26,7 +26,7 @@ namespace PL.Products
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
-            List<Product> list = BL_manager.BL_product.getAllProductsList();
+            List<Transaction> list = BL_manager.BL_transaction.getAllTransactionsList();
             Table table = new Table(list);
             panel.Children.Add(table);
         }

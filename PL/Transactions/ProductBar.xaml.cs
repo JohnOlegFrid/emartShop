@@ -15,17 +15,17 @@ using System.ComponentModel;
 using System.Threading;
 using BL;
 
-namespace PL.Products
+namespace PL.Transactions
 {
     /// <summary>
     /// Logique d'interaction pour EmployeeProgress.xaml
     /// </summary>
-    public partial class ProductBar : Window
+    public partial class TransactionsBar : Window
     {
         BL_Manager BL_manager;
 
         public bool finished;
-        public ProductBar(BL_Manager bl_manager)
+        public TransactionsBar(BL_Manager bl_manager)
         {
             InitializeComponent();
             this.BL_manager = bl_manager;

@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using BL;
 using Backend;
 
-namespace PL.Products
+namespace PL.Transactions
 {
     /// <summary>
     /// Interaction logic for Remove.xaml
