@@ -62,6 +62,27 @@
     <Compile Include="Departments\Table.xaml.cs">
       <DependentUpon>Table.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EmployeesManager\AddEmployeeControl.xaml.cs">
+      <DependentUpon>AddEmployeeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesManager\EditEmployee.xaml.cs">
+      <DependentUpon>EditEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesManager\EmployeeOptionsWindow.xaml.cs">
+      <DependentUpon>EmployeeOptionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesManager\Print.xaml.cs">
+      <DependentUpon>Print.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesManager\RemoveEmployeeWindow.xaml.cs">
+      <DependentUpon>RemoveEmployeeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesManager\SearchEmployee.xaml.cs">
+      <DependentUpon>SearchEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesManager\Table.xaml.cs">
+      <DependentUpon>Table.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Employees\AddEmployeeControl.xaml.cs">
       <DependentUpon>AddEmployeeControl.xaml</DependentUpon>
     </Compile>
@@ -187,6 +208,34 @@
     <Page Include="Departments\Table.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmployeesManager\AddEmployeeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmployeesManager\EditEmployee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmployeesManager\EmployeeOptionsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmployeesManager\Print.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmployeesManager\RemoveEmployeeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmployeesManager\SearchEmployee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmployeesManager\Table.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Employees\AddEmployeeControl.xaml">
       <SubType>Designer</SubType>

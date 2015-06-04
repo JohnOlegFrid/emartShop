@@ -45,7 +45,7 @@ namespace PL
             //mainFrame.NavigationService.Navigate(new Uri("Page1.xaml", UriKind.Relative));
 
             generalMenuPanel.Children.Clear();
-            Employees.EmployeeOptionsWindow uc = new Employees.EmployeeOptionsWindow(BL_manager);
+            EmployeesManager.EmployeeOptionsWindow uc = new EmployeesManager.EmployeeOptionsWindow(BL_manager,emp);
             generalMenuPanel.Children.Add(uc);
         }
 
