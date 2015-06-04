@@ -25,10 +25,13 @@ namespace PL
     {
         BL_Manager bl_manager;
 
+        public bool finished;
         public ProgressBar(BL_Manager bl_manager)
         {
             InitializeComponent();
             this.bl_manager = bl_manager;
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            finished = false;
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)
@@ -44,11 +47,13 @@ namespace PL
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
 
+
             for (int i = 0; i < 101; i++)
             {
                 (sender as BackgroundWorker).ReportProgress(i);
-                Thread.Sleep(10);
+                Thread.Sleep(3);
             }
+            finished = true;
         }
 
         void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -56,7 +61,18 @@ namespace PL
             pbStatus.Value = e.ProgressPercentage;
         }
 
+        private void OK_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        public Boolean endOfTask()
+        {
+            return finished;
+        }
+
 
 
     }
 }
+
