@@ -33,6 +33,21 @@ namespace BL
             }
         }
 
+        public Boolean Update(string name,String currPass,String newPass)
+        {
+            List<User> list = itsDAL.getAllUsersList();
+            foreach (User u in list)
+            {
+                if (u.userName == name && u.password == currPass)
+                {
+                    u.password = newPass;
+                    itsDAL.DB = list;
+                    return true;
+                }
+            }
+            return false;
+        }
+
         //removes a user
         public void Remove(User user)
         {
