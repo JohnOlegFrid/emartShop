@@ -54,10 +54,16 @@ namespace BL
             else return null;
         }
 
-        public string getAllClubMembers()
+        public string getAllClubMembersString()
+        {
+            return itsDAL.getAllClubMembersString();
+        }
+
+        public List<Club_Member> getAllClubMembers()
         {
             return itsDAL.getAllClubMembers();
         }
+
 
         public string getClubMemberByFirstName(string name)
         {

@@ -92,7 +92,7 @@ namespace BL
         }
 
 
-        public string getType(string ID)
+        public String getTypeByID(String ID)
         {
             if (BL_clubMember.exist(ID)) 
             {
@@ -102,7 +102,43 @@ namespace BL
             {
                 return BL_employee.getType(ID);
             }
-            else return "Error"; 
+            else return null; 
+        }
+
+        public String getTypeByUserName(String userName)
+        {
+            String ID = BL_user.getIDByUser(userName);
+            if (BL_clubMember.exist(ID))
+            {
+                return "Customer";
+            }
+            else if (BL_employee.exist(ID))
+            {
+                return BL_employee.getType(ID);
+            }
+            else return null;
+        }
+
+        public Person getPersonByUserName(String userName)
+        {
+            String id=BL_user.getIDByUser(userName);
+            if (BL_clubMember.exist(id))
+            {
+                List<Club_Member> list= BL_clubMember.getAllClubMembers();
+                foreach (Club_Member c in list)
+                {
+                    if (c.ID == id) return c;
+                }
+            }
+            else if (BL_employee.exist(id))
+            {
+                List<Employee> list = BL_employee.getAllEmployees();
+                foreach (Employee e in list)
+                {
+                    if (e.ID == id) return e;
+                }
+            }
+            return null;
         }
 
     }

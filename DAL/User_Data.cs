@@ -18,16 +18,16 @@ namespace DAL
         public User_Data()
         {
             DB = new List<User>();
-            DB.Add(new User("admin", "admin", "12345"));
+            DB.Add(new User("admin", "admin", "admin"));
             Encryption.encryption(DB, path);
         }
 
         public User_Data(List<User> UDB)
         {
             DB = UDB;
-            User admin = new User("admin", "admin", "12345");
+            User admin = new User("admin", "admin", "admin");
             if (!Contains(admin))
-                DB.Add(new User("admin", "admin", "12345"));
+                DB.Add(admin);
             Encryption.encryption(DB, path);
         }
 
@@ -92,17 +92,22 @@ namespace DAL
 
         public string getIDByUser (string user)
         {
-            StringBuilder SupervisorByID = new StringBuilder("");
-
+            
             foreach (User e in DB)
             {
-                if (e.userName == user)
+                if (e.userName.CompareTo(user)==0)
                 {
+                    String b = e.ID;
                     return e.ID;
                 }
 
             }
             return "";
+        }
+
+        public List<User> getAllUsersList()
+        {
+            return DB;
         }
 
     }

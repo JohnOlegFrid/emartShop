@@ -22,7 +22,7 @@
                 		SelectedIndex="0" HorizontalAlignment="Left" Background="White"
                 		Height="25"  VerticalAlignment="Top" Width="178" Margin="14,37,0,0" 
                 		ItemsSource="{Binding list}" 
-                		DisplayMemberPath="name" BorderBrush="#FFC0D4FF" SelectionChanged="DepartmentClick" 
+                		DisplayMemberPath="name"  BorderBrush="#FFC0D4FF" SelectionChanged="DepartmentClick" 
                               />
                     <TextBlock HorizontalAlignment="Left" Height="19" Margin="280,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Text="Product"/>
                     <ComboBox x:Name="producttxt"  HorizontalAlignment="Left" Height="25" Width="222" Margin="280,37,0,0" VerticalAlignment="Top" BorderBrush="#FFC0D4FF" Background="White" SelectedIndex="0" />

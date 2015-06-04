@@ -12,19 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
-
+using Backend;
 
 namespace PL
 {
     /// <summary>
-    /// Interaction logic for GeneralMenu.xaml
+    /// Interaction logic for GeneralMenuManager.xaml
     /// </summary>
-    public partial class GeneralMenu : Window
+    public partial class GeneralMenuManager : Window
     {
         BL_Manager BL_manager;
-        public GeneralMenu(BL_Manager BL_manager)
+        Employee emp;
+
+        public GeneralMenuManager(BL_Manager BL_manager,Employee emp)
         {
-            this.BL_manager=BL_manager;
+            this.emp = emp;
+            this.BL_manager = BL_manager;
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
@@ -40,32 +43,13 @@ namespace PL
         {
             //mainFrame.NavigationService.Navigate(new Page1());
             //mainFrame.NavigationService.Navigate(new Uri("Page1.xaml", UriKind.Relative));
-           
+
             generalMenuPanel.Children.Clear();
-           Employees.EmployeeOptionsWindow uc = new Employees.EmployeeOptionsWindow(BL_manager);
-           generalMenuPanel.Children.Add(uc);
+            Employees.EmployeeOptionsWindow uc = new Employees.EmployeeOptionsWindow(BL_manager);
+            generalMenuPanel.Children.Add(uc);
         }
 
-        private void closeClick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void maximaizeB_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.WindowState == WindowState.Maximized)
-                this.WindowState = WindowState.Normal;
-            else
-            {
-                this.WindowState = WindowState.Maximized;
-            }
-        }
-
-        private void minimaizeClick(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }
-
+        
         private void productClick(object sender, RoutedEventArgs e)
         {
             Products.Options o = new Products.Options(BL_manager);
@@ -93,9 +77,7 @@ namespace PL
         }
         private void usersClick(object sender, RoutedEventArgs e)
         {
-            Users.Options o = new Users.Options(BL_manager);
-            generalMenuPanel.Children.Clear();
-            generalMenuPanel.Children.Add(o);
+
         }
 
         private void storeClick(object sender, RoutedEventArgs e)
@@ -111,10 +93,10 @@ namespace PL
             this.Close();
         }
 
-        
-       
 
-        
+
+
+
 
     }
 }

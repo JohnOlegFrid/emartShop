@@ -19,11 +19,14 @@ namespace DAL
         public Employee_Data()
         {
             DB = new List<Employee>();
+            DB.Add(new Employee("admin", "admin", "admin", "Man", "0", 0.0, "0", "Admin"));
         }
 
         public Employee_Data(List<Employee> EDB)
         {
             DB = EDB;
+            if (!Contains("00000"))
+                DB.Add(new Employee("admin", "admin", "admin", "Man", "0", 0.0, "0", "Admin"));
             Encryption.encryption(DB, path);
         }
 
@@ -279,22 +282,16 @@ namespace DAL
 
         public string getType(string id)
         {
-            StringBuilder SupervisorByID = new StringBuilder("");
-            var type =
-                from i in DB
-                where i.ID == id
-                select i;
-            if (type.Count() == 0)
+            
+           
+            foreach (Employee e in DB)
             {
-                SupervisorByID.Append("no employees by this id ");
-                SupervisorByID.Append(id);
+                if (e.ID == id)
+                {
+                    return e.type;
+                }
             }
-            foreach (Employee e in type)
-            {
-                SupervisorByID.Append(e.type);
-                SupervisorByID.Append("\r\n");
-            }
-            return SupervisorByID.ToString();
+            return null;
 
         
         

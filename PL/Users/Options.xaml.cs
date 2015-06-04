@@ -10,33 +10,44 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
 
-namespace PL
+namespace PL.Users
 {
     /// <summary>
-    /// Interaction logic for ProductsMenu.xaml
+    /// Interaction logic for Options.xaml
     /// </summary>
-    public partial class ProductsMenu : Window
+    public partial class Options : UserControl
     {
         BL_Manager BL_manager;
-        public ProductsMenu(BL_Manager BL_manager)
+
+        public Options(BL_Manager BL_manager)
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
         }
 
-        private void printTest_Click(object sender, RoutedEventArgs e)
+        private void printClick(object sender, RoutedEventArgs e)
         {
-            stcTest.Children.Clear();
-            UserControl1 uc = new UserControl1(BL_manager);
-            stcTest.Children.Add(uc);
+            Print p = new Print(BL_manager);
+            p.Show();
         }
 
-        
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new Remove(BL_manager));
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+       
 
         
-
     }
 }

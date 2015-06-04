@@ -42,14 +42,33 @@ namespace PL
             String PassWord = txtPassWord.Password;
             String pass = txtPassWord.Password;
 
-            User tmpUser = new User(userName, PassWord,"12345");
+            User tmpUser = new User(userName, PassWord);
 
             if (BL_manager.BL_user.exist(tmpUser)) // check if the password and username exist
             {
-               
-                Window Gm = new GeneralMenu(BL_manager);
-                Gm.Show();
-                this.Close();
+                Person p=BL_manager.getPersonByUserName(userName);
+                String type = BL_manager.getTypeByUserName(userName);
+                switch (type)
+                {
+                    case "Manager":
+                        Employee emp = (Employee)p;
+                         Window w = new GeneralMenuManager(BL_manager,emp);
+                         w.Show();
+                         this.Close();
+                         break;
+                    case "Worker":
+
+                         break;
+                    case "Customer":
+                         break;
+                    case "Admin":
+                        Window Gm= new GeneralMenu(BL_manager);
+                        Gm.Show();
+                        this.Close();
+                         break;
+
+                }
+                
             }
             else
             {
