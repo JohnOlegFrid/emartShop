@@ -12,3 +12,8 @@ C:\Users\Gwainer\Desktop\emartwpf8\Backend\bin\Debug\Backend.dll
 C:\Users\Gwainer\Desktop\emartwpf8\Backend\bin\Debug\Backend.pdb
 C:\Users\Gwainer\Desktop\emartwpf8\Backend\obj\Debug\Backend.dll
 C:\Users\Gwainer\Desktop\emartwpf8\Backend\obj\Debug\Backend.pdb
+C:\Users\Airel\Desktop\emartmafrid\Backend\bin\Debug\Backend.dll
+C:\Users\Airel\Desktop\emartmafrid\Backend\bin\Debug\Backend.pdb
+C:\Users\Airel\Desktop\emartmafrid\Backend\obj\Debug\Backend.csprojResolveAssemblyReference.cache
+C:\Users\Airel\Desktop\emartmafrid\Backend\obj\Debug\Backend.dll
+C:\Users\Airel\Desktop\emartmafrid\Backend\obj\Debug\Backend.pdb
