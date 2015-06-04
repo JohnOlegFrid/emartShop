@@ -151,24 +151,7 @@ namespace DAL
             return product.ToString();
         }
 
-        public string getProductsInStockByType(string type)
-        {
-            StringBuilder product = new StringBuilder("");
-            var pByType =
-                from i in DB
-                where (i.type == (Product.Type)Enum.Parse(typeof(Product.Type), type))
-                select i;
-            foreach (Product p in pByType)
-            {
-                product.Append(p.ToString());
-                product.Append("\r\n");
-            }
-            if (product.ToString() == "")
-            {
-                product.Append("no product of this type");
-            }
-            return product.ToString();
-        }
+        
 
         public string getProductsInStockByPriceRange(string min, string max)
         {

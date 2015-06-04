@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="PL.onlineStore"
-        Title="onlineStore" Height="500" Width="600" WindowStyle="None">
+        Title="onlineStore" Height="400" Width="700" WindowStyle="None">
     <Grid>
         <DockPanel LastChildFill="False">
             <Border DockPanel.Dock="Top" Background="White" BorderBrush="#FF1E99FF" BorderThickness="0,0,0,1">
@@ -24,26 +24,24 @@
                 </StackPanel>
             </Border>
             <Border BorderBrush="#FF00B9FF" DockPanel.Dock="Left"  BorderThickness="1" >
-                <StackPanel DockPanel.Dock="Left" Width="145" >
-                    <Label Content="product department" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="types" Loaded="loadTypes"  Height="22" Width="120" HorizontalAlignment="Left" Margin="0,42,0,0" RenderTransformOrigin="1.596,0.588" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged"/>
-                </StackPanel>
+                <Grid DockPanel.Dock="Left" Width="145" Margin="0,19,0,-19" >
+                    <Label Content="product department" Height="23" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,23,0,0" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <ComboBox x:Name="types" Loaded="loadTypes"  Height="22" Width="120" HorizontalAlignment="Left" Margin="10,46,0,0" RenderTransformOrigin="1.596,0.588" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged"/>
+                </Grid>
             </Border>
-            <Border>
-                <StackPanel Width="446">
-                    <ListBox x:Name="ProductView" PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonDown" Loaded="loadProductView" Width="183" HorizontalAlignment="Left"/>
-                    <StackPanel Width="70" Orientation="Horizontal">
-                        <TextBlock x:Name="amount" Width="35"></TextBlock>
-                        <StackPanel Width="35">
-                            <Button x:Name="increase" Content="+" Height="20" Click="increase_Click"></Button>
-                            <Button x:Name="decrease" Content="-" Height="20" Click="decrease_Click"></Button>
-                        </StackPanel>
-                    </StackPanel>
-                    <Button x:Name="addToCart" Content="Add To Cart" Width="70" Click="addToCart_Click"/>
-                    <Button x:Name="buy" Content="buy" Width="70" Click="buy_Click"/>
-                    <ListBox x:Name="ShoppingCart" Drop="ListBox_Drop" AllowDrop="True" Width="188" Height="180" HorizontalAlignment="Right"/>
-                </StackPanel>
-            </Border>
+
+            <Grid Height="400" Width="520">
+                <ListBox x:Name="ProductView" Height="180" Width="230" PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonDown" Loaded="loadProductView" Margin="11,94,232,95" />
+                <TextBlock x:Name="amount" Height="25"  Width="100"></TextBlock>
+                <Button x:Name="increase" Width="30" Height="30" Content="+" Click="increase_Click" Margin="39,279,376,60" />
+                <Button x:Name="decrease" Content="-" Width="30" Height="30" Click="decrease_Click" Margin="36,294,454,76" RenderTransformOrigin="0.533,3.2" ></Button>
+
+
+                <Button x:Name="addToCart" Content="Add To Cart" Height="25" Width="90" Click="addToCart_Click" Margin="176,76,254,299"/>
+                <Button x:Name="buy" Content="buy" Height="25" Width="90" Click="buy_Click" Margin="36,76,394,299" Padding="0"/>
+                <ListBox x:Name="ShoppingCart" Drop="ListBox_Drop" AllowDrop="True" Width="230" Height="180" HorizontalAlignment="Right" Margin="0,94,12,95"/>
+            </Grid>
+
         </DockPanel>
 
     </Grid>

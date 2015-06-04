@@ -76,10 +76,12 @@ namespace BL
         {
             return itsDAL.getAllProducts();
         }
+        
         public List<Product> getAllProductsList()
         {
             return itsDAL.getAllProductsList();
         }
+        
         public List<Product> getAllProductsListByDepartmentID(String ID)
         {
             List<Product> ans=new List<Product>();
@@ -96,8 +98,16 @@ namespace BL
 
         public List<Product> getProductsListByType(Product.Type type)
         {
-            return itsDAL.getProductsListByType(type);
+            List<Product> list = itsDAL.getAllProductsList();
+            List<Product> ans = new List<Product>();
+            foreach (Product p in list)
+            {
+                if (p.type == type)
+                    ans.Add(p);
+            }
+            return ans;
         }
+
         public string Restock(string inventoryId, string addition)
         {
             return itsDAL.Restock(inventoryId, addition);
@@ -108,9 +118,16 @@ namespace BL
             return itsDAL.getProductsInStockByName(name);
         }
 
-        public string getProductsInStockByID(string id)
+        public Product getProductsInStockByID(string id)
         {
-            return itsDAL.getProductsInStockByID(id);
+            List<Product> list = itsDAL.getAllProductsList();
+            Product ans = new Product();
+            foreach (Product p in list)
+            {
+                if (p.inventoryID == id)
+                    ans = p;
+            }
+            return ans;
         }
 
         public string getProductsInStockByDepartment(string name)

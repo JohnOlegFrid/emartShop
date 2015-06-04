@@ -15,7 +15,7 @@ namespace nUnit
     //[TestFixture]
     public class Tests
     {
-        // [Test] // #1
+        [Test] // #1
         public void checkExistsUser()
         //@ Add a user and check if he existing
         {
@@ -26,7 +26,7 @@ namespace nUnit
         }
 
 
-        //  [Test] //#2
+        [Test] //#2
         public void checkExistsProduct()
         //@ Add a product, remove it and check if he not existing anymore
         {
@@ -37,7 +37,7 @@ namespace nUnit
             //Assert.IsTrue(!pd.Contains("1234")); // we're checking that is inventoryId is not existing
         }
 
-        // [Test] // #3
+        [Test] // #3
         public void checkExistsUser2()
         //@ Add a user and check if he existing
         {
@@ -47,7 +47,7 @@ namespace nUnit
             //Assert.IsTrue(ud.Contains(us));
         }
 
-        // [Test] //#3
+        [Test] //#3
         public void checkUpdateCM()
         //@ Add a ClubMember, and check if we can update him
         {
@@ -59,7 +59,7 @@ namespace nUnit
         }
 
 
-        // [Test] // #5
+         [Test] // #5
         public void checkDepartment()
         { //@ Add a deparment and check if he existing
             Department dp = new Department("bilou", "5874");
@@ -68,7 +68,7 @@ namespace nUnit
             //Assert.IsTrue(dt.Contains(dp));
         }
 
-        // [Test] // #6
+        [Test] // #6
         public void checkClubMember()
         { //@ Add a clubMember and check if he existing
             Club_Member cm = new Club_Member("1234", "avi", "dahan", "male", "5618", "2105");
@@ -77,14 +77,14 @@ namespace nUnit
             //Assert.IsTrue(cd.Contains(cm));
         }
 
-        // [Test] // #7
-       /* public void checkDepartment()
+        [Test] // #7
+        public void checkDepartment2()
         { //@ Add a department and check if he existing
             Department dp = new Department("food", "1212");
             Department_Data dt = new Department_Data();
             dt.Add("food", "1212");
             //Assert.IsTrue(dt.Contains(dp));
-        }*/
+        }
 
 
 

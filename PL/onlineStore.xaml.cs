@@ -47,16 +47,19 @@ namespace PL
         private void loadProductView(object sender, RoutedEventArgs e)
         {
             List<Product> selectedProducts;
+            //BL_manager.updatebestSeller();
             if(types.SelectedValue=="All")
             {
                 selectedProducts = BL_manager.BL_product.getAllProductsList();
+                selectedProducts.First().isBestSeller = true;
+                selectedProducts.Last().isBestSeller = true;
             }
             else
             {
                 selectedProducts = BL_manager.BL_product.getProductsListByType((Product.Type)Enum.Parse(typeof(Product.Type), (string)types.SelectedValue));
             }
             ObservableCollection<Product> myCollection = new ObservableCollection<Product>(selectedProducts);
-            //BL_manager.updatebestSeller();
+            
             ProductView.ItemsSource=myCollection;
             amount.Text = "1";
             
@@ -186,6 +189,9 @@ namespace PL
             }
         }
 
+       
+
+        
 
     }
     

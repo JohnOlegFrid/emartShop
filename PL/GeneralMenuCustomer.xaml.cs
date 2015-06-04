@@ -56,7 +56,7 @@ namespace PL
 
         private void productClick(object sender, RoutedEventArgs e)
         {
-            Products.Options o = new Products.Options(BL_manager);
+            CustomerMenu.Options o = new CustomerMenu.Options(BL_manager);
             generalMenuPanel.Children.Clear();
             generalMenuPanel.Children.Add(o);
 

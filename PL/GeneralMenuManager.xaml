@@ -10,7 +10,6 @@
                     <Image Source="emart.png" Margin="0,0,0,20"/>
                     <Button Content="Employee"   Name="employeeButton" Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="employeeClick"  />
                     <Button Content="Products"  Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="productClick" />
-                    <Button Content="Transaction"  Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="transactionClick" />
                     <Button Content="Customers"  Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="customersClick" />
                     <Button Name="store" Content="Virtual Store" Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="storeClick" />
                     <Button Content="Log out" Background="White" Margin="5" Click="logoutClick" BorderThickness="3,3,3,3" BorderBrush="Red" />

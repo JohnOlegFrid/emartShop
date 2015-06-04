@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
 
-namespace PL.Products
+namespace PL.CustomerMenu
 {
     /// <summary>
     /// Interaction logic for Options.xaml
@@ -28,27 +28,19 @@ namespace PL.Products
             InitializeComponent();
         }
 
-        private void AddClick(object sender, RoutedEventArgs e)
-        {
-            frame.Navigate(new Products.AddProducts(BL_manager));
-        }
+
 
         private void PrintClick(object sender, RoutedEventArgs e)
         {
-            ProductBar p = new ProductBar(BL_manager);
+            Products.ProductBar p = new Products.ProductBar(BL_manager);
             p.Show();
         }
-        private void EditClick(object sender, RoutedEventArgs e)
-        {
-
-        }
+            
+      
         private void SearchClick(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new Search(BL_manager));
+            frame.Navigate(new Products.Search(BL_manager));
         }
-        private void RemoveClick(object sender, RoutedEventArgs e)
-        {
-            frame.Navigate(new Products.Remove(BL_manager));
-        }
+       
     }
 }
