@@ -1,0 +1,29 @@
+﻿PL
+
+
+library
+C#
+.cs
+C:\Users\Gwainer\Desktop\emartwpf6\PL\obj\Debug\
+PL
+none
+false
+DEBUG;TRACE
+
+<<<<<<< HEAD
+251569421753
+
+32-1879507439
+14-605668080
+Departments\AddDepartment.xaml;Departments\Options.xaml;Departments\Print.xaml;Departments\Remove.xaml;Departments\Table.xaml;Employees\AddEmployeeControl.xaml;Employees\AddEmployeeWindow.xaml;Employees\EditEmployee.xaml;Employees\EmployeeOptionsWindow.xaml;Employees\PrintEmployeeWindow.xaml;Employees\RemoveEmployeeWindow.xaml;Employees\SearchEmployee.xaml;GeneralMenu.xaml;MainWindow.xaml;onlineStore.xaml;ProductsMenu.xaml;Products\AddProducts.xaml;Products\Options.xaml;Products\Print.xaml;Products\Remove.xaml;Products\Table.xaml;ProgressBar.xaml;RegisterMenu.xaml;SimpleProgressBar.xaml;UserControl1.xaml;
+=======
+16-1439826866
+26-439092290
+Departments\AddDepartment.xaml;Departments\Options.xaml;Departments\Print.xaml;Departments\Remove.xaml;Departments\Table.xaml;Employees\AddEmployeeControl.xaml;Employees\AddEmployeeWindow.xaml;Employees\EditEmployee.xaml;Employees\EmployeeOptionsWindow.xaml;Employees\PrintEmployeeWindow.xaml;Employees\RemoveEmployeeWindow.xaml;Employees\SearchEmployee.xaml;GeneralMenu.xaml;MainWindow.xaml;onlineStore.xaml;ProductsMenu.xaml;RegisterMenu.xaml;SimpleProgressBar.xaml;UserControl1.xaml;
+23-1480872222
+142122409565
+Employees\AddEmployeeControl.xaml;Employees\AddEmployeeWindow.xaml;DataEnities.xaml;EditUsersMenu.xaml;Employees\EditEmployee.xaml;Employees\EmployeeOptionsWindow.xaml;Employees\PrintEmployeeWindow.xaml;Employees\RemoveEmployeeWindow.xaml;Employees\SearchEmployee.xaml;GeneralMenu.xaml;MainWindow.xaml;onlineStore.xaml;ProductsMenu.xaml;RegisterMenu.xaml;SimpleProgressBar.xaml;UserControl1.xaml;
+>>>>>>> 9b58ca92d624cc2b239ba5f801b68b14d5b970c5
+
+False
+
