@@ -46,7 +46,7 @@ namespace PL.Users
             }
             else
             {
-                MessageBox.Show("Incorrect name, please try other department name.", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Incorrect name, please try again.", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             }
         }

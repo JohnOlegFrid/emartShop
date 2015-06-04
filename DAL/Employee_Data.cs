@@ -25,7 +25,7 @@ namespace DAL
         public Employee_Data(List<Employee> EDB)
         {
             DB = EDB;
-            if (!Contains("00000"))
+            if (!Contains("admin"))
                 DB.Add(new Employee("admin", "admin", "admin", "Man", "0", 0.0, "0", "Admin"));
             Encryption.encryption(DB, path);
         }

@@ -24,13 +24,16 @@ namespace BL
             return itsDAL.Contains(clubMember);
         }
         //adds a club member
-        public void Add(Club_Member clubMember)
+        public Boolean Add(Club_Member clubMember)
         {
             if (!exist(clubMember.ID))
             {
                 itsDAL.Add(clubMember);
+                return true;
             }
+            return false;
         }
+        
 
         // removing club member from database
         public void Remove(string memberID)

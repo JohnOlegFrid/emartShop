@@ -29,6 +29,7 @@ namespace PL.Employees
 
         private void addEmployeeClick(object sender, RoutedEventArgs e)
         {
+            employeePanel.Children.Clear();
             AddEmployeeControl a = new AddEmployeeControl(BL_manager);
             employeePanel.Children.Add(a);
             //AddEmployeeWindow a = new AddEmployeeWindow(BL_manager);

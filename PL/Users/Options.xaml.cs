@@ -43,7 +43,7 @@ namespace PL.Users
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            frame.Navigate(new Edit(BL_manager));
         }
 
        
