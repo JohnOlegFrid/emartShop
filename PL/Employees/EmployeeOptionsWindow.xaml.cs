@@ -38,7 +38,7 @@ namespace PL.Employees
 
         private void printEmployeeClick(object sender, RoutedEventArgs e)
         {
-            PrintEmployeeWindow p = new PrintEmployeeWindow(BL_manager);
+            EmployeeProgress p = new EmployeeProgress(BL_manager);
             p.Show();
 
         }
