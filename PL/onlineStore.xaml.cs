@@ -104,7 +104,7 @@ namespace PL
         {
             ListBox parent = (ListBox)sender;
             object data = e.Data.GetData(typeof(Product));
-            ((IList)dragSource.ItemsSource).Remove(data);
+           // ((IList)dragSource.ItemsSource).Remove(data);
             parent.Items.Add(data);
         }
 
