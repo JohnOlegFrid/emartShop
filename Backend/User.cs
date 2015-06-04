@@ -14,33 +14,37 @@ namespace Backend
     [Serializable]
     public class User
     {
-        private string _userName;
-        private string _password;
-        private string _ID;
+        private String _userName;
+        private String _password;
+        private String _ID;
 
-        public string ID
+        public String ID
         {
             get { return _ID; }
             set { _ID = value; }
         }
-        public string userName
+        public String userName
         {
             get { return _userName; }
             set { _userName = value; }
         }
         [XmlElement("Password")]
-        public string password
+        public String password
         {
             get { return _password; }
             set { _password = value; }
         }
 
-
-        public User(string name, string password, string ID)
+        public User(String name, String password)
         {
             _userName = name;
             _password = password;
-            _ID = ID;
+        }
+        public User(String name, String password, String IDD)
+        {
+            _userName = name;
+            _password = password;
+            _ID = IDD;
         }
     }
 }

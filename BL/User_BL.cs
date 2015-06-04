@@ -42,6 +42,20 @@ namespace BL
             }
         }
 
+        public Boolean RemoveByUserName(String name)
+        {
+            List<User> list=itsDAL.getAllUsersList();
+            if (isUserNameTaken(name))
+            {
+                foreach (User u in list)
+                {
+                    if (u.userName == name) itsDAL.Remove(u);
+                    return true;
+                }
+            }
+            return false;
+        }
+
         //checks if the username is already in use
         public bool isUserNameTaken(string userName)
         {
@@ -61,6 +75,11 @@ namespace BL
         public string getIDByUser(string user)
         {
             return itsDAL.getIDByUser(user);
+        }
+
+        public List<User> getAllUsersList()
+        {
+            return itsDAL.getAllUsersList();
         }
     }
 }

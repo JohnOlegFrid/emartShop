@@ -95,7 +95,7 @@ namespace DAL
             return name;
         }
 
-        public string getAllClubMembers()
+        public string getAllClubMembersString()
         {
             StringBuilder allClubMembers = new StringBuilder("");
             if (DB.Count() == 0)
@@ -108,6 +108,11 @@ namespace DAL
                 allClubMembers.Append("\r\n");
             }
             return allClubMembers.ToString();
+        }
+
+        public List<Club_Member> getAllClubMembers()
+        {
+            return DB;
         }
 
         public string getClubMemberByFirstName(string name)
