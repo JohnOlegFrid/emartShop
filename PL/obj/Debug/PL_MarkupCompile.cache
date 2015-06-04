@@ -4,17 +4,17 @@
 library
 C#
 .cs
-C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\
+C:\Users\Airel\Desktop\emartmafrid\PL\obj\Debug\
 PL
 none
 false
 DEBUG;TRACE
 
-46316446808
+48-846530705
 
-50462984577
-14-605668080
-CustomerMenu\ChangePass.xaml;CustomerMenu\Edit.xaml;Customers\Add.xaml;Customers\Edit.xaml;Customers\Options.xaml;Customers\Print.xaml;Customers\Remove.xaml;Customers\Table.xaml;Departments\AddDepartment.xaml;Departments\Options.xaml;Departments\Print.xaml;Departments\Remove.xaml;Departments\Table.xaml;EmployeesManager\AddEmployeeControl.xaml;EmployeesManager\EditEmployee.xaml;EmployeesManager\EmployeeOptionsWindow.xaml;EmployeesManager\Print.xaml;EmployeesManager\RemoveEmployeeWindow.xaml;EmployeesManager\SearchEmployee.xaml;EmployeesManager\Table.xaml;Employees\AddEmployeeControl.xaml;Employees\AddEmployeeWindow.xaml;Employees\EditEmployee.xaml;Employees\EmployeeOptionsWindow.xaml;Employees\PrintEmployeeWindow.xaml;Employees\RemoveEmployeeWindow.xaml;Employees\SearchEmployee.xaml;GeneralMenu.xaml;GeneralMenuCustomer.xaml;GeneralMenuManager.xaml;MainWindow.xaml;onlineStore.xaml;Products\AddProducts.xaml;Products\Options.xaml;Products\Print.xaml;Products\Remove.xaml;Products\Table.xaml;ProgressBar.xaml;RegisterMenu.xaml;SimpleProgressBar.xaml;UserControl1.xaml;Users\Edit.xaml;Users\Options.xaml;Users\Print.xaml;Users\Remove.xaml;Users\Table.xaml;
+52325551138
+141441439409
+CustomerMenu\ChangePass.xaml;CustomerMenu\Edit.xaml;Customers\Add.xaml;Customers\Edit.xaml;Customers\Options.xaml;Customers\Print.xaml;Customers\Remove.xaml;Customers\Table.xaml;Departments\AddDepartment.xaml;Departments\Options.xaml;Departments\Print.xaml;Departments\Remove.xaml;Departments\Table.xaml;EmployeesManager\AddEmployeeControl.xaml;EmployeesManager\EditEmployee.xaml;EmployeesManager\EmployeeOptionsWindow.xaml;EmployeesManager\Print.xaml;EmployeesManager\RemoveEmployeeWindow.xaml;EmployeesManager\SearchEmployee.xaml;EmployeesManager\Table.xaml;Employees\AddEmployeeControl.xaml;Employees\AddEmployeeWindow.xaml;Employees\EditEmployee.xaml;Employees\EmployeeOptionsWindow.xaml;Employees\EmployeeProgress.xaml;Employees\PrintEmployeeWindow.xaml;Employees\RemoveEmployeeWindow.xaml;Employees\SearchEmployee.xaml;GeneralMenu.xaml;GeneralMenuCustomer.xaml;GeneralMenuManager.xaml;MainWindow.xaml;onlineStore.xaml;Products\AddProducts.xaml;Products\Options.xaml;Products\Print.xaml;Products\ProductBar.xaml;Products\Remove.xaml;Products\Table.xaml;ProgressBar.xaml;RegisterMenu.xaml;SimpleProgressBar.xaml;UserControl1.xaml;Users\Edit.xaml;Users\Options.xaml;Users\Print.xaml;Users\Remove.xaml;Users\Table.xaml;
 
 False
 
