@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
 
-namespace PL.Transactions
+namespace PL.Products
 {
     /// <summary>
     /// Interaction logic for Options.xaml
@@ -35,7 +35,7 @@ namespace PL.Transactions
 
         private void PrintClick(object sender, RoutedEventArgs e)
         {
-            TransactionsBar p = new TransactionsBar(BL_manager);
+            ProductBar p = new ProductBar(BL_manager);
             p.Show();
         }
         private void EditClick(object sender, RoutedEventArgs e)

@@ -33,7 +33,10 @@ namespace BL
             {
                 inStock = true;
             }
-            return itsDAL.Add(name, (Product.Type)Enum.Parse(typeof(Product.Type), type), id, departmentID, inStock, int.Parse(stockCount), double.Parse(price));
+            Backend.Product temp = new Backend.Product(name, (Backend.Product.Type)Enum.Parse(typeof(Backend.Product.Type), type), id, departmentID, inStock, int.Parse(stockCount), double.Parse(price));
+
+            itsDAL.Add(temp);
+            return id;
         }
 
         //id generator
@@ -51,7 +54,7 @@ namespace BL
 
         public bool existByName(string name)
         {
-            foreach (Product p in itsDAL.DB)
+            foreach (Backend.Product p in itsDAL.DB)
             {
                 if (p.name == name) return true;
             }
@@ -76,17 +79,17 @@ namespace BL
         {
             return itsDAL.getAllProducts();
         }
-        
-        public List<Product> getAllProductsList()
+
+        public List<Backend.Product> getAllProductsList()
         {
             return itsDAL.getAllProductsList();
         }
-        
-        public List<Product> getAllProductsListByDepartmentID(String ID)
+
+        public List<Backend.Product> getAllProductsListByDepartmentID(String ID)
         {
-            List<Product> ans=new List<Product>();
-            List<Product> list= itsDAL.getAllProductsList();
-            foreach (Product p in list)
+            List<Backend.Product> ans = new List<Backend.Product>();
+            List<Backend.Product> list = itsDAL.getAllProductsList();
+            foreach (Backend.Product p in list)
             {
                 if (p.departmentID == ID)
                 {
@@ -96,11 +99,11 @@ namespace BL
             return ans;
         }
 
-        public List<Product> getProductsListByType(Product.Type type)
+        public List<Backend.Product> getProductsListByType(Backend.Product.Type type)
         {
-            List<Product> list = itsDAL.getAllProductsList();
-            List<Product> ans = new List<Product>();
-            foreach (Product p in list)
+            List<Backend.Product> list = itsDAL.getAllProductsList();
+            List<Backend.Product> ans = new List<Backend.Product>();
+            foreach (Backend.Product p in list)
             {
                 if (p.type == type)
                     ans.Add(p);
@@ -113,16 +116,16 @@ namespace BL
             return itsDAL.Restock(inventoryId, addition);
         }
 
-        public Product getProductsInStockByName(string name)
+        public Backend.Product getProductsInStockByName(string name)
         {
             return itsDAL.getProductsInStockByName(name);
         }
 
-        public Product getProductsInStockByID(string id)
+        public Backend.Product getProductsInStockByID(string id)
         {
-            List<Product> list = itsDAL.getAllProductsList();
-            Product ans = new Product();
-            foreach (Product p in list)
+            List<Backend.Product> list = itsDAL.getAllProductsList();
+            Backend.Product ans = new Backend.Product();
+            foreach (Backend.Product p in list)
             {
                 if (p.inventoryID == id)
                     ans = p;
@@ -142,7 +145,7 @@ namespace BL
 
         public bool updateProduct(string id, string name, string type, string departmentId, string price)
         {
-            return itsDAL.updateProduct(id, name, (Product.Type)Enum.Parse(typeof(Product.Type), type), departmentId, double.Parse(price));
+            return itsDAL.updateProduct(id, name, (Backend.Product.Type)Enum.Parse(typeof(Backend.Product.Type), type), departmentId, double.Parse(price));
         }
 
         public void RemoveDepartment(string id)

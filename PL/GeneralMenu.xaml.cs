@@ -76,7 +76,9 @@ namespace PL
 
         private void transactionClick(object sender, RoutedEventArgs e)
         {
-
+            Transactions.Options o = new Transactions.Options(BL_manager);
+            generalMenuPanel.Children.Clear();
+            generalMenuPanel.Children.Add(o);
         }
 
         private void customersClick(object sender, RoutedEventArgs e)
@@ -108,9 +110,16 @@ namespace PL
 
         private void logoutClick(object sender, RoutedEventArgs e)
         {
-            MainWindow m = new MainWindow(BL_manager);
+           MainWindow m = new MainWindow(BL_manager);
             m.Show();
             this.Close();
+        }
+
+        private void Location_Click(object sender, RoutedEventArgs e)
+        {
+            Location l = new Location();
+            generalMenuPanel.Children.Clear();
+            generalMenuPanel.Children.Add(l);
         }
 
         

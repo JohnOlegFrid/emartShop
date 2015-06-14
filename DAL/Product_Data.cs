@@ -13,26 +13,28 @@ namespace DAL
     [Serializable]
     public class Product_Data
     {
-        public List<Product> DB;
-        public string path = @"product.bin";
+        public List<Backend.Product> DB;
+        public EmartDataContext emartDataContext;
 
         public Product_Data()
         {
-            DB = new List<Product>();
+            DB = new List<Backend.Product>();
+            emartDataContext = new EmartDataContext();
         }
 
-        public Product_Data(List<Product> PDB)
+        public Product_Data(List<Backend.Product> PDB)
         {
             DB = PDB;
-            Encryption.encryption(DB, path);
+            emartDataContext = new EmartDataContext();
         }
 
-        public string Add(string name, Product.Type type, string id, string departmentID, bool inStock, int stockCount, double price)
+        public void Add(Backend.Product p)
         {
-            DB.Add(new Product(name, type, id, departmentID, inStock, stockCount, price));
-            Encryption.encryption(DB, path);
-
-            return id;
+            DB.Add(p);
+            DAL.Product temp= Change.ProductBackendToDal(p);
+            emartDataContext.Products.InsertOnSubmit(temp);
+            emartDataContext.SubmitChanges();
+          
         }
 
         public string getAllProducts()
@@ -42,34 +44,42 @@ namespace DAL
             {
                 return "there are no products";
             }
-            foreach (Product p in DB)
+            foreach (Backend.Product p in DB)
             {
                 allProducts.Append(p.ToString());
                 allProducts.Append("\r\n");
             }
             return allProducts.ToString();
         }
-        public List<Product> getAllProductsList()
+        public List<Backend.Product> getAllProductsList()
         {
-            return DB;
+            List<Backend.Product> list = new List<Backend.Product>();
+            foreach (Backend.Product p in DB)
+            {
+                list.Add(p);
+            }
+            return list;
         }
 
         public void Remove(string id)
         {
-            foreach (Product p in DB)
+            foreach (Backend.Product p in DB)
             {
                 if (p.inventoryID == id)
                 {
                     DB.Remove(p);
-                    Encryption.encryption(DB, path);
-                    return;
+                    DAL.Product temp = Change.ProductBackendToDal(p);
+                    emartDataContext.Products.DeleteOnSubmit(temp);
+                    emartDataContext.SubmitChanges();
+                    return;          
                 }
+                
             }
         }
 
         public bool Contains(string id)
         {
-            foreach (Product p in DB)
+            foreach (Backend.Product p in DB)
             {
                 if (p.inventoryID == id) return true;
             }
@@ -82,7 +92,7 @@ namespace DAL
                 from i in DB
                 where i.inventoryID == inventoryId
                 select i;
-            foreach (Product p in stock)
+            foreach (Backend.Product p in stock)
             {
                 p.stockCount += int.Parse(addition);
                 if (p.stockCount > 0)
@@ -94,18 +104,18 @@ namespace DAL
             {
                 return "no product by this inventory id";
             }
-            Encryption.encryption(DB, path);
+            
             return "stock was added";
         }
 
-        public Product getProductsInStockByName(string name)
+        public Backend.Product getProductsInStockByName(string name)
         {
             StringBuilder product = new StringBuilder("");
             var pByName =
                 from i in DB
                 where i.name == name
                 select i;
-            foreach (Product p in pByName)
+            foreach (Backend.Product p in pByName)
             {
                 return p;
             }
@@ -119,7 +129,7 @@ namespace DAL
                 from i in DB
                 where i.inventoryID == id
                 select i;
-            foreach (Product p in pByID)
+            foreach (Backend.Product p in pByID)
             {
                 product.Append(p.ToString());
                 product.Append("\r\n");
@@ -139,7 +149,7 @@ namespace DAL
                 from i in DB
                 where i.departmentID == name
                 select i;
-            foreach (Product p in pByDepartment)
+            foreach (Backend.Product p in pByDepartment)
             {
                 product.Append(p.ToString());
                 product.Append("\r\n");
@@ -160,7 +170,7 @@ namespace DAL
                 from i in DB
                 where (i.price < double.Parse(max)) && (i.price > double.Parse(min))
                 select i;
-            foreach (Product p in pByPriceRange)
+            foreach (Backend.Product p in pByPriceRange)
             {
                 product.Append(p.ToString());
                 product.Append("\r\n");
@@ -172,7 +182,7 @@ namespace DAL
             return product.ToString();
         }
 
-        public bool updateProduct(string id, string name, Product.Type type, string departmentId, double price)
+        public bool updateProduct(string id, string name, Backend.Product.Type type, string departmentId, double price)
         {
             if (!Contains(id))
             {
@@ -182,20 +192,20 @@ namespace DAL
                from p in DB
                where (p.inventoryID == id)
                select p;
-            foreach (Product p in product)
+            foreach (Backend.Product p in product)
             {
                 p.name = name;
                 p.type = type;
                 p.departmentID = departmentId;
                 p.price = price;
             }
-            Encryption.encryption(DB, path);
+            
             return true;
         }
 
         public void RemoveDepartment(string id)
         {
-            foreach (Product p in DB)
+            foreach (Backend.Product p in DB)
             {
                 if (p.departmentID == id)
                 {
@@ -212,7 +222,7 @@ namespace DAL
                 from i in DB
                 where i.inventoryID == id
                 select i;
-            foreach (Product p in pById)
+            foreach (Backend.Product p in pById)
             {
                 product.Append(p.price);
                 product.Append("\r\n");
@@ -224,10 +234,10 @@ namespace DAL
             return product.ToString();
         }
 
-        public List<Product> getProductsListByType(Product.Type type)
+        public List<Backend.Product> getProductsListByType(Backend.Product.Type type)
         {
-            List < Product > list= new List<Product>();
-            foreach(Product p in DB)
+            List < Backend.Product > list= new List<Backend.Product>();
+            foreach(Backend.Product p in DB)
             {
                 if(p.type==type)
                 {

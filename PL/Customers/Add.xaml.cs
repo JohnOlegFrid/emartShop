@@ -54,7 +54,7 @@ namespace PL.Customers
                 BL_manager.BL_user.Add(addedNow);
                 MessageBox.Show("User name : " + userName + "\nPassword : "+pass, "User name and Password", MessageBoxButton.OK, MessageBoxImage.Information);
                 MainWindow mw = new MainWindow(BL_manager);
-                mw.Show();
+                
 
             
             }

@@ -16,6 +16,8 @@ using DAL;
 using Backend;
 using PL;
 using System.IO;
+using System.Data.Linq;
+
 namespace MainProg
 {
     /// <summary>
@@ -26,31 +28,30 @@ namespace MainProg
         public Main()
         {
             InitializeComponent();
+            EmartDataContext emartDataContext = new EmartDataContext();
             //data classes of the enities
-            
-            List<User> userDB = new List<User>();
-            Encryption.checkEncryption(userDB, @"user.bin");
-            userDB = (List<User>)Encryption.Decryption(@"user.bin");
+
+            List<DAL.User> userSqlDB = (from s in emartDataContext.Users select s).ToList();
+            List<Backend.User> userDB = Change.UserDalToBackendList(userSqlDB);
             User_Data user_data = new User_Data(userDB);
 
-            List<Club_Member> clubMemberDB = new List<Club_Member>();
-            Encryption.checkEncryption(clubMemberDB, @"clubMember.bin");
-            clubMemberDB = (List<Club_Member>)Encryption.Decryption(@"clubMember.bin");
-            ClubMember_Data clubMember_data = new ClubMember_Data(clubMemberDB);
 
-            List<Department> departmentDB = new List<Department>();
-            Encryption.checkEncryption(departmentDB, @"department.bin");
-            departmentDB = (List<Department>)Encryption.Decryption(@"department.bin");
+            List<DAL.Customer> clubMemberSqlDB = (from s in emartDataContext.Customers select s).ToList();
+            List<Club_Member> clubMemberDB = Change.CustomerDalToBackendList(clubMemberSqlDB);
+            ClubMember_Data clubMember_data = new ClubMember_Data(clubMemberDB);
+            
+          
+            List<DAL.Department> departmentSqlDB = (from s in emartDataContext.Departments select s).ToList();
+            List<Backend.Department> departmentDB = Change.DepartmentDalToBackendList(departmentSqlDB);
             Department_Data department_data = new Department_Data(departmentDB);
 
-            List<Employee> employeeDB = new List<Employee>();
-            Encryption.checkEncryption(employeeDB, @"employee.bin");
-            employeeDB = (List<Employee>)Encryption.Decryption(@"employee.bin");
-            Employee_Data employee_data = new Employee_Data(employeeDB);
+            List<DAL.Employee> EmployeeSqlDB = (from s in emartDataContext.Employees select s).ToList();
+            List<Backend.Employee> EmployeeDB = Change.EmployeeDalToBackendList(EmployeeSqlDB);
+            Employee_Data employee_data = new Employee_Data(EmployeeDB);
 
-            List<Product> productDB = new List<Product>();
-            Encryption.checkEncryption(productDB, @"product.bin");
-            productDB = (List<Product>)Encryption.Decryption(@"product.bin");
+
+            List<DAL.Product> productSqlDB = (from s in emartDataContext.Products select s).ToList();
+            List<Backend.Product> productDB = Change.ProductDalToBackendList(productSqlDB);
             Product_Data product_data = new Product_Data(productDB);
 
             List<Transaction> transactionDB = new List<Transaction>();
@@ -66,5 +67,7 @@ namespace MainProg
             mw.Show();
             this.Close();
         }
+
+       
     }
 }

@@ -31,7 +31,7 @@ namespace PL.Transactions
 
         private void AddClick(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new Products.AddProducts(BL_manager));
+            frame.Navigate(new Transactions.AddTransactions(BL_manager));
         }
 
         private void PrintClick(object sender, RoutedEventArgs e)

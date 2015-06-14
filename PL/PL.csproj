@@ -35,6 +35,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -148,6 +150,9 @@
     <Compile Include="GeneralMenuManager.xaml.cs">
       <DependentUpon>GeneralMenuManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Location.xaml.cs">
+      <DependentUpon>Location.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -206,8 +211,8 @@
     <Compile Include="Transactions\Print.xaml.cs">
       <DependentUpon>Print.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Transactions\ProductBar.xaml.cs">
-      <DependentUpon>ProductBar.xaml</DependentUpon>
+    <Compile Include="Transactions\TransactionsBar.xaml.cs">
+      <DependentUpon>TransactionsBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Transactions\Remove.xaml.cs">
       <DependentUpon>Remove.xaml</DependentUpon>
@@ -385,6 +390,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Location.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -445,7 +454,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Transactions\ProductBar.xaml">
+    <Page Include="Transactions\TransactionsBar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -492,8 +501,9 @@
   <ItemGroup>
     <Resource Include="SmartShoppingLOGO.png" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="cart.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

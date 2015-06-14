@@ -29,7 +29,8 @@ namespace BL
         {
             if (!exist(id))
             {
-                itsDAL.Add(id, first, last, gender, departmentID, double.Parse(salary), supervisorID, type);
+                Backend.Employee e = new Backend.Employee(id, first, last, gender, departmentID, double.Parse(salary), supervisorID, type);
+                itsDAL.Add(e);
                 return true;
             }
             return false;
@@ -57,7 +58,7 @@ namespace BL
             return itsDAL.getAllEmployeesString();
         }
 
-        public List<Employee> getAllEmployees()
+        public List<Backend.Employee> getAllEmployees()
         {
             return itsDAL.getAllEmployees();
         }
@@ -72,7 +73,7 @@ namespace BL
             return itsDAL.getEmployeeByIDString(id);
         }
 
-        public List<Employee> getEmployeeByID(string id)
+        public List<Backend.Employee> getEmployeeByID(string id)
         {
             return itsDAL.getEmployeeByID(id);
         }
@@ -87,8 +88,8 @@ namespace BL
         {
             return itsDAL.getEmployeesByFirstNameString(name);
         }
-        
-        public List<Employee> getEmployeesByFirstName(string name)
+
+        public List<Backend.Employee> getEmployeesByFirstName(string name)
         {
             return itsDAL.getEmployeesByFirstName(name);
         }
@@ -98,7 +99,7 @@ namespace BL
             return itsDAL.getEmployeesByLastNameString(name);
         }
 
-        public List<Employee> getEmployeesByLastName(string name)
+        public List<Backend.Employee> getEmployeesByLastName(string name)
         {
             return itsDAL.getEmployeesByLastName(name);
         }

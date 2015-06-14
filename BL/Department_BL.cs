@@ -43,7 +43,9 @@ namespace BL
         public string Add(string name)
         {
             string id = generateID();
-            return itsDAL.Add(name, id);
+            Backend.Department temp = new Backend.Department(name, id);
+            itsDAL.Add(temp);
+            return id;
         }
 
         //removes a department
@@ -71,7 +73,7 @@ namespace BL
             return itsDAL.getAllDepartmentString();
         }
 
-        public List<Department> getAllDepartments()
+        public List<Backend.Department> getAllDepartments()
         {
             return itsDAL.getAllDepartment();
         }

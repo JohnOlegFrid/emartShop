@@ -23,9 +23,10 @@
                     <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="ID number"/>
                     <TextBox Name="IDtxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="55,93,0,0" />
                     <TextBlock HorizontalAlignment="Left" Height="19" Margin="285,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="Gender"/>
-                    <ComboBox Name="gendertxt" HorizontalAlignment="Left" Height="25" Width="90" Margin="285,93,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White" >
+                    <ComboBox SelectedIndex="0" Name="gendertxt" HorizontalAlignment="Left" Height="25" Width="90" Margin="285,93,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White" >
                         <ComboBoxItem>Man</ComboBoxItem>
                         <ComboBoxItem>Women</ComboBoxItem>
+                        
                     </ComboBox>
                     <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"><Run FlowDirection="RightToLeft" Text="Create your password"/></TextBlock>
                     <TextBox Name="passtxt"  HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="55,152,0,0"/>

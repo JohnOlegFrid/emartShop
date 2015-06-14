@@ -32,7 +32,7 @@
 
             <Grid Height="400" Width="520">
                 <ListBox x:Name="ProductView" Height="180" Width="230" PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonDown" Loaded="loadProductView" Margin="11,94,232,95" />
-                <TextBlock x:Name="amount" Height="25"  Width="100"></TextBlock>
+                <TextBlock x:Name="amount" Height="25"  Width="100" Margin="164,294,256,80" Background="#FFEEEEEE"></TextBlock>
                 <Button x:Name="increase" Width="30" Height="30" Content="+" Click="increase_Click" Margin="39,279,376,60" />
                 <Button x:Name="decrease" Content="-" Width="30" Height="30" Click="decrease_Click" Margin="36,294,454,76" RenderTransformOrigin="0.533,3.2" ></Button>
 

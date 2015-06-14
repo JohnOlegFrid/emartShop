@@ -26,7 +26,7 @@ namespace PL.Transactions
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
-            List<Transaction> list = BL_manager.BL_transaction.getAllTransactionsList();
+            List<Backend.Transaction> list = BL_manager.BL_transaction.getAllTransactionsList();
             Table table = new Table(list);
             panel.Children.Add(table);
         }
@@ -34,7 +34,7 @@ namespace PL.Transactions
         private void refresh_Click(object sender, RoutedEventArgs e)
         {
             panel.Children.Clear();
-            List<Product> list = BL_manager.BL_product.getAllProductsList();
+            List<Backend.Transaction> list = BL_manager.BL_transaction.getAllTransactionsList();
             Table table = new Table(list);
             panel.Children.Add(table);
         }

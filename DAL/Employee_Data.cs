@@ -7,42 +7,47 @@ using Backend;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using System.Data.Linq;
+
 namespace DAL
 {
     //database for employee, recives information from bl and updates/returns information from the database 
     [Serializable]
     public class Employee_Data
     {
-        public List<Employee> DB;
-        public string path = @"employee.bin";
-
+        public List<Backend.Employee> DB;
+        public EmartDataContext emartDataContext;
+        
         public Employee_Data()
         {
-            DB = new List<Employee>();
-            DB.Add(new Employee("admin", "admin", "admin", "Man", "0", 0.0, "0", "Admin"));
+            DB = new List<Backend.Employee>();
+            DB.Add(new Backend.Employee("admin", "admin", "admin", "Man", "0", 0.0, "0", "Admin"));
+            emartDataContext = new EmartDataContext();
         }
 
-        public Employee_Data(List<Employee> EDB)
+        public Employee_Data(List<Backend.Employee> EDB)
         {
             DB = EDB;
             if (!Contains("admin"))
-                DB.Add(new Employee("admin", "admin", "admin", "Man", "0", 0.0, "0", "Admin"));
-            Encryption.encryption(DB, path);
+                DB.Add(new Backend.Employee("admin", "admin", "admin", "Man", "0", 0.0, "0", "Admin"));
+            emartDataContext = new EmartDataContext();
         }
 
         public bool Contains(string id)
         {
-            foreach (Employee e in DB)
+            foreach (Backend.Employee e in DB)
             {
                 if (e.ID == id) return true;
             }
             return false;
         }
 
-        public void Add(string id, string first, string last, string gender, string departmentID, double salary, string supervisorID, string type)
+        public void Add(Backend.Employee e)
         {
-            DB.Add(new Employee(id, first, last, gender, departmentID, salary, supervisorID, type));
-            Encryption.encryption(DB, path);
+            DB.Add(e);
+            DAL.Employee temp= Change.EmployeeBackendToDal(e);
+            emartDataContext.Employees.InsertOnSubmit(temp);
+            emartDataContext.SubmitChanges();
         }
 
         public void Remove(string id)
@@ -51,10 +56,12 @@ namespace DAL
                 from e in DB
                 where e.ID == id
                 select e;
-            foreach (Employee e in employee)
+            foreach (Backend.Employee e in employee)
             {
                 DB.Remove(e);
-                Encryption.encryption(DB, path);
+                DAL.Employee temp = Change.EmployeeBackendToDal(e);
+                emartDataContext.Employees.DeleteOnSubmit(temp);
+                emartDataContext.SubmitChanges();
                 return;
             }
         }
@@ -71,7 +78,7 @@ namespace DAL
                 EmployeeByID.Append("no employees by this id ");
                 EmployeeByID.Append(id);
             }
-            foreach (Employee e in employee)
+            foreach (Backend.Employee e in employee)
             {
                 EmployeeByID.Append(e.ToString());
                 EmployeeByID.Append("\r\n");
@@ -79,15 +86,15 @@ namespace DAL
             return EmployeeByID.ToString();
         }
 
-        public List<Employee> getEmployeeByID(string id)
+        public List<Backend.Employee> getEmployeeByID(string id)
         {
-            List<Employee> list=new List<Employee>();
+            List<Backend.Employee> list = new List<Backend.Employee>();
             var employee =
                 from i in DB
                 where i.ID == id
                 select i;
-           
-            foreach (Employee e in employee) list.Add(e);
+
+            foreach (Backend.Employee e in employee) list.Add(e);
             
             return list;
         }
@@ -99,7 +106,7 @@ namespace DAL
             {
                 return "there are no employees";
             }
-            foreach (Employee e in DB)
+            foreach (Backend.Employee e in DB)
             {
                 allEmployees.Append(e.ToString());
                 allEmployees.Append("\r\n");
@@ -107,9 +114,14 @@ namespace DAL
             return allEmployees.ToString();
         }
 
-        public List<Employee> getAllEmployees()
+        public List<Backend.Employee> getAllEmployees()
         {
-            return DB;
+            List<Backend.Employee> list = new List<Backend.Employee>();
+            foreach (Backend.Employee e in DB)
+            {
+                list.Add(e);
+            }
+            return list;
         }
 
         public string getSalaryByID(string id)
@@ -124,7 +136,7 @@ namespace DAL
                 SalaryByID.Append("no employees by this id ");
                 SalaryByID.Append(id);
             }
-            foreach (Employee e in salary)
+            foreach (Backend.Employee e in salary)
             {
                 SalaryByID.Append(e.salary);
                 SalaryByID.Append("\r\n");
@@ -144,7 +156,7 @@ namespace DAL
                 SupervisorByID.Append("no employees by this id ");
                 SupervisorByID.Append(id);
             }
-            foreach (Employee e in supervisor)
+            foreach (Backend.Employee e in supervisor)
             {
                 SupervisorByID.Append(e.supervisorID);
                 SupervisorByID.Append("\r\n");
@@ -164,7 +176,7 @@ namespace DAL
                 EmployeeByName.Append("no employees by this first name ");
                 EmployeeByName.Append(name);
             }
-            foreach (Employee e in firstName)
+            foreach (Backend.Employee e in firstName)
             {
                 EmployeeByName.Append(e.ToString());
                 EmployeeByName.Append("\r\n");
@@ -172,15 +184,15 @@ namespace DAL
             return EmployeeByName.ToString();
         }
 
-        public List<Employee> getEmployeesByFirstName(string name)
+        public List<Backend.Employee> getEmployeesByFirstName(string name)
         {
-            List<Employee> list = new List<Employee>();
+            List<Backend.Employee> list = new List<Backend.Employee>();
             var firstName =
                 from i in DB
                 where i.firstName == name
                 select i;
-            
-            foreach (Employee e in firstName)
+
+            foreach (Backend.Employee e in firstName)
             {
                 list.Add(e);
             }
@@ -199,7 +211,7 @@ namespace DAL
                 EmployeeByName.Append("no employees by this last name ");
                 EmployeeByName.Append(name);
             }
-            foreach (Employee e in lastName)
+            foreach (Backend.Employee e in lastName)
             {
                 EmployeeByName.Append(e.ToString());
                 EmployeeByName.Append("\r\n");
@@ -208,15 +220,15 @@ namespace DAL
         }
 
 
-        public List<Employee> getEmployeesByLastName(string name)
+        public List<Backend.Employee> getEmployeesByLastName(string name)
         {
-            List<Employee> list = new List<Employee>();
+            List<Backend.Employee> list = new List<Backend.Employee>();
             var LastName =
                 from i in DB
                 where i.lastName == name
                 select i;
 
-            foreach (Employee e in LastName)
+            foreach (Backend.Employee e in LastName)
             {
                 list.Add(e);
             }
@@ -237,7 +249,7 @@ namespace DAL
                 EmployeeByName.Append(" ");
                 EmployeeByName.Append(lname);
             }
-            foreach (Employee e in fullName)
+            foreach (Backend.Employee e in fullName)
             {
                 EmployeeByName.Append(e.ToString());
                 EmployeeByName.Append("\r\n");
@@ -255,7 +267,7 @@ namespace DAL
                from e in DB
                where (e.ID == id)
                select e;
-            foreach (Employee e in employee)
+            foreach (Backend.Employee e in employee)
             {
                 e.firstName = first;
                 e.lastName = last;
@@ -264,13 +276,21 @@ namespace DAL
                 e.salary = double.Parse(salary);
                 e.supervisorID = supervisorID;
                 e.type = type;
+
+                DAL.Employee temp = Change.EmployeeBackendToDal(e);
+                temp.firstName = first;
+                temp.lastName = last;
+                temp.gender = gender;
+                temp.departmentID = departmentID;
+                temp.salary = double.Parse(salary);
+                temp.supervisorID = supervisorID;
+                temp.type = type;
             }
-            Encryption.encryption(DB, path);
-            return true;
+                        return true;
         }
         public void RemoveDepartment(string id)
         {
-            foreach (Employee e in DB)
+            foreach (Backend.Employee e in DB)
             {
                 if (e.departmentID == id)
                 {
@@ -284,7 +304,7 @@ namespace DAL
         {
             
            
-            foreach (Employee e in DB)
+            foreach (Backend.Employee e in DB)
             {
                 if (e.ID == id)
                 {

@@ -64,6 +64,10 @@ namespace BL
         {
             return itsDAL.getAllTransactions();
         }
+        public List<Transaction> getAllTransactionsList()
+        {
+            return itsDAL.DB;
+        }
 
         public bool updateTransaction(string transactionID, string dateTime, bool isAReturn, string paymentMethod)
         {

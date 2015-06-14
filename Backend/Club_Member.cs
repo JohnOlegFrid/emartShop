@@ -34,6 +34,12 @@ namespace Backend
             set { _dateOfBirth = value; }
         }
 
+        public String type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
+
         public Club_Member()
         {
         }

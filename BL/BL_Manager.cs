@@ -125,8 +125,8 @@ namespace BL
             }
             else if (BL_employee.exist(id))
             {
-                List<Employee> list = BL_employee.getAllEmployees();
-                foreach (Employee e in list)
+                List<Backend.Employee> list = BL_employee.getAllEmployees();
+                foreach (Backend.Employee e in list)
                 {
                     if (e.ID == id) return e;
                 }

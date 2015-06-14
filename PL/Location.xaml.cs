@@ -12,22 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BL;
-using Backend;
 
-namespace PL.Transactions
+namespace PL
 {
     /// <summary>
-    /// Interaction logic for Table.xaml
+    /// Interaction logic for Location.xaml
     /// </summary>
-    public partial class Table : UserControl
+    public partial class Location : UserControl
     {
-        public Table(List<Backend.Transaction> list)
+        public Location()
         {
             InitializeComponent();
-           
-            dataGrid.ItemsSource = list;
+        }
 
+        private void webBrowser_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.webBrowser.Navigate("https://www.google.co.il/maps/@31.259262,34.7993325,15z?hl=en");
         }
     }
 }

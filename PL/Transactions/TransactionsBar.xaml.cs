@@ -63,7 +63,7 @@ namespace PL.Transactions
         private void OK_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            Print p = new Print(BL_manager);
+            Transactions.Print p = new Transactions.Print(BL_manager);
             p.Show();
         }
 
