@@ -1,6 +1,7 @@
 ﻿<Window x:Class="PL.GeneralMenu"
        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF" 
         Title="GeneralMenu" Height="530" Width="800" WindowStyle="None" >
     <Window.Resources>
         <Image x:Key="myImage" Source="SmartShoppingLOGO.png"/>

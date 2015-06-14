@@ -141,6 +141,8 @@ namespace DAL
             }
             return ClubMemberByName.ToString();
         }
+
+
         public string getClubMemberByLastName(string name)
         {
             StringBuilder ClubMemberByName = new StringBuilder("");
@@ -160,6 +162,8 @@ namespace DAL
             }
             return ClubMemberByName.ToString();
         }
+
+
         public string getClubMemberByFullName(string fname, string lname)
         {
             StringBuilder ClubMemberByName = new StringBuilder("");
@@ -179,6 +183,7 @@ namespace DAL
             }
             return ClubMemberByName.ToString();
         }
+
 
         public string getClubMemberByID(string id)
         {
@@ -216,24 +221,36 @@ namespace DAL
             }
             return transactionHistory.ToString();
         }
-        public bool updateClubMember(string id, string firstName, string lastName, string gender, string birthDay)
+        public bool updateClubMember(Club_Member toUpdate)
         {
-            if (!Contains(id))
+            if (!Contains(toUpdate.ID))
             {
                 return false;
             }
-            var clubMember =
-               from c in DB
-               where (c.ID == id)
-               select c;
-            foreach (Club_Member c in clubMember)
-            {
-                c.firstName = firstName;
-                c.lastName = lastName;
-                c.gender = gender;
-                c.dateOfBirth = birthDay;
-            }
             
+            foreach (Club_Member c in DB)
+            {
+                if (c.ID == toUpdate.ID)
+                {
+                    c.firstName = toUpdate.firstName;
+                    c.lastName = toUpdate.lastName;
+                    c.gender = toUpdate.gender;
+                    c.dateOfBirth = toUpdate.dateOfBirth;
+                }
+            }
+                
+            foreach(Customer temp in sqlDB.Customers)
+            {
+                if (temp.ID == toUpdate.ID)
+                {
+                   temp.firstName = toUpdate.firstName;
+                   temp.lastName = toUpdate.lastName;     
+                   temp.gender = toUpdate.gender;    
+                   temp.dateOfBirth = toUpdate.dateOfBirth;
+                   sqlDB.SubmitChanges();
+                   return true;     
+                }
+            }
             return true;
         }
 

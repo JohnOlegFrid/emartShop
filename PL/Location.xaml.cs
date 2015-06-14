@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Globalization;
+using Microsoft.Maps.MapControl.WPF;
+using Microsoft.Maps.MapControl.WPF.Design;
+
 
 namespace PL
 {
@@ -20,14 +24,21 @@ namespace PL
     /// </summary>
     public partial class Location : UserControl
     {
+        LocationConverter locConverter = new LocationConverter();
         public Location()
         {
             InitializeComponent();
+            String cord = "31.264372,34.802995,0.000";
+            Microsoft.Maps.MapControl.WPF.Location center = (Microsoft.Maps.MapControl.WPF.Location)(locConverter.ConvertFrom(cord));
+            double zoom = 17.0;
+            myMap.SetView(center, zoom);
+            Pushpin pin = new Pushpin();
+            pin.Location = center;
+            myMap.Children.Add(pin);
         }
 
-        private void webBrowser_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.webBrowser.Navigate("https://www.google.co.il/maps/@31.259262,34.7993325,15z?hl=en");
-        }
+       
+
+       
     }
 }
