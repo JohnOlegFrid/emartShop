@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Emart">
+  <DataContextMoniker Name="/EmartDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2ee1fe67-ac5b-44b7-8dcf-3b7d12abc25f" absoluteBounds="6.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/EmartDataContext/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3c23c29b-f501-43dc-8622-dfd775fb94f8" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1286c9cd-f015-4361-9871-429e4cc8f1e2" absoluteBounds="0.75, 3.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/EmartDataContext/Department" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ae49e78-a32a-4ce2-8bcd-1b0a45eed9fa" absoluteBounds="0.765, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34f056c1-29d3-4b1e-b844-ce6a1691a155" absoluteBounds="3.5, 1.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/EmartDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db28db0a-dec1-4ec6-8af3-825ae88b6132" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a14153e2-629c-4ac6-9471-759a73526b40" absoluteBounds="3.5, 4.25, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/EmartDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f9bfb29-8f90-4dbf-8931-6384b0b80345" absoluteBounds="3.515, 4.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c31b8ff5-8cc4-4bb9-bf4f-d638ee4927ce" absoluteBounds="6.75, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/EmartDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55d4814d-6803-4f1d-9a0d-f550159c271c" absoluteBounds="6.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 3.25); (1.75 : 2.1874995); (3.5 : 2.1874995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmartDataContext/Department/Department_Employee" />
+      <nodes>
+        <classShapeMoniker Id="1286c9cd-f015-4361-9871-429e4cc8f1e2" />
+        <classShapeMoniker Id="34f056c1-29d3-4b1e-b844-ce6a1691a155" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 4.44399251302083); (1.75 : 5.52089730989583); (3.5 : 5.52089730989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmartDataContext/Department/Department_Product" />
+      <nodes>
+        <classShapeMoniker Id="1286c9cd-f015-4361-9871-429e4cc8f1e2" />
+        <classShapeMoniker Id="a14153e2-629c-4ac6-9471-759a73526b40" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
