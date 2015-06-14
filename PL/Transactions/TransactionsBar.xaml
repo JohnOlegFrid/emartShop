@@ -1,0 +1,15 @@
+﻿<Window x:Class="PL.Transactions.TransactionsBar"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Please wait..." Height="187.632" Width="398.684"
+        ContentRendered="Window_ContentRendered">
+
+    <Grid Margin="10,10,2,5">
+        <ProgressBar Minimum="0" Maximum="100" Value="0" Name="pbStatus" Margin="0,44,0,52" />
+        <TextBlock Text="{Binding ElementName=pbStatus, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Right" VerticalAlignment="Center" RenderTransformOrigin="0.5,-0.875" Margin="0,59,180,67" />
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="81,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" FontSize="18" TextAlignment="Center"><Run Text="Loading ..."/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <Button Background="White" BorderBrush="#FF00B9FF" Content="OK" Click="OK_Click" Margin="145,104,148,10"/>
+
+    </Grid>
+</Window>
+

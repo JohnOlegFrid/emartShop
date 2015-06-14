@@ -15,17 +15,18 @@ namespace DAL
     public class ClubMember_Data
     {
         public List<Club_Member> DB;
-        public string path = @"clubMember.bin";
+        EmartDataContext sqlDB;
 
         public ClubMember_Data()
         {
             DB = new List<Club_Member>();
+            sqlDB = new EmartDataContext();
         }
 
         public ClubMember_Data(List<Club_Member> CMDB)
         {
             DB = CMDB;
-            Encryption.encryption(DB, path);
+            sqlDB = new EmartDataContext();
         }
 
 
@@ -33,7 +34,9 @@ namespace DAL
         {
             Club_Member clubMember = (Club_Member)cm;
             DB.Add(clubMember);
-            Encryption.encryption(DB, path);
+            DAL.Customer c = Change.CustomerBackendToDal(clubMember);
+            sqlDB.Customers.InsertOnSubmit(c);
+            sqlDB.SubmitChanges();
         }
 
         public void Remove(string id)
@@ -45,7 +48,9 @@ namespace DAL
             foreach (Club_Member c in clubMember)
             {
                 DB.Remove(c);
-                Encryption.encryption(DB, path);
+                DAL.Customer cus = Change.CustomerBackendToDal(c);
+                sqlDB.Customers.DeleteOnSubmit(cus);
+                sqlDB.SubmitChanges();
                 return;
             }
         }
@@ -112,7 +117,9 @@ namespace DAL
 
         public List<Club_Member> getAllClubMembers()
         {
-            return DB;
+            List<Club_Member> list = new List<Club_Member>();
+            foreach (Club_Member c in DB) list.Add(c);
+            return list;
         }
 
         public string getClubMemberByFirstName(string name)
@@ -226,7 +233,7 @@ namespace DAL
                 c.gender = gender;
                 c.dateOfBirth = birthDay;
             }
-            Encryption.encryption(DB, path);
+            
             return true;
         }
 

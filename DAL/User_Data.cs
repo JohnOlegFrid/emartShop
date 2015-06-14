@@ -12,50 +12,79 @@ namespace DAL
     [Serializable]
     public class User_Data : IDAL
     {
-        public List<User> DB;
-        public string path = @"user.bin";
+        public List<Backend.User> DB;
+        public EmartDataContext sqlDB;
 
         public User_Data()
         {
-            DB = new List<User>();
-            DB.Add(new User("admin", "admin", "admin"));
-            Encryption.encryption(DB, path);
+            DB = new List<Backend.User>();
+            DB.Add(new Backend.User("admin", "admin", "admin"));
+            sqlDB = new EmartDataContext();
         }
 
-        public User_Data(List<User> UDB)
+        public User_Data(List<Backend.User> UDB)
         {
             DB = UDB;
-            User admin = new User("admin", "admin", "admin");
+            Backend.User admin = new Backend.User("admin", "admin", "admin");
             if (!Contains(admin))
                 DB.Add(admin);
-            Encryption.encryption(DB, path);
+            sqlDB = new EmartDataContext();
         }
 
 
         public void Add(Object us)
         {
-            User user = (User)us;
+            Backend.User user = (Backend.User)us;
             DB.Add(user);
-            Encryption.encryption(DB, path);
+            DAL.User toAdd = Change.UserBackendToDal(user);
+            sqlDB.Users.InsertOnSubmit(toAdd);
+            sqlDB.SubmitChanges();
         }
 
         public void Remove(Object us)
         {
-            User user = (User)us;
-            foreach (User u in DB)
+            Backend.User user = (Backend.User)us;
+            foreach (Backend.User u in DB)
             {
                 if ((u.userName).CompareTo((user.userName)) == 0 && (u.password).CompareTo((user.password)) == 0)
                 {
                     DB.Remove(u);
-                    Encryption.encryption(DB, path);
+                    DAL.User toDelete = Change.UserBackendToDal(user);
+                    sqlDB.Users.DeleteOnSubmit(toDelete);
+                    sqlDB.SubmitChanges();
                     return;
                 }
             }
         }
 
-        public bool Contains(User user)
+        public Boolean Update(Backend.User toUpdate,String newPass)
         {
-            foreach (User u in DB)
+            Boolean ans1 = false; 
+            Boolean ans2 = false;
+            foreach (Backend.User u in DB)
+            {
+                if (u.userName==toUpdate.userName && u.password==toUpdate.password)
+                {
+                    u.password = newPass;
+                    ans1 = true;
+                }
+            }
+            foreach (DAL.User u in sqlDB.Users)
+            {
+                if (u.userName == toUpdate.userName && u.password == toUpdate.password)
+                {
+                    u.password = newPass;
+                    sqlDB.SubmitChanges();
+                    ans2 = true;
+                }
+            }
+            return ans1 && ans2;
+        }
+
+
+        public bool Contains(Backend.User user)
+        {
+            foreach (Backend.User u in DB)
             {
                 if ((u.userName).CompareTo(user.userName) == 0 && (u.password).CompareTo((user.password)) == 0) return true;
             }
@@ -64,22 +93,28 @@ namespace DAL
 
         public bool isUserNameTaken(string userName)
         {
-            foreach (User u in DB)
+            foreach (Backend.User u in DB)
             {
                 if ((u.userName).CompareTo(userName) == 0) return true;
             }
             return false;
         }
-        public List<User> getAllUsers()
+        
+        public List<Backend.User> getAllUsersList()
         {
-            return DB;
+            List<Backend.User> list = new List<Backend.User>();
+            foreach (Backend.User u in DB)
+            {
+                list.Add(u);
+            }
+            return list;
         }
 
         public string getUserByID(string id)
         {
             StringBuilder SupervisorByID = new StringBuilder("");
 
-            foreach (User e in DB)
+            foreach (Backend.User e in DB)
             {
                 if (e.ID == id)
                 {
@@ -92,8 +127,8 @@ namespace DAL
 
         public string getIDByUser (string user)
         {
-            
-            foreach (User e in DB)
+
+            foreach (Backend.User e in DB)
             {
                 if (e.userName.CompareTo(user)==0)
                 {
@@ -103,11 +138,6 @@ namespace DAL
 
             }
             return "";
-        }
-
-        public List<User> getAllUsersList()
-        {
-            return DB;
         }
 
     }

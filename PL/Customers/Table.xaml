@@ -6,6 +6,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="600">
     <Grid>
-        <DataGrid Name="dataGrid" BorderBrush="#FF00B9FF" HorizontalGridLinesBrush="#FF00B9FF" VerticalGridLinesBrush="#FF00B9FF"/> 
+        <DataGrid Name="dataGrid"  AutoGenerateColumns="False" BorderBrush="#FF00B9FF" HorizontalGridLinesBrush="#FF00B9FF" VerticalGridLinesBrush="#FF00B9FF">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding Path=firstName}"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Path=lastName}"/>
+                <DataGridTextColumn Header="Gender" Binding="{Binding Path=gender}"/>
+                <DataGridTextColumn Header="Date of Birth" Binding="{Binding Path=dateOfBirth}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

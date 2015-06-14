@@ -44,7 +44,7 @@ namespace PL.Products
         }
         private void SearchClick(object sender, RoutedEventArgs e)
         {
-
+            frame.Navigate(new Search(BL_manager));
         }
         private void RemoveClick(object sender, RoutedEventArgs e)
         {

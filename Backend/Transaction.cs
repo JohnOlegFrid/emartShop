@@ -16,6 +16,7 @@ namespace Backend
         private bool _isAReturn;
         private Receipt _receipt;
         private PaymentMethod _paymentMethod;
+        private String CustomerID;
 
         public string transactionID
         {

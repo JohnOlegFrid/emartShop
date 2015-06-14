@@ -1,7 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\nunit.framework.dll" total="0" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-06-04" time="14:13:12">
+<test-results name="C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\nUnit.dll" total="7" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-06-04" time="16:38:44">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="OLEJKA-PC" user="Olejka" user-domain="Olejka-PC" />
   <culture-info current-culture="he-IL" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\nunit.framework.dll" executed="True" result="Inconclusive" success="False" time="0.068" asserts="0" />
+  <test-suite type="Assembly" name="C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\nUnit.dll" executed="True" result="Success" success="True" time="0.310" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="nUnit" executed="True" result="Success" success="True" time="0.283" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="Tests" executed="True" result="Success" success="True" time="0.280" asserts="0">
+            <results>
+              <test-case name="nUnit.Tests.checkClubMember" executed="True" result="Success" success="True" time="0.140" asserts="0" />
+              <test-case name="nUnit.Tests.checkDepartment" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+              <test-case name="nUnit.Tests.checkDepartment2" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+              <test-case name="nUnit.Tests.checkExistsProduct" executed="True" result="Success" success="True" time="0.009" asserts="0" />
+              <test-case name="nUnit.Tests.checkExistsUser" executed="True" result="Success" success="True" time="0.005" asserts="0" />
+              <test-case name="nUnit.Tests.checkExistsUser2" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+              <test-case name="nUnit.Tests.checkUpdateCM" executed="True" result="Success" success="True" time="0.027" asserts="0" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
 </test-results>

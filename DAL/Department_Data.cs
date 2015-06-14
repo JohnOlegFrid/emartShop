@@ -14,25 +14,27 @@ namespace DAL
     [Serializable]
     public class Department_Data
     {
-        public List<Department> DB;
-        public string path = @"department.bin";
+        public List<Backend.Department> DB;
+        public EmartDataContext emartDataContext;
 
         public Department_Data()
         {
-            DB = new List<Department>();
-            DB.Add(new Department("defult", "0"));//defult department, only in use when removing departmetnt in exsisting object
+            DB = new List<Backend.Department>();
+            DB.Add(new Backend.Department("defult", "0"));//defult department, only in use when removing departmetnt in exsisting object
+            emartDataContext = new EmartDataContext();
         }
 
-        public Department_Data(List<Department> DDB)
+        public Department_Data(List<Backend.Department> DDB)
         {
             DB = DDB;
-            Encryption.encryption(DB, path);
+            emartDataContext = new EmartDataContext();
+
         }
 
 
         public bool contains(string id)
         {
-            foreach (Department d in DB)
+            foreach (Backend.Department d in DB)
             {
                 if ((d.ID) == id) return true;
             }
@@ -41,40 +43,45 @@ namespace DAL
 
         public bool isNameTaken(string name)
         {
-            foreach (Department d in DB)
+            foreach (Backend.Department d in DB)
             {
                 if ((d.name) == name) return true;
             }
             return false;
         }
 
-        public string Add(string name, string id)
+        public void Add(Backend.Department d)
         {
-            DB.Add(new Department(name, id));
-            Encryption.encryption(DB, path);
-            return id;
+            DB.Add(d);
+            DAL.Department temp = Change.DepartmentBackendToDal(d);
+            emartDataContext.Departments.InsertOnSubmit(temp);
+            emartDataContext.SubmitChanges();
         }
 
         public void Remove(string id)
         {
-            foreach (Department d in DB)
+            foreach (Backend.Department d in DB)
             {
                 if (d.ID == id)
                 {
                     DB.Remove(d);
-                    Encryption.encryption(DB, path);
+                    DAL.Department temp = Change.DepartmentBackendToDal(d);
+                    emartDataContext.Departments.DeleteOnSubmit(temp);
+                    emartDataContext.SubmitChanges();
                     return;
                 }
             }
         }
         public void RemoveByName(String name)
         {
-            foreach (Department d in DB)
+            foreach (Backend.Department d in DB)
             {
                 if (d.name == name)
                 {
                     DB.Remove(d);
-                    Encryption.encryption(DB, path);
+                    DAL.Department temp=Change.DepartmentBackendToDal(d);
+                    emartDataContext.Departments.DeleteOnSubmit(temp);
+                    emartDataContext.SubmitChanges();
                     return;
                 }
             }
@@ -87,7 +94,7 @@ namespace DAL
                 from i in DB
                 where (i.name).CompareTo(Name) == 0
                 select i;
-            foreach (Department d in dByName)
+            foreach (Backend.Department d in dByName)
             {
                 department.Append(d.ToString());
                 department.Append("\r\n");
@@ -106,7 +113,7 @@ namespace DAL
                 from i in DB
                 where i.ID == id
                 select i;
-            foreach (Department d in dByID)
+            foreach (Backend.Department d in dByID)
             {
                 department.Append(d.ToString());
                 department.Append("\r\n");
@@ -124,7 +131,7 @@ namespace DAL
             {
                 return "there are no departments";
             }
-            foreach (Department d in DB)
+            foreach (Backend.Department d in DB)
             {
                 AllDepartment.Append(d.ToString());
                 AllDepartment.Append("\r\n");
@@ -132,10 +139,10 @@ namespace DAL
             return AllDepartment.ToString();
         }
 
-        public List<Department> getAllDepartment()
+        public List<Backend.Department> getAllDepartment()
         {
-            List<Department> list = new List<Department>();
-            foreach (Department d in DB)
+            List<Backend.Department> list = new List<Backend.Department>();
+            foreach (Backend.Department d in DB)
             {
                 list.Add(d);
             }

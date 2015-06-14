@@ -19,13 +19,13 @@ namespace BL
         }
 
         //checks if user(password&username) exsists in the database
-        public bool exist(User user)
+        public bool exist(Backend.User user)
         {
             return itsDAL.Contains(user);
         }
 
         //adds a user to database
-        public void Add(User user)
+        public void Add(Backend.User user)
         {
             if (!exist(user))
             {
@@ -35,21 +35,13 @@ namespace BL
 
         public Boolean Update(string name,String currPass,String newPass)
         {
-            List<User> list = itsDAL.getAllUsersList();
-            foreach (User u in list)
-            {
-                if (u.userName == name && u.password == currPass)
-                {
-                    u.password = newPass;
-                    itsDAL.DB = list;
-                    return true;
-                }
-            }
-            return false;
+            Backend.User u = new Backend.User(name, currPass);
+            return itsDAL.Update(u,newPass);
+          
         }
 
         //removes a user
-        public void Remove(User user)
+        public void Remove(Backend.User user)
         {
             if (exist(user))
             {
@@ -59,10 +51,10 @@ namespace BL
 
         public Boolean RemoveByUserName(String name)
         {
-            List<User> list=itsDAL.getAllUsersList();
+            List<Backend.User> list = itsDAL.getAllUsersList();
             if (isUserNameTaken(name))
             {
-                foreach (User u in list)
+                foreach (Backend.User u in list)
                 {
                     if (u.userName == name) itsDAL.Remove(u);
                     return true;
@@ -77,9 +69,9 @@ namespace BL
             return itsDAL.isUserNameTaken(userName);
         }
 
-        public List<User> getAllUsers()
+        public List<Backend.User> getAllUsersList()
         {
-            return itsDAL.getAllUsers();
+            return itsDAL.getAllUsersList();
         }
 
         public string getUserByID (string ID) 
@@ -92,10 +84,7 @@ namespace BL
             return itsDAL.getIDByUser(user);
         }
 
-        public List<User> getAllUsersList()
-        {
-            return itsDAL.getAllUsersList();
-        }
+        
     }
 }
 

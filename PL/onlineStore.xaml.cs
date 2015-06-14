@@ -47,6 +47,7 @@ namespace PL
         private void loadProductView(object sender, RoutedEventArgs e)
         {
             List<Product> selectedProducts;
+            //BL_manager.updatebestSeller();
             if(types.SelectedValue=="All")
             {
                 selectedProducts = BL_manager.BL_product.getAllProductsList();
@@ -55,9 +56,10 @@ namespace PL
             {
                 selectedProducts = BL_manager.BL_product.getProductsListByType((Product.Type)Enum.Parse(typeof(Product.Type), (string)types.SelectedValue));
             }
-            ObservableCollection<Product> myCollection = new ObservableCollection<Product>(selectedProducts);
-            //BL_manager.updatebestSeller();
-            ProductView.ItemsSource=myCollection;
+           // ObservableCollection<Product> myCollection = new ObservableCollection<Product>(selectedProducts);
+            
+            ProductView.ItemsSource=selectedProducts;
+            ProductView.SelectedIndex = 0;
             amount.Text = "1";
             
         }
@@ -84,7 +86,7 @@ namespace PL
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Console.WriteLine(types.SelectedValue);
+            //Console.WriteLine(types.SelectedValue);
             this.loadProductView(sender, e);
         }
 
@@ -103,8 +105,9 @@ namespace PL
         private void ListBox_Drop(object sender, DragEventArgs e)
         {
             ListBox parent = (ListBox)sender;
-            object data = e.Data.GetData(typeof(Product));
+            Product p = (Product)e.Data.GetData(typeof(Product));
            // ((IList)dragSource.ItemsSource).Remove(data);
+            Tuple<Product, int> data = new Tuple<Product, int>(p, int.Parse(amount.Text));
             parent.Items.Add(data);
         }
 
@@ -139,8 +142,11 @@ namespace PL
 
         private void addToCart_Click(object sender, RoutedEventArgs e)
         {
-            Tuple<Product, int> item = new Tuple<Product, int>((ProductView.SelectedItem as Product), int.Parse(amount.Text));
+            Product p = (ProductView.SelectedItem as Product);
+            int m=int.Parse(amount.Text);
+            Tuple<Product, int> item = new Tuple<Product, int>(p, m);
             ShoppingCart.Items.Add(item);
+
         }
 
         private void buy_Click(object sender, RoutedEventArgs e)
@@ -168,7 +174,8 @@ namespace PL
 
         private void increase_Click(object sender, RoutedEventArgs e)
         {
-            if ((ProductView.SelectedItem as Product).stockCount > int.Parse(amount.Text))
+            Product selected = ProductView.SelectedItem as Product;
+            if (selected.stockCount > int.Parse(amount.Text))
             {
                 int num = int.Parse(amount.Text);
                 num++;
@@ -186,6 +193,9 @@ namespace PL
             }
         }
 
+       
+
+        
 
     }
     
