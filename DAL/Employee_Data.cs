@@ -263,30 +263,37 @@ namespace DAL
             {
                 return false;
             }
-            var employee =
-               from e in DB
-               where (e.ID == id)
-               select e;
-            foreach (Backend.Employee e in employee)
-            {
-                e.firstName = first;
-                e.lastName = last;
-                e.gender = gender;
-                e.departmentID = departmentID;
-                e.salary = double.Parse(salary);
-                e.supervisorID = supervisorID;
-                e.type = type;
 
-                DAL.Employee temp = Change.EmployeeBackendToDal(e);
-                temp.firstName = first;
-                temp.lastName = last;
-                temp.gender = gender;
-                temp.departmentID = departmentID;
-                temp.salary = double.Parse(salary);
-                temp.supervisorID = supervisorID;
-                temp.type = type;
+            foreach (Backend.Employee e in DB)
+            {
+                if(e.ID==id)
+                {
+                    e.firstName = first;
+                    e.lastName = last;
+                    e.gender = gender;
+                    e.departmentID = departmentID;
+                    e.salary = double.Parse(salary);
+                    e.supervisorID = supervisorID;
+                    e.type = type;
+                }
             }
-                        return true;
+
+            foreach(DAL.Employee temp in emartDataContext.Employees)
+            {
+                if(temp.ID==id)
+                {
+                    temp.firstName = first;
+                    temp.lastName = last;
+                    temp.gender = gender;
+                    temp.departmentID = departmentID;
+                    temp.salary = double.Parse(salary);
+                    temp.supervisorID = supervisorID;
+                    temp.type = type;
+                    emartDataContext.SubmitChanges();
+                    return true;
+                }   
+            }
+            return false;
         }
         public void RemoveDepartment(string id)
         {
@@ -302,8 +309,6 @@ namespace DAL
 
         public string getType(string id)
         {
-            
-           
             foreach (Backend.Employee e in DB)
             {
                 if (e.ID == id)
@@ -312,9 +317,6 @@ namespace DAL
                 }
             }
             return null;
-
-        
-        
         }
 
 

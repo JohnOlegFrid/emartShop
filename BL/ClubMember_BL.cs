@@ -95,7 +95,8 @@ namespace BL
 
         public bool updateClubMember(string id, string firstName, string lastName, string gender, string birthDay)
         {
-            return itsDAL.updateClubMember(id, firstName, lastName, gender, birthDay);
+            Club_Member customer = new Club_Member(id, firstName, lastName, gender, id, birthDay);
+            return itsDAL.updateClubMember(customer);
         }
 
         public void removeTransaction(string id)

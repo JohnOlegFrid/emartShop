@@ -32,6 +32,15 @@ namespace MainProg
             //data classes of the enities
 
             List<DAL.User> userSqlDB = (from s in emartDataContext.Users select s).ToList();
+           
+            
+            
+            
+            
+            
+            
+            
+            
             List<Backend.User> userDB = Change.UserDalToBackendList(userSqlDB);
             User_Data user_data = new User_Data(userDB);
 
@@ -59,8 +68,9 @@ namespace MainProg
             transactionDB = (List<Transaction>)Encryption.Decryption(@"transaction.bin");
             Transaction_Data transaction_data = new Transaction_Data(transactionDB);
 
+            Location_Data location_data = new Location_Data();
             // managers
-            DAL_Manager dal_manager = new DAL_Manager(user_data, clubMember_data, department_data, employee_data, product_data, transaction_data);
+            DAL_Manager dal_manager = new DAL_Manager(user_data, clubMember_data, department_data, employee_data, product_data, transaction_data,location_data);
             BL_Manager BL_manager = new BL_Manager(dal_manager);
 
             Window mw = new MainWindow(BL_manager);

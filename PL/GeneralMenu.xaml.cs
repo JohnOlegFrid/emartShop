@@ -117,7 +117,7 @@ namespace PL
 
         private void Location_Click(object sender, RoutedEventArgs e)
         {
-            Location l = new Location();
+            Location.Options l = new Location.Options(BL_manager);
             generalMenuPanel.Children.Clear();
             generalMenuPanel.Children.Add(l);
         }
