@@ -20,7 +20,7 @@ namespace BL
         public Employee_BL BL_employee;
         public Product_BL BL_product;
         public Transaction_BL BL_transaction;
-
+        public Location_BL BL_location;
         //constructor
         public BL_Manager(DAL_Manager dal_manager)
         {
@@ -30,6 +30,7 @@ namespace BL
             BL_employee = new Employee_BL(dal_manager.employeeData);
             BL_product = new Product_BL(dal_manager.productData);
             BL_transaction = new Transaction_BL(dal_manager.transactionData);
+            BL_location = new Location_BL(dal_manager.locationData);
            
         }
         //this function updates the database in the relevet places after addition of a transaction (adding/ removing products)

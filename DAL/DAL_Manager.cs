@@ -16,8 +16,9 @@ namespace DAL
         public Employee_Data employeeData;
         public Product_Data productData;
         public Transaction_Data transactionData;
+        public Location_Data locationData;
 
-        public DAL_Manager(User_Data userData, ClubMember_Data ClubMemberData, Department_Data departmentData, Employee_Data employeeData, Product_Data productData, Transaction_Data transactionData)
+        public DAL_Manager(User_Data userData, ClubMember_Data ClubMemberData, Department_Data departmentData, Employee_Data employeeData, Product_Data productData, Transaction_Data transactionData,Location_Data LocationData)
         {
             this.userData = userData;
             this.ClubMemberData = ClubMemberData;
@@ -25,6 +26,7 @@ namespace DAL
             this.employeeData = employeeData;
             this.productData = productData;
             this.transactionData = transactionData;
+            this.locationData=LocationData;
         }
 
     }
