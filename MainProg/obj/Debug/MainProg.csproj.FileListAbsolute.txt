@@ -124,3 +124,5 @@ C:\Users\Olejka\Desktop\projects\EmartWPF2\MainProg\obj\Debug\MainProg_MarkupCom
 C:\Users\Olejka\Desktop\projects\EmartWPF2\MainProg\obj\Debug\MainProg.g.resources
 C:\Users\Olejka\Desktop\projects\EmartWPF2\MainProg\obj\Debug\MainProg.Properties.Resources.resources
 C:\Users\Olejka\Desktop\projects\EmartWPF2\MainProg\obj\Debug\MainProg.csproj.GenerateResource.Cache
+C:\Users\Olejka\Desktop\projects\EmartWPF\MainProg\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\MainProg\bin\Debug\Microsoft.Maps.MapControl.WPF.xml

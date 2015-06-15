@@ -439,5 +439,13 @@ C:\Users\Olejka\Desktop\projects\EmartWPF2\PL\obj\Debug\PL.Properties.Resources.
 C:\Users\Olejka\Desktop\projects\EmartWPF2\PL\obj\Debug\PL.csproj.GenerateResource.Cache
 C:\Users\Olejka\Desktop\projects\EmartWPF2\PL\obj\Debug\PL.dll
 C:\Users\Olejka\Desktop\projects\EmartWPF2\PL\obj\Debug\PL.pdb
-C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Location.baml
-C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Location.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Location\Add.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Location\Map.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Location\Options.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Location\Remove.baml
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Location\Add.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Location\Map.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Location\Options.g.cs
+C:\Users\Olejka\Desktop\projects\EmartWPF\PL\obj\Debug\Location\Remove.g.cs
