@@ -8,7 +8,7 @@
     </Window.Resources>
     <Grid>
 
-        <DockPanel LastChildFill="False">
+        <DockPanel LastChildFill="true">
             <Border DockPanel.Dock="Top" Background="White" BorderBrush="#FF1E99FF" BorderThickness="0,0,0,1">
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Top" CanVerticallyScroll="True" FlowDirection="RightToLeft" Background="White">
                     <Button Name="closeB" Content="X" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Background="White" BorderBrush="White" Foreground="#FF1E99FF" FontWeight="Bold" Click="closeClick"/>
@@ -39,14 +39,10 @@
                     <Button Name="store" Content="Virtual Store" Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="storeClick" />
                     <Button Content="Location" Background="White" Margin="5" Click="Location_Click" BorderThickness="3,3,3,3" BorderBrush="#FF04EE2F" />
                     <Button Content="Log out" Background="White" Margin="5" Click="logoutClick" BorderThickness="3,3,3,3" BorderBrush="Red" />
-
-
-                    <StackPanel Height="139" VerticalAlignment="Bottom">
-                        <Image Source="SmartShoppingLOGO.png"/>
-                    </StackPanel>
-                </StackPanel>
+                    <Image Source="SmartShoppingLOGO.png"/>
+                 </StackPanel>
             </Border>
-            <StackPanel Name="generalMenuPanel" Height="1000" DockPanel.Dock="Top" HorizontalAlignment="Stretch">
+            <StackPanel Name="generalMenuPanel"  DockPanel.Dock="Right" >
                 <StackPanel.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.215"/>
