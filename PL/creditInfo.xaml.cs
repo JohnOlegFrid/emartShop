@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
+using Backend;
 
 namespace PL
 {
@@ -20,9 +21,23 @@ namespace PL
     /// </summary>
     public partial class Window1 : Window
     {
-        public Window1(BL_Manager BL_manager)
+        private Club_Member member;
+        private BL_Manager BL_manager;
+        public Window1(BL_Manager BL_manager, string r, Club_Member c)
         {
             InitializeComponent();
+            member = c;
+            this.BL_manager = BL_manager;
+            string text = "";
+            foreach (Backend.Receipt recipt in BL_manager.BL_transaction.itsDAL.receiptDB)
+            {
+                if(recipt.ID==r)
+                {
+                    string name = BL_manager.BL_product.getProductsInStockByID(recipt.product).name;
+                    text += "\n" + recipt.amount + " " + name + " " + (recipt.amount * recipt.price) + "$";
+                }
+            }
+            shoppingList.Text=text;
         }
         private void closeClick(object sender, RoutedEventArgs e)
         {
@@ -46,7 +61,9 @@ namespace PL
 
         private void addInfo_Click(object sender, RoutedEventArgs e)
         {
-
+            int creditNum = int.Parse(info.Text);
+            BL_manager.BL_clubMember.itsDAL.updateMemberVisa(member.ID, creditNum);
+            MessageBox.Show("visa number saved");
         }
     }
 }

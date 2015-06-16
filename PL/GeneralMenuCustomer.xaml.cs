@@ -83,7 +83,7 @@ namespace PL
 
         private void storeClick(object sender, RoutedEventArgs e)
         {
-            onlineStore s = new onlineStore(BL_manager);
+            onlineStore s = new onlineStore(BL_manager,cm);
             s.Show();
         }
 

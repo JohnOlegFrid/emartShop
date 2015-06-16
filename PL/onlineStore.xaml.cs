@@ -25,12 +25,14 @@ namespace PL
     public partial class onlineStore : Window
     {
         BL_Manager BL_manager;
+        Backend.Club_Member Member;
         ObservableCollection<string> zoneList = new ObservableCollection<string>(); // ariel
         ListBox dragSource = null; // ariel
 
-        public onlineStore(BL_Manager BL_manager)
+        public onlineStore(BL_Manager BL_manager, Backend.Club_Member member)
         {
             this.BL_manager=BL_manager;
+            Member = member;
             InitializeComponent();
         }
 
@@ -47,7 +49,8 @@ namespace PL
         private void loadProductView(object sender, RoutedEventArgs e)
         {
             List<Product> selectedProducts;
-            //BL_manager.updatebestSeller();
+            BL_manager.updateBestSeller();
+            
             if(types.SelectedValue=="All")
             {
                 selectedProducts = BL_manager.BL_product.getAllProductsList();
@@ -57,7 +60,6 @@ namespace PL
                 selectedProducts = BL_manager.BL_product.getProductsListByType((Product.Type)Enum.Parse(typeof(Product.Type), (string)types.SelectedValue));
             }
            // ObservableCollection<Product> myCollection = new ObservableCollection<Product>(selectedProducts);
-            
             ProductView.ItemsSource=selectedProducts;
             ProductView.SelectedIndex = 0;
             amount.Text = "1";
@@ -108,7 +110,26 @@ namespace PL
             Product p = (Product)e.Data.GetData(typeof(Product));
            // ((IList)dragSource.ItemsSource).Remove(data);
             Tuple<Product, int> data = new Tuple<Product, int>(p, int.Parse(amount.Text));
-            parent.Items.Add(data);
+            bool exist = false;
+            int index=0;
+            foreach (Tuple<Product, int> t in ShoppingCart.Items)
+            {
+                if (t.Item1.inventoryID == p.inventoryID)
+                {
+                    int newAmount = t.Item2 + int.Parse(amount.Text);
+                    data= new Tuple<Product, int>(p, newAmount);
+                    index = ShoppingCart.Items.IndexOf(t);
+                    exist = true;
+                }
+            }
+            if (!exist)
+            {
+                ShoppingCart.Items.Add(data);
+            }
+            else
+            {
+                ShoppingCart.Items[index] = data;
+            }
         }
 
         #region GetDataFromListBox(ListBox,Point)
@@ -145,31 +166,41 @@ namespace PL
             Product p = (ProductView.SelectedItem as Product);
             int m=int.Parse(amount.Text);
             Tuple<Product, int> item = new Tuple<Product, int>(p, m);
-            ShoppingCart.Items.Add(item);
+            bool exist=false;
+            int index = 0;
+            foreach(Tuple<Product, int> t in ShoppingCart.Items)
+            {
+                if(t.Item1.inventoryID==p.inventoryID)
+                {
+                    int newAmount= t.Item2 + m;
+                    item = new Tuple<Product, int>(p, newAmount);
+                    index = ShoppingCart.Items.IndexOf(t);
+                    exist = true;
+                }
+            }
+            if(!exist)
+            {
+                ShoppingCart.Items.Add(item);
+            }
+            else
+            {
+                ShoppingCart.Items[index] = item;
+            }
+            
 
         }
 
         private void buy_Click(object sender, RoutedEventArgs e)
         {
-            Window1 a = new Window1(BL_manager);
-            a.Show();
-            List<Tuple<Product,int>> list = ShoppingCart.Items.OfType<Tuple<Product,int>>().ToList();
-            Dictionary<string, int> receipt = new Dictionary<string, int>();
-            Dictionary<string, double> products = new Dictionary<string, double>();
-            foreach (Tuple<Product,int> p in list)
+            string reciptID = BL_Manager.generateID();
+            foreach (Tuple<Product, int> p in ShoppingCart.Items)
             {
-                if(receipt.ContainsKey(p.Item1.name))
-                {
-                    receipt[p.Item1.name]+=p.Item2;
-                }
-                else
-                {
-                    receipt.Add(p.Item1.name, p.Item2);
-                    products.Add(p.Item1.name, p.Item1.price);
-                }
-                
+                Receipt temp = new Receipt(reciptID,p.Item1.inventoryID, p.Item2 ,p.Item1.price);
+                BL_manager.BL_transaction.addRecipt(temp);
             }
-            BL_manager.BL_transaction.Add(false, receipt, products, "CreditCard");
+            BL_manager.BL_transaction.Add(false,reciptID,"visa", Member.ID);
+            Window1 a = new Window1(BL_manager,reciptID, Member);
+            a.Show();
         }
 
         private void increase_Click(object sender, RoutedEventArgs e)

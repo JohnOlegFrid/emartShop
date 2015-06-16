@@ -10,42 +10,51 @@ namespace Backend
 
     public class Receipt
     {
-        private Dictionary<string, double> _products;
-        private Dictionary<string, int> _amount;
+        private string _ID;
+        private string _product;
+        private int _amount;
+        private double _price;
 
-        public Dictionary<string, double> product
+        public string ID
         {
-            get { return _products; }
-            set { _products = value; }
+            get { return _ID; }
+            set { _ID = value; }
         }
 
-        public Dictionary<string, int> amount
+        public string product
+        {
+            get { return _product; }
+            set { _product = value; }
+        }
+
+        public int amount
         {
             get { return _amount; }
             set { _amount = value; }
-        } 
+        }
+
+        public double price
+        {
+            get { return _price; }
+            set { _price = value; }
+        }
 
         public Receipt()
         {
 
         }
 
-        public Receipt(Dictionary<string, double> product, Dictionary<string,int> amount)
+        public Receipt(string id, string product, int amount, double price)
         {
-            _products = product;
+            _ID = id;
+            _product = product;
             _amount = amount;
+            _price = price;
         }
 
         public override string ToString()
         {
             StringBuilder receipt = new StringBuilder("");
-            foreach (KeyValuePair<string, double> product in _products)
-            {
-                receipt.Append(product.Key);
-                receipt.Append(" ");
-                receipt.Append(product.Value);
-                receipt.Append("\r\n");
-            }
             return receipt.ToString();
         }
     }

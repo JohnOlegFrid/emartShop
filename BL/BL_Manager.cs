@@ -63,26 +63,42 @@ namespace BL
             BL_employee.RemoveDepartment(id);
         }
 
-        public void updatebestSeller()
+        public void updateBestSeller()
         {
             DateTime date = DateTime.Now;
-            List<Transaction> list = BL_transaction.getTransactionByMonth(date.Month);
-            //List<Product> bestSeller;
-            Dictionary<string, int> products=new Dictionary<string, int>();
-            foreach (Transaction t in list)
+            List<Backend.Transaction> list = BL_transaction.getTransactionByMonth(date.Month);
+            List<Backend.Product> bestSeller=new List<Backend.Product>();
+            Dictionary<string, int> products = new Dictionary<string, int>();
+            foreach (Backend.Transaction t in list)
             {
-                Console.Write("11111 " + t.ToString());
-                foreach (KeyValuePair<string, int> p in t.receipt.amount)
+                var items = from i in BL_transaction.itsDAL.receiptDB
+                            where i.ID == t.receipt
+                            select i;
+                foreach (Receipt p in items)
                 {
-                          products.Add(p.Key, p.Value);
+                    if(products.ContainsKey(p.product))
+                    {
+                        products[p.product] += p.amount;
+                    }
+                    else
+                    {
+                        products.Add(p.product, p.amount);
+                    }
+                      
                 }
             }
-            var items = from pair in products
-                        orderby pair.Value ascending
-                        select pair;
-            //BL_product.getProductsInStockByName(items.First().Key).isBestSeller = true;
-            //BL_product.getProductsInStockByName(items.ElementAt(1).Key).isBestSeller = true;
-            //BL_product.getProductsInStockByName(items.ElementAt(2).Key).isBestSeller = true;
+            var top1 = from t in products
+                        orderby t.Value descending
+                        select t;
+            foreach (Backend.Product p in BL_product.itsDAL.DB)
+            {
+                p.isBestSeller = false;
+                if(p.inventoryID==top1.First().Key)
+                {
+                    p.isBestSeller = true;
+                }
+            }
+            
         }
 
 
@@ -133,6 +149,12 @@ namespace BL
                 }
             }
             return null;
+        }
+        public static string generateID()
+        {
+            DateTime date = DateTime.Now;
+            string uniqueID = String.Format("{0:0000}{1:00}{2:00}{3:00}{4:00}{5:00}", date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Second);
+            return uniqueID;
         }
 
     }

@@ -32,9 +32,9 @@ namespace BL
             return uniqueID;
         }
 
-        public void Add(bool isAReturn, Dictionary<string, int> receiptamount, Dictionary<string, double> receipt, string paymentMethod)
+        public void Add(bool isAReturn, string receipt, string paymentMethod, string id)
         {
-            itsDAL.Add(generateID(), DateTime.Now, isAReturn, new Receipt(receipt,receiptamount), (PaymentMethod)Enum.Parse(typeof(PaymentMethod), paymentMethod));
+            itsDAL.Add(generateID(), DateTime.Now, isAReturn, receipt, paymentMethod, id);
         }
 
         public void Remove(string id)
@@ -64,28 +64,33 @@ namespace BL
         {
             return itsDAL.getAllTransactions();
         }
-        public List<Transaction> getAllTransactionsList()
+        public List<Backend.Transaction> getAllTransactionsList()
         {
             return itsDAL.DB;
         }
 
         public bool updateTransaction(string transactionID, string dateTime, bool isAReturn, string paymentMethod)
         {
-            return itsDAL.updateTransaction(transactionID, Convert.ToDateTime(dateTime), isAReturn, (PaymentMethod)Enum.Parse(typeof(PaymentMethod), paymentMethod));
+            return itsDAL.updateTransaction(transactionID, Convert.ToDateTime(dateTime), isAReturn, paymentMethod);
         }
 
-        public List<Transaction> getTransactionByMonth(int p)
+        public List<Backend.Transaction> getTransactionByMonth(int p)
         {
             var transaction =
               from t in itsDAL.DB
               where t.dateTime.Month == p
               select t;
-            List<Transaction> list = new List<Transaction>();
-            foreach (Transaction t in transaction)
+            List<Backend.Transaction> list = new List<Backend.Transaction>();
+            foreach (Backend.Transaction t in transaction)
             {
                 list.Add(t);
             }
             return list;
+        }
+
+        public void addRecipt(Receipt r)
+        {
+            itsDAL.addRecipt(r);
         }
     }
 }

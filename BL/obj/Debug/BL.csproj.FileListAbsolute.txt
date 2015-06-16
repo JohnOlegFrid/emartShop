@@ -1,12 +1,3 @@
-C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\BL.dll
-C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\BL.pdb
-C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\Backend.dll
-C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\DAL.dll
-C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\Backend.pdb
-C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\DAL.pdb
-C:\Users\Gwainer\Desktop\emartwpf1\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
-C:\Users\Gwainer\Desktop\emartwpf1\BL\obj\Debug\BL.dll
-C:\Users\Gwainer\Desktop\emartwpf1\BL\obj\Debug\BL.pdb
 C:\Users\Gwainer\Desktop\emartwpf6\BL\bin\Debug\BL.dll
 C:\Users\Gwainer\Desktop\emartwpf6\BL\bin\Debug\BL.pdb
 C:\Users\Gwainer\Desktop\emartwpf6\BL\bin\Debug\Backend.dll
@@ -52,3 +43,12 @@ C:\Users\Olejka\Desktop\projects\EmartWPF2\BL\bin\Debug\DAL.dll
 C:\Users\Olejka\Desktop\projects\EmartWPF2\BL\bin\Debug\Backend.pdb
 C:\Users\Olejka\Desktop\projects\EmartWPF2\BL\bin\Debug\DAL.pdb
 C:\Users\Olejka\Desktop\projects\EmartWPF2\BL\obj\Debug\BL.pdb
+C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\BL.dll
+C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\BL.pdb
+C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\Backend.dll
+C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\DAL.dll
+C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\Backend.pdb
+C:\Users\Gwainer\Desktop\emartwpf1\BL\bin\Debug\DAL.pdb
+C:\Users\Gwainer\Desktop\emartwpf1\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\Gwainer\Desktop\emartwpf1\BL\obj\Debug\BL.dll
+C:\Users\Gwainer\Desktop\emartwpf1\BL\obj\Debug\BL.pdb

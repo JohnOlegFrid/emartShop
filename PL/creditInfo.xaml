@@ -25,7 +25,9 @@
             <TextBox x:Name="info" Width="259" Margin="0,0,0,236"/>
             <Button x:Name="addCreditCardInfo" Content="addCreditCardInfo" Click="addInfo_Click" Margin="0,0,0,236" Width="111"/>
             <Border>
+                <TextBox x:Name="shoppingList" Height="140" Margin="0,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"/>
             </Border>
+            
         </DockPanel>
     </Grid>
 </Window>
