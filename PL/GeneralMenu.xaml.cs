@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
-
+using Backend;
 
 namespace PL
 {
@@ -22,8 +22,10 @@ namespace PL
     public partial class GeneralMenu : Window
     {
         BL_Manager BL_manager;
-        public GeneralMenu(BL_Manager BL_manager)
+        Employee admin;
+        public GeneralMenu(BL_Manager BL_manager,Employee adm)
         {
+            this.admin = adm;
             this.BL_manager=BL_manager;
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -104,8 +106,8 @@ namespace PL
 
         private void storeClick(object sender, RoutedEventArgs e)
         {
-           // onlineStore s = new onlineStore(BL_manager);
-            //s.Show();
+           //onlineStore s = new onlineStore(BL_manager);
+           //s.Show();
         }
 
         private void logoutClick(object sender, RoutedEventArgs e)

@@ -66,7 +66,9 @@ namespace PL
                          this.Close();
                          break;
                     case "Admin":
-                        Window Gm= new GeneralMenu(BL_manager);
+                         Employee adm = (Employee)p;
+
+                        Window Gm= new GeneralMenu(BL_manager,adm);
                         Gm.Show();
                         this.Close();
                          break;

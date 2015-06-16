@@ -69,6 +69,8 @@ namespace BL
             List<Backend.Transaction> list = BL_transaction.getTransactionByMonth(date.Month);
             List<Backend.Product> bestSeller=new List<Backend.Product>();
             Dictionary<string, int> products = new Dictionary<string, int>();
+
+            if (list.Count == 0) return;
             foreach (Backend.Transaction t in list)
             {
                 var items = from i in BL_transaction.itsDAL.receiptDB

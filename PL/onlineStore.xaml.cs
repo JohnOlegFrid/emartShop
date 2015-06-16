@@ -34,6 +34,8 @@ namespace PL
             this.BL_manager=BL_manager;
             Member = member;
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
         }
 
         private void loadTypes(object sender, RoutedEventArgs e)
