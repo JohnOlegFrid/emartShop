@@ -11,7 +11,7 @@ namespace BL
     [Serializable]
     public class ClubMember_BL
     {
-        ClubMember_Data itsDAL;
+        public ClubMember_Data itsDAL;
         //constructor
         public ClubMember_BL(ClubMember_Data dl)
         {

@@ -13,27 +13,45 @@ namespace DAL
     [Serializable]
     public class Transaction_Data
     {
-        public List<Transaction> DB;
+        public List<Backend.Transaction> DB;
+        public List<Backend.Receipt> receiptDB;
+        public EmartDataContext emartDataContext;
         public string path = @"transaction.bin";
 
         public Transaction_Data()
         {
-            DB = new List<Transaction>();
+            DB = new List<Backend.Transaction>();
+            receiptDB = new List<Backend.Receipt>();
+            emartDataContext = new EmartDataContext();
         }
 
-        public Transaction_Data(List<Transaction> TDB)
+        public Transaction_Data(List<Backend.Transaction> TDB, List<Backend.Receipt> list)
         {
             DB = TDB;
+            receiptDB = list;
+            emartDataContext = new EmartDataContext();
             Encryption.encryption(DB, path);
         }
         public bool Contains(string id)
         {
-            return true;
+            foreach(Backend.Transaction t in DB)
+            {
+                if (t.transactionID == id) return true;
+            }
+            return false;
         }
 
-        public void Add(string transactionID, DateTime datetime, bool isAReturn, Receipt receipt, PaymentMethod paymentMethod)
+        public void Add(string transactionID, DateTime datetime, bool isAReturn, string receipt, string paymentMethod, string id)
         {
-            DB.Add(new Transaction(transactionID, datetime, isAReturn, receipt, paymentMethod));
+            DB.Add(new Backend.Transaction(transactionID, datetime, isAReturn, receipt, paymentMethod));
+            DAL.Transaction temp = Change.TransactionBackendToDal(new Backend.Transaction(transactionID, datetime, isAReturn, receipt, paymentMethod));
+            temp.customerID = id;
+            emartDataContext.Transactions.InsertOnSubmit(temp);
+            DAL.Recipt_Transaction rt=new Recipt_Transaction();
+            rt.reciptID=receipt;
+            rt.transactionID=transactionID;
+            emartDataContext.Recipt_Transactions.InsertOnSubmit(rt);
+            emartDataContext.SubmitChanges();
             Encryption.encryption(DB, path);
         }
 
@@ -43,9 +61,12 @@ namespace DAL
               from t in DB
               where t.transactionID == id
               select t;
-            foreach (Transaction t in transaction)
+            foreach (Backend.Transaction t in transaction)
             {
                 DB.Remove(t);
+                DAL.Transaction temp = Change.TransactionBackendToDal(t);
+                emartDataContext.Transactions.DeleteOnSubmit(temp);
+                emartDataContext.SubmitChanges();
                 Encryption.encryption(DB, path);
                 return;
             }
@@ -57,7 +78,7 @@ namespace DAL
               from t in DB
               where t.transactionID == id
               select t;
-            foreach (Transaction t in transaction)
+            foreach (Backend.Transaction t in transaction)
             {
                 if (t.isAReturn)
                 {
@@ -74,7 +95,7 @@ namespace DAL
               where t.transactionID == id
               select t;
             StringBuilder p = new StringBuilder("");
-            foreach (Transaction t in transaction)
+            foreach (Backend.Transaction t in transaction)
             {
                 p.Append(t.paymentMethod);
             }
@@ -88,7 +109,7 @@ namespace DAL
               where t.transactionID == id
               select t;
             StringBuilder p = new StringBuilder("");
-            foreach (Transaction t in transaction)
+            foreach (Backend.Transaction t in transaction)
             {
                 p.Append(t.receipt.ToString());
             }
@@ -102,7 +123,7 @@ namespace DAL
             {
                 return "There are no transactions";
             }
-            foreach (Transaction t in DB)
+            foreach (Backend.Transaction t in DB)
             {
                 allTransactions.Append(t.ToString());
                 allTransactions.Append("\r\n");
@@ -110,7 +131,7 @@ namespace DAL
             return allTransactions.ToString();
         }
 
-        public bool updateTransaction(string transactionID, DateTime dateTime, bool isAReturn, PaymentMethod paymentMethod)
+        public bool updateTransaction(string transactionID, DateTime dateTime, bool isAReturn, string paymentMethod)
         {
             if (!Contains(transactionID))
             {
@@ -120,7 +141,7 @@ namespace DAL
                from p in DB
                where (p.transactionID == transactionID)
                select p;
-            foreach (Transaction t in transaction)
+            foreach (Backend.Transaction t in transaction)
             {
                 t.dateTime = dateTime;
                 t.isAReturn = isAReturn;
@@ -130,5 +151,26 @@ namespace DAL
             return true;
         }
 
+
+        public void addRecipt(Receipt r)
+        {
+            receiptDB.Add(r);
+            DAL.Recipt temp = Change.ReciptBackendToDal(r);
+            emartDataContext.Recipts.InsertOnSubmit(temp);
+            emartDataContext.SubmitChanges();
+        }
+
+        public Backend.Receipt getReciptById(string id)
+        {
+            var recipt =
+              from r in DB
+              where r.receipt == id
+              select r;
+            if(recipt==null)
+            {
+                return null;
+            }
+            return recipt as Backend.Receipt;
+        }
     }
 }

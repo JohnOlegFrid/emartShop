@@ -14,8 +14,8 @@ namespace Backend
         private string _transactionID;
         private DateTime _dateTime;
         private bool _isAReturn;
-        private Receipt _receipt;
-        private PaymentMethod _paymentMethod;
+        private string _receiptID;
+        private string _paymentMethod;
         private String CustomerID;
 
         public string transactionID
@@ -36,24 +36,30 @@ namespace Backend
             set { _isAReturn = value; }
         }
 
-        public Receipt receipt
+        public string receipt
         {
-            get { return _receipt; }
-            set { _receipt = value; }
+            get { return _receiptID; }
+            set { _receiptID = value; }
         }
 
-        public PaymentMethod paymentMethod
+        public string paymentMethod
         {
             get { return _paymentMethod; }
             set { _paymentMethod = value; }
         }
 
-        public Transaction(string transactionID, DateTime dateTime, bool isAReturn, Receipt receipt, PaymentMethod paymentMethod)
+        public string customerID
+        {
+            get { return CustomerID; }
+            set { CustomerID = value; }
+        }
+
+        public Transaction(string transactionID, DateTime dateTime, bool isAReturn, string receipt, string paymentMethod)
         {
             _transactionID = transactionID;
             _dateTime = dateTime;
             _isAReturn = isAReturn;
-            _receipt = receipt;
+            _receiptID = receipt;
             _paymentMethod = paymentMethod;
         }
 
@@ -66,7 +72,7 @@ namespace Backend
             transaction.Append(" is a return: ");
             transaction.Append(isAReturn);
             transaction.Append("\n\n");
-            transaction.Append(receipt.ToString());
+           // transaction.Append(receipt.ToString());
             transaction.Append("\n");
             transaction.Append("\nPayment method : " + paymentMethod);
             return transaction.ToString();

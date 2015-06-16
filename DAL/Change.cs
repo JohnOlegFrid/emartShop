@@ -174,6 +174,54 @@ namespace DAL
             temp.type = c.type;
             return temp;
         }
+
+        public static DAL.Transaction TransactionBackendToDal (Backend.Transaction t)
+        {
+            DAL.Transaction temp = new DAL.Transaction();
+            temp.ID = t.transactionID;
+            temp.dateTime = t.dateTime;
+            temp.isAReturn = t.isAReturn;
+            temp.paymentMethod = t.paymentMethod;
+            temp.reciptID = t.receipt;
+            temp.customerID = t.customerID;
+            return temp;
+        }
+
+        public static List<Backend.Transaction> TransactionDalToBackendList(List<DAL.Transaction> SqlDB)
+        {
+            List<Backend.Transaction> list = new List<Backend.Transaction>();
+            Backend.Transaction temp;
+            foreach (DAL.Transaction t in SqlDB)
+            {
+                temp = new Backend.Transaction(t.ID, t.dateTime , t.isAReturn , t.reciptID , t.paymentMethod);
+                temp.customerID = t.customerID;
+                list.Add(temp);
+            }
+            return list;
+        }
+
+        public static DAL.Recipt ReciptBackendToDal(Backend.Receipt r)
+        {
+            DAL.Recipt temp = new DAL.Recipt();
+
+            temp.ID = r.ID;
+            temp.productID = r.product;
+            temp.price = r.price;
+            temp.amount = r.amount;
+            return temp;
+        }
+
+        public static List<Receipt> ReciptDalToBackendList(List<Recipt> reciptSqlDB)
+        {
+            List<Backend.Receipt> list = new List<Backend.Receipt>();
+            Backend.Receipt temp;
+            foreach (DAL.Recipt t in reciptSqlDB)
+            {
+                temp = new Backend.Receipt(t.ID, t.productID, t.amount, t.price);
+                list.Add(temp);
+            }
+            return list;
+        }
     }
 }
     

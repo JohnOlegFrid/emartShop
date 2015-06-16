@@ -241,12 +241,28 @@ namespace DAL
         {
             foreach (Club_Member c in DB)
             {
-                foreach (Transaction t in c.transaction)
+                foreach (Backend.Transaction t in c.transaction)
                 {
                     if (t.transactionID == id)
                     {
                         c.transaction.Remove(t);
                     }
+                }
+            }
+        }
+
+        public void updateMemberVisa(string id,int i)
+        {
+            foreach (Club_Member c in DB)
+            {
+                if(c.ID==id)
+                {
+                    DAL.Customer cus = Change.CustomerBackendToDal(c);
+                    sqlDB.Customers.Attach(cus);
+                    sqlDB.Customers.DeleteOnSubmit(cus);
+                    c.visaNumber = i;
+                    sqlDB.Customers.InsertOnSubmit(Change.CustomerBackendToDal(c));
+                    sqlDB.SubmitChanges();
                 }
             }
         }

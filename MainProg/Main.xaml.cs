@@ -54,10 +54,11 @@ namespace MainProg
             List<Backend.Product> productDB = Change.ProductDalToBackendList(productSqlDB);
             Product_Data product_data = new Product_Data(productDB);
 
-            List<Transaction> transactionDB = new List<Transaction>();
-            Encryption.checkEncryption(transactionDB, @"transaction.bin");
-            transactionDB = (List<Transaction>)Encryption.Decryption(@"transaction.bin");
-            Transaction_Data transaction_data = new Transaction_Data(transactionDB);
+            List<DAL.Transaction> transactionSqlDB = (from s in emartDataContext.Transactions select s).ToList();
+            List<Backend.Transaction> transactionDB = Change.TransactionDalToBackendList(transactionSqlDB);
+            List<DAL.Recipt> reciptSqlDB = (from s in emartDataContext.Recipts select s).ToList();
+            List<Backend.Receipt> reciptDB = Change.ReciptDalToBackendList(reciptSqlDB);
+            Transaction_Data transaction_data = new Transaction_Data(transactionDB, reciptDB);
 
             // managers
             DAL_Manager dal_manager = new DAL_Manager(user_data, clubMember_data, department_data, employee_data, product_data, transaction_data);
