@@ -32,18 +32,13 @@ namespace PL.Location
             InitializeComponent();
             this.BL_manager = BL_manager;
 
+            txt.Text = "";
+            temptxt.Text = "";
+            sign.Text = "";
+
             List<StoreLocation> sl = BL_manager.BL_location.getAll();
             locationsBox.ItemsSource = sl;
-            locationsBox.SelectedIndex = 0;
-            StoreLocation selected=(locationsBox.SelectedValue as StoreLocation);
-            String cord = selected.latitude + "," + selected.longitude + "," + "0.000";
-            //String cord = "31.264372,34.802995,0.000";
-            Microsoft.Maps.MapControl.WPF.Location center = (Microsoft.Maps.MapControl.WPF.Location)(locConverter.ConvertFrom(cord));
-            double zoom = 12.0;
-            myMap.SetView(center, zoom);
-            Pushpin pin = new Pushpin();
-            pin.Location = center;
-            myMap.Children.Add(pin);
+            
             
         }
 
@@ -59,6 +54,12 @@ namespace PL.Location
             Pushpin pin = new Pushpin();
             pin.Location = center;
             myMap.Children.Add(pin);
+            txt.Text = "Current temperature\nnear the store";
+            sign.Text = "0";
+            String temp= Weather.get(selected.city).Substring(0, 2) + " Celsius";
+            if (temp != null) temptxt.Text = temp;
+            else
+                MessageBox.Show("There where an Internet Error.Could not get the weather information.", "Connection problem", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
     }

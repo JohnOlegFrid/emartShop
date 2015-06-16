@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
+using DAL;
 
 namespace PL.Location
 {
@@ -26,20 +27,25 @@ namespace PL.Location
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
+            List<StoreLocation> list = BL_manager.BL_location.getAll();
+            locationsBox.ItemsSource = list;
         }
 
         private void removeClick(object sender, RoutedEventArgs e)
         {
-            String latitude = latitudetxt.Text;
-            String longitude = longitudetxt.Text;
+            StoreLocation sl=(locationsBox.SelectedItem as StoreLocation);
+            String latitude =sl.latitude;
+            String longitude = sl.longitude;
             if (BL_manager.BL_location.Remove(latitude, longitude))
             {
                 MessageBox.Show("The location Removed succefully.", "Removed succefully", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("User with that name doesn't exist, please try other User name.", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Location with that cordinate doesn't exist, please try other cordinate.", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+            List<StoreLocation> list = BL_manager.BL_location.getAll();
+            locationsBox.ItemsSource = list;
         }
     }
 }

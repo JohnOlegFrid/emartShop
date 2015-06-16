@@ -165,6 +165,7 @@
     <Compile Include="Location\Remove.xaml.cs">
       <DependentUpon>Remove.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Location\Weather.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
