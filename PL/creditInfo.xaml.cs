@@ -19,11 +19,11 @@ namespace PL
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class creditinfo : Window
     {
-        private Club_Member member;
+        private Person member;
         private BL_Manager BL_manager;
-        public Window1(BL_Manager BL_manager, string r, Club_Member c)
+        public creditinfo(BL_Manager BL_manager, string r, Person c)
         {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -47,8 +47,7 @@ namespace PL
             String inf = info.Text;
             if (MainWindow.isNumber(inf))
             {
-                int creditNum = int.Parse(info.Text);
-                BL_manager.BL_clubMember.itsDAL.updateMemberVisa(member.ID, creditNum);
+                BL_manager.BL_clubMember.itsDAL.updateMemberVisa(member.ID, inf);
                 MessageBox.Show("visa number saved");
                 this.Close();
             }
@@ -57,6 +56,13 @@ namespace PL
                 MessageBox.Show("Incorrect Credit card number,please try again.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
+        
+
+       
+        
+
+        
 
         
     }

@@ -268,7 +268,7 @@ namespace DAL
             }
         }
 
-        public void updateMemberVisa(string id,int i)
+        public void updateMemberVisa(string id,String i)
         {
             foreach (Club_Member c in DB)
             {

@@ -15,7 +15,7 @@ namespace Backend
         private List<Transaction> _transaction = new List<Transaction>();
         private String _dateOfBirth;
         private String _type;
-        private int _visaNumber;
+        private String _visaNumber;
 
         public string memberID
         {
@@ -41,7 +41,7 @@ namespace Backend
             set { _type = value; }
         }
 
-        public int visaNumber
+        public String visaNumber
         {
             get { return _visaNumber; }
             set { _visaNumber = value; }
@@ -57,7 +57,7 @@ namespace Backend
             this._memberID = memberID;
             this._dateOfBirth = dateOfBirth;
             this._type = "Customer";
-            this._visaNumber = 0;
+            this._visaNumber = "";
         }
 
         public Club_Member(Person p)
