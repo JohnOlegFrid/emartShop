@@ -49,6 +49,15 @@ namespace DAL
     partial void InsertStoreLocation(StoreLocation instance);
     partial void UpdateStoreLocation(StoreLocation instance);
     partial void DeleteStoreLocation(StoreLocation instance);
+    partial void InsertRecipt(Recipt instance);
+    partial void UpdateRecipt(Recipt instance);
+    partial void DeleteRecipt(Recipt instance);
+    partial void InsertRecipt_Transaction(Recipt_Transaction instance);
+    partial void UpdateRecipt_Transaction(Recipt_Transaction instance);
+    partial void DeleteRecipt_Transaction(Recipt_Transaction instance);
+    partial void InsertTransaction(Transaction instance);
+    partial void UpdateTransaction(Transaction instance);
+    partial void DeleteTransaction(Transaction instance);
     #endregion
 		
 		public EmartDataContext() : 
@@ -126,6 +135,30 @@ namespace DAL
 			get
 			{
 				return this.GetTable<StoreLocation>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Recipt> Recipts
+		{
+			get
+			{
+				return this.GetTable<Recipt>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Recipt_Transaction> Recipt_Transactions
+		{
+			get
+			{
+				return this.GetTable<Recipt_Transaction>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Transaction> Transactions
+		{
+			get
+			{
+				return this.GetTable<Transaction>();
 			}
 		}
 	}
@@ -1169,13 +1202,12 @@ namespace DAL
 
         public override string ToString()
         {
-            StringBuilder ans = new StringBuilder("");
+            StringBuilder ans = new StringBuilder();
             ans.Append(country);
             ans.Append(", ");
             ans.Append(city);
             ans.Append(", ");
             ans.Append(street);
-            ans.Append("");
             return ans.ToString();
         }
 
@@ -1275,6 +1307,408 @@ namespace DAL
 					this._longitude = value;
 					this.SendPropertyChanged("longitude");
 					this.OnlongitudeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Recipt")]
+	public partial class Recipt : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _ID;
+		
+		private string _productID;
+		
+		private double _price;
+		
+		private int _amount;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(string value);
+    partial void OnIDChanged();
+    partial void OnproductIDChanging(string value);
+    partial void OnproductIDChanged();
+    partial void OnpriceChanging(double value);
+    partial void OnpriceChanged();
+    partial void OnamountChanging(int value);
+    partial void OnamountChanged();
+    #endregion
+		
+		public Recipt()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_productID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string productID
+		{
+			get
+			{
+				return this._productID;
+			}
+			set
+			{
+				if ((this._productID != value))
+				{
+					this.OnproductIDChanging(value);
+					this.SendPropertyChanging();
+					this._productID = value;
+					this.SendPropertyChanged("productID");
+					this.OnproductIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Float NOT NULL")]
+		public double price
+		{
+			get
+			{
+				return this._price;
+			}
+			set
+			{
+				if ((this._price != value))
+				{
+					this.OnpriceChanging(value);
+					this.SendPropertyChanging();
+					this._price = value;
+					this.SendPropertyChanged("price");
+					this.OnpriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="Int NOT NULL")]
+		public int amount
+		{
+			get
+			{
+				return this._amount;
+			}
+			set
+			{
+				if ((this._amount != value))
+				{
+					this.OnamountChanging(value);
+					this.SendPropertyChanging();
+					this._amount = value;
+					this.SendPropertyChanged("amount");
+					this.OnamountChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Recipt_Transaction")]
+	public partial class Recipt_Transaction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _reciptID;
+		
+		private string _transactionID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnreciptIDChanging(string value);
+    partial void OnreciptIDChanged();
+    partial void OntransactionIDChanging(string value);
+    partial void OntransactionIDChanged();
+    #endregion
+		
+		public Recipt_Transaction()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reciptID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string reciptID
+		{
+			get
+			{
+				return this._reciptID;
+			}
+			set
+			{
+				if ((this._reciptID != value))
+				{
+					this.OnreciptIDChanging(value);
+					this.SendPropertyChanging();
+					this._reciptID = value;
+					this.SendPropertyChanged("reciptID");
+					this.OnreciptIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_transactionID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string transactionID
+		{
+			get
+			{
+				return this._transactionID;
+			}
+			set
+			{
+				if ((this._transactionID != value))
+				{
+					this.OntransactionIDChanging(value);
+					this.SendPropertyChanging();
+					this._transactionID = value;
+					this.SendPropertyChanged("transactionID");
+					this.OntransactionIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Transaction]")]
+	public partial class Transaction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _ID;
+		
+		private string _customerID;
+		
+		private System.DateTime _dateTime;
+		
+		private bool _isAReturn;
+		
+		private string _paymentMethod;
+		
+		private string _reciptID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(string value);
+    partial void OnIDChanged();
+    partial void OncustomerIDChanging(string value);
+    partial void OncustomerIDChanged();
+    partial void OndateTimeChanging(System.DateTime value);
+    partial void OndateTimeChanged();
+    partial void OnisAReturnChanging(bool value);
+    partial void OnisAReturnChanged();
+    partial void OnpaymentMethodChanging(string value);
+    partial void OnpaymentMethodChanged();
+    partial void OnreciptIDChanging(string value);
+    partial void OnreciptIDChanged();
+    #endregion
+		
+		public Transaction()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customerID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string customerID
+		{
+			get
+			{
+				return this._customerID;
+			}
+			set
+			{
+				if ((this._customerID != value))
+				{
+					this.OncustomerIDChanging(value);
+					this.SendPropertyChanging();
+					this._customerID = value;
+					this.SendPropertyChanged("customerID");
+					this.OncustomerIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateTime", DbType="DateTime NOT NULL")]
+		public System.DateTime dateTime
+		{
+			get
+			{
+				return this._dateTime;
+			}
+			set
+			{
+				if ((this._dateTime != value))
+				{
+					this.OndateTimeChanging(value);
+					this.SendPropertyChanging();
+					this._dateTime = value;
+					this.SendPropertyChanged("dateTime");
+					this.OndateTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isAReturn", DbType="Bit NOT NULL")]
+		public bool isAReturn
+		{
+			get
+			{
+				return this._isAReturn;
+			}
+			set
+			{
+				if ((this._isAReturn != value))
+				{
+					this.OnisAReturnChanging(value);
+					this.SendPropertyChanging();
+					this._isAReturn = value;
+					this.SendPropertyChanged("isAReturn");
+					this.OnisAReturnChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paymentMethod", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string paymentMethod
+		{
+			get
+			{
+				return this._paymentMethod;
+			}
+			set
+			{
+				if ((this._paymentMethod != value))
+				{
+					this.OnpaymentMethodChanging(value);
+					this.SendPropertyChanging();
+					this._paymentMethod = value;
+					this.SendPropertyChanged("paymentMethod");
+					this.OnpaymentMethodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_reciptID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string reciptID
+		{
+			get
+			{
+				return this._reciptID;
+			}
+			set
+			{
+				if ((this._reciptID != value))
+				{
+					this.OnreciptIDChanging(value);
+					this.SendPropertyChanging();
+					this._reciptID = value;
+					this.SendPropertyChanged("reciptID");
+					this.OnreciptIDChanged();
 				}
 			}
 		}

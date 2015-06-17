@@ -25,15 +25,17 @@ namespace PL
     public partial class onlineStore : Window
     {
         BL_Manager BL_manager;
-        Backend.Club_Member Member;
+        Person Member;
         ObservableCollection<string> zoneList = new ObservableCollection<string>(); // ariel
         ListBox dragSource = null; // ariel
 
-        public onlineStore(BL_Manager BL_manager, Backend.Club_Member member)
+        public onlineStore(BL_Manager BL_manager, Backend.Person member)
         {
             this.BL_manager=BL_manager;
             Member = member;
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
         }
 
         private void loadTypes(object sender, RoutedEventArgs e)
@@ -199,7 +201,7 @@ namespace PL
                 BL_manager.BL_transaction.addRecipt(temp);
             }
             BL_manager.BL_transaction.Add(false,reciptID,"visa", Member.ID);
-            Window1 a = new Window1(BL_manager,reciptID, Member);
+            creditinfo a = new creditinfo(BL_manager,reciptID, Member);
             a.Show();
         }
 

@@ -1,33 +1,20 @@
-﻿<Window x:Class="PL.Window1"
+﻿<Window x:Class="PL.creditinfo"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Window1" Height="300" Width="429.412" WindowStyle="None">
+        Title="Credit Card registration" Height="316.406" Width="600.781" WindowStyle="SingleBorderWindow">
     <Grid>
-        <DockPanel LastChildFill="False">
-            <Border DockPanel.Dock="Top" Background="White" BorderBrush="#FF1E99FF" BorderThickness="0,0,0,1">
-                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Top" CanVerticallyScroll="True" FlowDirection="RightToLeft" Background="White">
-                    <Button x:Name="closeB" Content="X" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Background="White" BorderBrush="White" Foreground="#FF1E99FF" FontWeight="Bold" Click="closeClick"/>
-                    <Button x:Name="maximaizeB" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Background="White" BorderBrush="White" Foreground="#FF1E99FF" FontWeight="Bold" Click="maximaizeB_Click" RenderTransformOrigin="0.5,0.5" Height="22">
-                        <Button.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleY="1" ScaleX="-1"/>
-                                <SkewTransform AngleY="0" AngleX="0"/>
-                                <RotateTransform Angle="0"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Button.RenderTransform>
-                        <Path Data="M4.368511,23.127279L4.3685131,47.283243 47.117023,47.283243 47.117023,23.127279z M0,10.684L53.755001,10.684 53.755001,51.668001 0,51.668001z M8.5679998,0L58.668022,0 64,0 64,5.6864691 64,45.317999 58.668022,45.317999 58.668022,5.6864691 8.5679998,5.6864691z"
-							Stretch="Uniform" Fill="#FF1E99FF" Width="10" Margin="0,0,0,0" />
-                    </Button>
-                    <Button x:Name="minimaizeB" Content="_" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Background="White" BorderBrush="White" Foreground="#FF1E99FF" FontWeight="Bold" Click="minimaizeClick"/>
-                </StackPanel>
-            </Border>
-            <TextBox x:Name="info" Width="259" Margin="0,0,0,236"/>
-            <Button x:Name="addCreditCardInfo" Content="addCreditCardInfo" Click="addInfo_Click" Margin="0,0,0,236" Width="111"/>
-            <Border>
-                <TextBox x:Name="shoppingList" Height="140" Margin="0,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"/>
-            </Border>
-            
+        <DockPanel>
+            <Grid DockPanel.Dock="Top" Height="87">
+                <TextBlock HorizontalAlignment="Left" Margin="56,27,0,0" Text="Credit Card Number" VerticalAlignment="Top" Height="25" Width="180" TextAlignment="Center" FontWeight="Bold" FontSize="16"/>
+                <TextBox x:Name="info" Height="25" Margin="241,27,43,35" />
+            </Grid>
+            <StackPanel DockPanel.Dock="Top" Height="40" VerticalAlignment="Center">
+                <Button x:Name="addCreditCardInfo" Content="Buy" Click="addInfo_Click" FontSize="16" Height="26" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </StackPanel>
+
+            <TextBox x:Name="shoppingList"   Width="317" Height="130" />
+
         </DockPanel>
+
     </Grid>
 </Window>

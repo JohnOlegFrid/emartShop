@@ -57,7 +57,8 @@ namespace PL
                          this.Close();
                          break;
                     case "Worker":
-
+                         Employee worker = (Employee)p;
+                         //GenralMenuWorker gm = new GeneralMenuWorker(BL_manager, worker);
                          break;
                     case "Customer":
                          Club_Member cm = (Club_Member)p;
@@ -66,7 +67,9 @@ namespace PL
                          this.Close();
                          break;
                     case "Admin":
-                        Window Gm= new GeneralMenu(BL_manager);
+                         Employee adm = (Employee)p;
+                         
+                        Window Gm= new GeneralMenu(BL_manager,adm);
                         Gm.Show();
                         this.Close();
                          break;

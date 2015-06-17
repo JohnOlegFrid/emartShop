@@ -19,13 +19,15 @@ namespace PL
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class creditinfo : Window
     {
-        private Club_Member member;
+        private Person member;
         private BL_Manager BL_manager;
-        public Window1(BL_Manager BL_manager, string r, Club_Member c)
+        public creditinfo(BL_Manager BL_manager, string r, Person c)
         {
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
             member = c;
             this.BL_manager = BL_manager;
             string text = "";
@@ -39,31 +41,29 @@ namespace PL
             }
             shoppingList.Text=text;
         }
-        private void closeClick(object sender, RoutedEventArgs e)
+      
+        private void addInfo_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-        }
-
-        private void maximaizeB_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.WindowState == WindowState.Maximized)
-                this.WindowState = WindowState.Normal;
+            String inf = info.Text;
+            if (MainWindow.isNumber(inf))
+            {
+                BL_manager.BL_clubMember.itsDAL.updateMemberVisa(member.ID, inf);
+                MessageBox.Show("visa number saved");
+                this.Close();
+            }
             else
             {
-                this.WindowState = WindowState.Maximized;
+                MessageBox.Show("Incorrect Credit card number,please try again.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
-        private void minimaizeClick(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }
+        
 
-        private void addInfo_Click(object sender, RoutedEventArgs e)
-        {
-            int creditNum = int.Parse(info.Text);
-            BL_manager.BL_clubMember.itsDAL.updateMemberVisa(member.ID, creditNum);
-            MessageBox.Show("visa number saved");
-        }
+       
+        
+
+        
+
+        
     }
 }
