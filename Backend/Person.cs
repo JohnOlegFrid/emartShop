@@ -56,7 +56,7 @@ namespace Backend
             this.firstName = first;
             this.lastName = last;
             this.gender = gender;
-            _visa = "";
+            _visa = "no visa saved";
         }
 
         public Person(Person p)

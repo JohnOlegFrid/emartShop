@@ -50,13 +50,13 @@ namespace PL
                 if(member is Club_Member)
                 {
                     BL_manager.BL_clubMember.itsDAL.updateMemberVisa(member.ID, inf);
-                    MessageBox.Show("visa number saved");
+                    MessageBox.Show("transaction completed");
                     this.Close();
                 }
                 if(member is Employee)
                 {
                     BL_manager.BL_employee.itsDAL.updateEmployeeVisa(member.ID, inf);
-                    MessageBox.Show("visa number saved");
+                    MessageBox.Show("transaction completed");
                     this.Close();
                 }
             }
@@ -66,6 +66,20 @@ namespace PL
             }
         }
 
+        private void exsisting_info_load_Click(object sender, RoutedEventArgs e)
+        {
+
+                if(member is Club_Member)
+                {
+                    info.Text=BL_manager.BL_clubMember.itsDAL.getVisaByID(member.ID);
+                    
+                }
+                if(member is Employee)
+                {
+                    info.Text = BL_manager.BL_employee.itsDAL.getVisaByID(member.ID);
+
+                }
+        }
         
 
        

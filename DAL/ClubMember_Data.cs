@@ -283,5 +283,21 @@ namespace DAL
                 }
             }
         }
+
+        public string getVisaByID(string id)
+        {
+            foreach (Club_Member c in DB)
+            {
+                if(c.ID==id)
+                {
+                    if(c.visa=="")
+                    {
+                        return "no visa saved";
+                    }
+                    return c.visa;
+                }
+            }
+            return "";
+        }
     }
 }

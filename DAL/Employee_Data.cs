@@ -336,5 +336,17 @@ namespace DAL
         }
 
 
+
+        public string getVisaByID(string id)
+        {
+            foreach (Backend.Employee c in DB)
+            {
+                if (c.ID == id)
+                {
+                    return c.visa;
+                }
+            }
+            return "";
+        }
     }
 }
