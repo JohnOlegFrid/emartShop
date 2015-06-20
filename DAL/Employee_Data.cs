@@ -319,6 +319,21 @@ namespace DAL
             return null;
         }
 
+        public void updateEmployeeVisa(string id, String i)
+        {
+            foreach (Backend.Employee c in DB)
+            {
+                if (c.ID == id)
+                {
+                    DAL.Employee cus = Change.EmployeeBackendToDal(c);
+                    emartDataContext.Employees.Attach(cus);
+                    emartDataContext.Employees.DeleteOnSubmit(cus);
+                    c.visa = i;
+                    emartDataContext.Employees.InsertOnSubmit(Change.EmployeeBackendToDal(c));
+                    emartDataContext.SubmitChanges();
+                }
+            }
+        }
 
 
     }
