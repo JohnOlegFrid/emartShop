@@ -270,15 +270,14 @@ namespace DAL
 
         public void updateMemberVisa(string id,String i)
         {
-            foreach (Club_Member c in DB)
+            foreach (Customer c in sqlDB.Customers)
             {
                 if(c.ID==id)
                 {
-                    DAL.Customer cus = Change.CustomerBackendToDal(c);
-                    sqlDB.Customers.Attach(cus);
-                    sqlDB.Customers.DeleteOnSubmit(cus);
+                    
+                   // sqlDB.Customers.DeleteOnSubmit(c);
                     c.visa = i;
-                    sqlDB.Customers.InsertOnSubmit(Change.CustomerBackendToDal(c));
+                    //sqlDB.Customers.InsertOnSubmit(c);
                     sqlDB.SubmitChanges();
                 }
             }
@@ -286,7 +285,7 @@ namespace DAL
 
         public string getVisaByID(string id)
         {
-            foreach (Club_Member c in DB)
+            foreach (Customer c in sqlDB.Customers)
             {
                 if(c.ID==id)
                 {

@@ -124,5 +124,15 @@ namespace BL
             return itsDAL.getType(ID);
         }
 
+
+        public string getVisaByID(string p)
+        {
+            return itsDAL.getVisaByID(p);
+        }
+   
+        public void updateEmployeeVisa(string p, string inf)
+        {
+            itsDAL.getVisaByID(p);
+        }
     }
 }

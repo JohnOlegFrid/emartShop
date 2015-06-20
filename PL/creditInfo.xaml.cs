@@ -49,13 +49,13 @@ namespace PL
             {
                 if(member is Club_Member)
                 {
-                    BL_manager.BL_clubMember.itsDAL.updateMemberVisa(member.ID, inf);
+                    BL_manager.BL_clubMember.updateMemberVisa(member.ID, inf);
                     MessageBox.Show("transaction completed");
                     this.Close();
                 }
                 if(member is Employee)
                 {
-                    BL_manager.BL_employee.itsDAL.updateEmployeeVisa(member.ID, inf);
+                    BL_manager.BL_employee.updateEmployeeVisa(member.ID, inf);
                     MessageBox.Show("transaction completed");
                     this.Close();
                 }
@@ -71,12 +71,12 @@ namespace PL
 
                 if(member is Club_Member)
                 {
-                    info.Text=BL_manager.BL_clubMember.itsDAL.getVisaByID(member.ID);
+                    info.Text=BL_manager.BL_clubMember.getVisaByID(member.ID);
                     
                 }
                 if(member is Employee)
                 {
-                    info.Text = BL_manager.BL_employee.itsDAL.getVisaByID(member.ID);
+                    info.Text = BL_manager.BL_employee.getVisaByID(member.ID);
 
                 }
         }

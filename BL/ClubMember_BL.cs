@@ -103,5 +103,15 @@ namespace BL
         {
             itsDAL.removeTransaction(id);
         }
+
+        public string getVisaByID(string p)
+        {
+            return itsDAL.getVisaByID(p);
+        }
+
+        public void updateMemberVisa(string p, string inf)
+        {
+            itsDAL.updateMemberVisa(p, inf);
+        }
     }
 }

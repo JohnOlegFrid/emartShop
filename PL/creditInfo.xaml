@@ -11,7 +11,9 @@
             <StackPanel DockPanel.Dock="Top" Height="40" VerticalAlignment="Center">
                 <Button x:Name="addCreditCardInfo" Content="Buy" Click="addInfo_Click" FontSize="16" Height="26" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </StackPanel>
-
+            <StackPanel DockPanel.Dock="Top" Height="40" VerticalAlignment="Center">
+                <Button x:Name="saveInfo" Content="use saved credit card number" Click="exsisting_info_load_Click" FontSize="16" Height="26" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </StackPanel>
             <TextBox x:Name="shoppingList"   Width="317" Height="130" />
 
         </DockPanel>
