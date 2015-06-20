@@ -34,13 +34,6 @@ namespace MainProg
             List<DAL.User> userSqlDB = (from s in emartDataContext.Users select s).ToList();
            
             
-            
-            
-            
-            
-            
-            
-            
             List<Backend.User> userDB = Change.UserDalToBackendList(userSqlDB);
             User_Data user_data = new User_Data(userDB);
 

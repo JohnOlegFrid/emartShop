@@ -277,7 +277,7 @@ namespace DAL
                     DAL.Customer cus = Change.CustomerBackendToDal(c);
                     sqlDB.Customers.Attach(cus);
                     sqlDB.Customers.DeleteOnSubmit(cus);
-                    c.visaNumber = i;
+                    c.visa = i;
                     sqlDB.Customers.InsertOnSubmit(Change.CustomerBackendToDal(c));
                     sqlDB.SubmitChanges();
                 }

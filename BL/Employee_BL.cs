@@ -11,7 +11,7 @@ namespace BL
     [Serializable]
     public class Employee_BL
     {
-        Employee_Data itsDAL;
+        public Employee_Data itsDAL;
 
         public Employee_BL(Employee_Data dl)
         {
