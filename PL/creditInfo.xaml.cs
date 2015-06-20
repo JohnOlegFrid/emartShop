@@ -47,9 +47,18 @@ namespace PL
             String inf = info.Text;
             if (MainWindow.isNumber(inf))
             {
-                BL_manager.BL_clubMember.itsDAL.updateMemberVisa(member.ID, inf);
-                MessageBox.Show("visa number saved");
-                this.Close();
+                if(member is Club_Member)
+                {
+                    BL_manager.BL_clubMember.itsDAL.updateMemberVisa(member.ID, inf);
+                    MessageBox.Show("visa number saved");
+                    this.Close();
+                }
+                if(member is Employee)
+                {
+                    BL_manager.BL_employee.itsDAL.updateEmployeeVisa(member.ID, inf);
+                    MessageBox.Show("visa number saved");
+                    this.Close();
+                }
             }
             else
             {

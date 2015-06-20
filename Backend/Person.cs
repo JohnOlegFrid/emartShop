@@ -14,6 +14,7 @@ namespace Backend
         private string _firstName;
         private string _lastName;
         private string _gender;
+        private string _visa;
 
         public string ID
         {
@@ -40,6 +41,11 @@ namespace Backend
             set { _gender = value; }
         }
 
+        public string visa
+        {
+            get { return _visa; }
+            set { _visa = value; }
+        }
         public Person()
         {
         }
@@ -50,6 +56,7 @@ namespace Backend
             this.firstName = first;
             this.lastName = last;
             this.gender = gender;
+            _visa = "";
         }
 
         public Person(Person p)
