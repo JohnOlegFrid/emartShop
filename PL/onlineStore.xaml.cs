@@ -199,6 +199,7 @@ namespace PL
             {
                 Receipt temp = new Receipt(reciptID,p.Item1.inventoryID, p.Item2 ,p.Item1.price);
                 BL_manager.BL_transaction.addRecipt(temp);
+                BL_manager.BL_product.Restock(p.Item1.inventoryID, "-"+p.Item2.ToString());
             }
             BL_manager.BL_transaction.Add(false,reciptID,"visa", Member.ID);
             creditinfo a = new creditinfo(BL_manager,reciptID, Member);
@@ -224,6 +225,10 @@ namespace PL
                 num--;
                 amount.Text = Convert.ToString(num);
             }
+        }
+        private void OnSelected(object sender, RoutedEventArgs e)
+        {
+            amount.Text = "1";
         }
 
        

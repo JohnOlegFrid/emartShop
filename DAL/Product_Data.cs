@@ -100,6 +100,18 @@ namespace DAL
                     p.inStock = true;
                 }
             }
+            foreach(DAL.Product p in emartDataContext.Products)
+            {
+                if(p.inventoryID==inventoryId)
+                {
+                    p.stockCount += int.Parse(addition);
+                    if (p.stockCount > 0)
+                    {
+                        p.inStock = true;
+                    }
+                }
+                
+            }
             if (stock.Count() == 0)
             {
                 return "no product by this inventory id";
