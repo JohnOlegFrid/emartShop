@@ -51,6 +51,7 @@ namespace DAL
                 temp.salary = d.salary;
                 temp.supervisorID = d.supervisorID;
                 temp.type = d.type;
+                temp.visa = d.visa;
                 list.Add(temp);
             }
             return list;
@@ -68,6 +69,7 @@ namespace DAL
             temp.salary = d.salary;
             temp.supervisorID = d.supervisorID.ToString();
             temp.type = d.type.ToString();
+            temp.visa = d.visa.ToString();
             return temp;
         }
 

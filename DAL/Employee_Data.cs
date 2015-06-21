@@ -321,7 +321,7 @@ namespace DAL
 
         public void updateEmployeeVisa(string id, String i)
         {
-            foreach (Employee c in emartDataContext.Employees)
+            foreach (DAL.Employee c in emartDataContext.Employees)
             {
                 if (c.ID == id)
                 {
@@ -335,10 +335,14 @@ namespace DAL
 
         public string getVisaByID(string id)
         {
-            foreach (Employee c in emartDataContext.Employees)
+            foreach (DAL.Employee c in emartDataContext.Employees)
             {
                 if (c.ID == id)
                 {
+                    if (c.visa == "")
+                    {
+                        return "no visa saved";
+                    }
                     return c.visa;
                 }
             }

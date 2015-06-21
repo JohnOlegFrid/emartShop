@@ -132,7 +132,7 @@ namespace BL
    
         public void updateEmployeeVisa(string p, string inf)
         {
-            itsDAL.getVisaByID(p);
+            itsDAL.updateEmployeeVisa(p,inf);
         }
     }
 }
