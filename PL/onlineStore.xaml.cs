@@ -195,15 +195,22 @@ namespace PL
         private void buy_Click(object sender, RoutedEventArgs e)
         {
             string reciptID = BL_Manager.generateID();
-            foreach (Tuple<Product, int> p in ShoppingCart.Items)
+            if(!ShoppingCart.Items.IsEmpty)
             {
-                Receipt temp = new Receipt(reciptID,p.Item1.inventoryID, p.Item2 ,p.Item1.price);
-                BL_manager.BL_transaction.addRecipt(temp);
-                BL_manager.BL_product.Restock(p.Item1.inventoryID, "-"+p.Item2.ToString());
+                foreach (Tuple<Product, int> p in ShoppingCart.Items)
+                {
+                    Receipt temp = new Receipt(reciptID, p.Item1.inventoryID, p.Item2, p.Item1.price);
+                    BL_manager.BL_transaction.addRecipt(temp);
+                    BL_manager.BL_product.Restock(p.Item1.inventoryID, "-" + p.Item2.ToString());
+                }
+                BL_manager.BL_transaction.Add(false, reciptID, "visa", Member.ID);
+                creditinfo a = new creditinfo(BL_manager, reciptID, Member);
+                a.Show();
             }
-            BL_manager.BL_transaction.Add(false,reciptID,"visa", Member.ID);
-            creditinfo a = new creditinfo(BL_manager,reciptID, Member);
-            a.Show();
+            else
+            {
+                MessageBox.Show("shopping Cart empty");
+            }
         }
 
         private void increase_Click(object sender, RoutedEventArgs e)
