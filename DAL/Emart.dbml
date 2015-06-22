@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EmartDataBase" Class="EmartDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=OLEJKA-PC\SQLEXPRESS;Initial Catalog=EmartDataBase;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="EmartDataBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.StoreLocation" Member="StoreLocations">
+    <Type Name="StoreLocation">
+      <Column Name="country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="street" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="latitude" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="longitude" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.Customer" Member="Customers">
     <Type Name="Customer">
       <Column Name="ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -9,6 +18,7 @@
       <Column Name="memberID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="dateOfBirth" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="visa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Department" Member="Departments">
@@ -29,6 +39,7 @@
       <Column Name="salary" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="supervisorID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="visa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Department_Employee" Member="Department" ThisKey="departmentID" OtherKey="ID" Type="Department" IsForeignKey="true" />
     </Type>
   </Table>
@@ -43,22 +54,6 @@
       <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="isBestSeller" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Department_Product" Member="Department" ThisKey="departmentID" OtherKey="ID" Type="Department" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
-      <Column Name="userName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.StoreLocation" Member="StoreLocations">
-    <Type Name="StoreLocation">
-      <Column Name="country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="city" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="street" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="latitude" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="longitude" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Recipt" Member="Recipts">
@@ -83,6 +78,13 @@
       <Column Name="isAReturn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="paymentMethod" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="reciptID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="userName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
