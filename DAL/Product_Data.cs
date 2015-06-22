@@ -99,6 +99,10 @@ namespace DAL
                 {
                     p.inStock = true;
                 }
+                if (p.stockCount < 1)
+                {
+                    p.inStock = false;
+                }
             }
             foreach(DAL.Product p in emartDataContext.Products)
             {
@@ -109,7 +113,12 @@ namespace DAL
                     {
                         p.inStock = true;
                     }
+                    if (p.stockCount < 1)
+                     {
+                         p.inStock = false;
+                     }
                 }
+                emartDataContext.SubmitChanges();
                 
             }
             if (stock.Count() == 0)
