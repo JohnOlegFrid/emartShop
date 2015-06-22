@@ -29,5 +29,13 @@ namespace PL.Products
             dataGrid.ItemsSource = list;
 
         }
+
+        private void doubleClick(object sender, MouseButtonEventArgs e)
+        {
+            GeneralMenu gn = new GeneralMenu(null, null);
+            gn.Show();
+        }
+
+       
     }
 }

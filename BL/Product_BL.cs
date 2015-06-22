@@ -143,10 +143,11 @@ namespace BL
             return itsDAL.getProductsInStockByPriceRange(min, max);
         }
 
-        public bool updateProduct(string id, string name, string type, string departmentId, string price)
+        public bool updateProduct(string id, string name, string type, string departmentId, string price,String stockCount)
         {
-            return itsDAL.updateProduct(id, name, (Backend.Product.Type)Enum.Parse(typeof(Backend.Product.Type), type), departmentId, double.Parse(price));
+            return itsDAL.updateProduct(id, name, (Backend.Product.Type)Enum.Parse(typeof(Backend.Product.Type), type), departmentId, double.Parse(price), int.Parse(stockCount));
         }
+       
 
         public void RemoveDepartment(string id)
         {

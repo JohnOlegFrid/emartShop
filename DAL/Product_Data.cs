@@ -109,6 +109,7 @@ namespace DAL
                     {
                         p.inStock = true;
                     }
+                    emartDataContext.SubmitChanges();
                 }
                 
             }
@@ -194,7 +195,7 @@ namespace DAL
             return product.ToString();
         }
 
-        public bool updateProduct(string id, string name, Backend.Product.Type type, string departmentId, double price)
+        public bool updateProduct(string id, string name, Backend.Product.Type type, string departmentId, double price,int stockCount)
         {
             if (!Contains(id))
             {
@@ -210,9 +211,21 @@ namespace DAL
                 p.type = type;
                 p.departmentID = departmentId;
                 p.price = price;
+                p.stockCount = stockCount;
             }
+            foreach(DAL.Product p in emartDataContext.Products)
+                if (p.inventoryID == id)
+                {
+                    p.name = name;
+                    p.price = price;
+                    p.type = type.ToString();
+                    p.departmentID = departmentId;
+                    p.stockCount = stockCount;
+                    emartDataContext.SubmitChanges();
+                    return true;
+                }
             
-            return true;
+            return false;
         }
 
         public void RemoveDepartment(string id)
