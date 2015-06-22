@@ -12,7 +12,6 @@
                     <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Add Product" Click="AddClick" Margin="5,0"/>
                     <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Print Products" Click="PrintClick" Margin="5,0"/>
                     <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Remove" Margin="5,0" Click="RemoveClick"/>
-                    <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Edit" Margin="5,0" Click="EditClick"/>
                     <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Search" Margin="5,0" Click="SearchClick"/>
                 </StackPanel>
             </Border>

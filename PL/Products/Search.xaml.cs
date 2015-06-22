@@ -85,11 +85,23 @@ namespace PL.Products
         {
             List<Product> list = new List<Product>();
             String type = (typeCombo.SelectedItem as Enum).ToString();
-            foreach (Product p in currList)
+            if (currList != null)
             {
-                if (p.type.ToString() == type) list.Add(p);
+                foreach (Product p in currList)
+                {
+                    if (p.type.ToString() == type) list.Add(p);
+                }
+                searchResult.ItemsSource = list;
             }
-            searchResult.ItemsSource = list;
+            
+        }
+
+        private void Edit_Button(object sender, RoutedEventArgs e)
+        {
+            Product p = (searchResult.SelectedItem as Product);
+            Products.Edit edit=new Products.Edit(BL_manager,p);
+            edit.Show();
+            
         }
 
         

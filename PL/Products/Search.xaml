@@ -24,7 +24,9 @@
 
             <RadioButton Name="byIDradio" Content="by ID" GroupName="search"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,51,0,0" />
             <RadioButton Name="byNameradio" Content="By name" GroupName="search" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,50,0,0"/>
-            <DataGrid Name="searchResult" GridLinesVisibility="None"  Margin="0,124,0,0" />
+            
+            <DataGrid Name="searchResult" IsReadOnly="true" GridLinesVisibility="None"  Margin="0,124,0,0" />
+            <Button Name="editButton" Content="Edit" HorizontalAlignment="Left" Height="20" Margin="185,99,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" FontStretch="Condensed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Click="Edit_Button" />
         </Grid>
     </StackPanel>
 
