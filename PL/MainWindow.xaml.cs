@@ -59,6 +59,7 @@ namespace PL
                     case "Worker":
                          Employee worker = (Employee)p;
                          GeneralMenuWorker gm = new GeneralMenuWorker(BL_manager, worker);
+                         gm.Show();
                          break;
                     case "Customer":
                          Club_Member cm = (Club_Member)p;
