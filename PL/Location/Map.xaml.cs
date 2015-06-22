@@ -38,7 +38,8 @@ namespace PL.Location
 
             List<StoreLocation> sl = BL_manager.BL_location.getAll();
             locationsBox.ItemsSource = sl;
-            
+            browser.NavigateToString("<html><body><script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script><div style='overflow:hidden;height:500px;width:600px;'><div id='gmap_canvas' style='height:500px;width:600px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class='google-map-code' href='http://wptiger.com' id='get-map-data'>premium wordpress themes</a></div><script type='text/javascript'> function init_map(){var myOptions = {zoom:2,center:new google.maps.LatLng(29.557669,34.951925000000074),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(29.557669, 34.951925000000074)});infowindow = new google.maps.InfoWindow({content:'<b></b><br/><br/> ' });google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});}google.maps.event.addDomListener(window, 'load', init_map);</script></body></html>");
+
             
         }
 

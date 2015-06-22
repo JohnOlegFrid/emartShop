@@ -6,20 +6,21 @@
 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="590"
+      d:DesignHeight="450" d:DesignWidth="590"
 	Title="Map">
 
-    <Grid>
-        <Grid Height="400" Width="600" >
+    
+
+        <Grid Height="450" Width="600" >
             <TextBlock x:Name="txt_Copy" HorizontalAlignment="Left" Margin="10,36,0,342" VerticalAlignment="Center" FontFamily="abeatbyKai" FontSize="16" Padding="0,5,0,0" Height="22" Width="247" Text="Select Store Location" TextAlignment="Center"/>
-            <ComboBox x:Name="locationsBox" Height="25" Width="247"  BorderThickness="1,4,1,1" SelectionChanged="locationsBox_SelectionChanged" VerticalAlignment="Top" Margin="10,58,343,0" />
+            <ComboBox x:Name="locationsBox" Height="25" Width="247"  BorderThickness="1,4,1,1" SelectionChanged="locationsBox_SelectionChanged" VerticalAlignment="Top" Margin="10,83,343,0" />
             <TextBlock Name="txt" HorizontalAlignment="Left" Margin="297,36,0,317" VerticalAlignment="Center" FontFamily="abeatbyKai" TextAlignment="Center" FontSize="20" Padding="0,5,0,0" Height="47"><Run Text="Current temperature"/><LineBreak/><Run Text=" near the store "/></TextBlock>
-            <TextBlock  Name="temptxt" Height="47" Margin="499,36,0,0" VerticalAlignment="Top" Width="55" Foreground="#FF5690F7" IsHyphenationEnabled="True" FontFamily="abeatbyKai" FontSize="40" TextAlignment="Center" Padding="0,5,0,0" FontWeight="Bold" HorizontalAlignment="Left"/>
-            <TextBlock  x:Name="sign" Height="47" Margin="547,36,0,0" VerticalAlignment="Top" Width="54" Foreground="#FF5690F7" IsHyphenationEnabled="True" FontFamily="abeatbyKai" Padding="0,5,0,0" FontWeight="Bold" HorizontalAlignment="Left" Text="0"/>
-            <WebBrowser Name="browser" HorizontalAlignment="Left" Height="253" Margin="10,137,0,0" VerticalAlignment="Top" Width="580"/>
+            <TextBlock  Name="temptxt" Height="47" Margin="498,61,0,0" VerticalAlignment="Top" Width="55" Foreground="#FF5690F7" IsHyphenationEnabled="True" FontFamily="abeatbyKai" FontSize="40" TextAlignment="Center" Padding="0,5,0,0" FontWeight="Bold" HorizontalAlignment="Left"/>
+            <TextBlock  x:Name="sign" Height="47" Margin="546,61,0,0" VerticalAlignment="Top" Width="54" Foreground="#FF5690F7" IsHyphenationEnabled="True" FontFamily="abeatbyKai" Padding="0,5,0,0" FontWeight="Bold" HorizontalAlignment="Left" Text="0"/>
+            <WebBrowser Name="browser" HorizontalAlignment="Left" Height="300" Margin="2,137,0,0" VerticalAlignment="Top" Width="580"/>
             <!--m:Map x:Name="myMap" CredentialsProvider="ArKYZVKMt1Y2vJvznGAu8NkVD3HBmC7VMjnbj6UdHCrss-vq-M4-e_65bheLavmA" Margin="0,106,16,0" FontWeight="Bold" Height="284" VerticalAlignment="Top"/-->
-            
+
 
         </Grid>
-    </Grid>
+    
 </Page>
