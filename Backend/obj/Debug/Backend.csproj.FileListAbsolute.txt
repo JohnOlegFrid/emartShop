@@ -35,3 +35,4 @@ C:\Users\Gwainer\Desktop\emartwpf2\Backend\bin\Debug\Backend.dll
 C:\Users\Gwainer\Desktop\emartwpf2\Backend\bin\Debug\Backend.pdb
 C:\Users\Gwainer\Desktop\emartwpf2\Backend\obj\Debug\Backend.dll
 C:\Users\Gwainer\Desktop\emartwpf2\Backend\obj\Debug\Backend.pdb
+C:\Users\Gwainer\Desktop\emartwpf2\Backend\obj\Debug\Backend.csprojResolveAssemblyReference.cache
