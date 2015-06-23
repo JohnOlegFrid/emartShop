@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
 using Backend;
-using DAL;
+
 
 namespace PL.Location
 {

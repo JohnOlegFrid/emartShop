@@ -60,10 +60,35 @@ namespace BL
             return false;
         }
 
-        public List<StoreLocation> getAll()
+        public List<Backend.StoreLocation> getAll()
         {
-            return itsDAL.getAll();
+            List<DAL.StoreLocation> list= itsDAL.getAll();
+            List<Backend.StoreLocation> ans = Change.StoreLocationDalToBackendList(list);
+            return ans;
         }
 
+        public List<Backend.StoreLocation> getByCityName(String city)
+        {
+            List<DAL.StoreLocation> list = itsDAL.getAll();
+            List<Backend.StoreLocation> blist = Change.StoreLocationDalToBackendList(list);
+            List<Backend.StoreLocation> ans=new List<Backend.StoreLocation>();
+            foreach (Backend.StoreLocation s in blist)
+            {
+                if (s.city == city) ans.Add(s);
+            }
+            return ans;
+        }
+
+        public List<Backend.StoreLocation> getByCountryName(String country)
+        {
+            List<DAL.StoreLocation> list = itsDAL.getAll();
+            List<Backend.StoreLocation> blist = Change.StoreLocationDalToBackendList(list);
+            List<Backend.StoreLocation> ans = new List<Backend.StoreLocation>();
+            foreach (Backend.StoreLocation s in blist)
+            {
+                if (s.country == country) ans.Add(s);
+            }
+            return ans;
+        }
     }
 }

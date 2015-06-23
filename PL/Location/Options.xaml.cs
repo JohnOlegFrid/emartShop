@@ -44,6 +44,11 @@ namespace PL.Location
         {
             frame.Navigate(new Location.Map(BL_manager));
         }
+
+        private void searchClick(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new Location.Search(BL_manager));
+        }
        
 
         

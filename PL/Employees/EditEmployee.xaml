@@ -11,7 +11,7 @@
         </Grid.Background>
         <DockPanel>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="517" Height="350">
-            
+
                 <StackPanel Height="50" Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock TextWrapping="Wrap" Text="Edit Employee" Width="353" Margin="0" VerticalAlignment="Bottom" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
 
@@ -21,8 +21,6 @@
                     <TextBox Name="firstNametxt" HorizontalAlignment="Left" Height="25" Margin="55,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
                     <TextBlock HorizontalAlignment="Left" Height="19" Margin="285,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"><Run FlowDirection="RightToLeft" Text="Last name"/></TextBlock>
                     <TextBox Name="lastNametxt" HorizontalAlignment="Left" Height="25" Margin="285,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
-                    <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="ID number"/>
-                    <TextBox Name="IDnumbertxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="55,93,0,0" />
                     <TextBlock HorizontalAlignment="Left" Height="19" Margin="285,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="Gender"/>
                     <ComboBox Name="gendertxt" HorizontalAlignment="Left" Height="25" Width="90" Margin="285,93,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White" SelectedIndex="0" >
                         <ComboBoxItem>Man</ComboBoxItem>
@@ -30,16 +28,16 @@
                     </ComboBox>
                     <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="Salary"/>
                     <TextBox Name="salarytxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="55,152,0,0"/>
-                    <TextBlock HorizontalAlignment="Left" Height="19" Margin="285,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="Supervisor ID"/>
-                    <TextBox Name="supervisorIDtxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="285,152,0,0" />
-                    <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="Department ID"/>
-                    <TextBox Name="departmentIDtxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="55,213,0,0" />
+                    <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="Supervisor ID"/>
+                    <TextBox Name="supervisorIDtxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Margin="55,93,0,0" />
+                    <TextBlock HorizontalAlignment="Left" Height="19" Margin="55,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="Department"/>
+                    <ComboBox Name="departmentIDtxt" HorizontalAlignment="Left" Height="25" BorderBrush="White" Background="White"  VerticalAlignment="Top" Width="178" Margin="55,213,0,0" />
                     <TextBlock HorizontalAlignment="Left" Height="19" Margin="285,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Text="Type"/>
                     <ComboBox Name="typetxt" HorizontalAlignment="Left" Height="25" Width="90" Margin="285,213,0,0" VerticalAlignment="Top" BorderBrush="White" Background="White" SelectedIndex="0" >
                         <ComboBoxItem>Worker</ComboBoxItem>
                         <ComboBoxItem>Manager</ComboBoxItem>
                     </ComboBox>
-                    <Button Content="Register" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="136" Height="37"  Click="Register_Click"/>
+                    <Button Content="Update" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="136" Height="37"  Click="Register_Click"/>
                 </Grid>
             </StackPanel>
         </DockPanel>

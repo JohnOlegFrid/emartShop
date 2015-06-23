@@ -13,6 +13,7 @@
                     <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Add Location"  Margin="5,5,5,0" VerticalAlignment="Top" Click="AddClick"/>
                     <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Remove Location" Margin="5,0" Click="Remove_Click"/>
                     <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Map" Click="printClick" Margin="5,5,5,0" VerticalAlignment="Top"/>
+                    <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Search" Margin="5" Click="searchClick" />
                 </StackPanel>
             </Border>
             <Frame  DockPanel.Dock="Top" Name="frame">

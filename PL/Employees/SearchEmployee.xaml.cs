@@ -84,6 +84,21 @@ namespace PL.Employees
             }
         }
 
+        private void editClick(object sender, RoutedEventArgs e)
+        {
+            Employee emp = (searchResult.SelectedItem as Employee);
+            Employees.EditEmployee ee = new Employees.EditEmployee(BL_manager, emp);
+            ee.Show();
+        }
+
+        private void showAllClick(object sender, RoutedEventArgs e)
+        {
+            List<Employee> list = BL_manager.BL_employee.getAllEmployees();
+            searchResult.ItemsSource = list;
+        }
+
+        
+
         
 
         
