@@ -24,6 +24,7 @@ namespace PL
     [Serializable]
     public partial class onlineStore : Window
     {
+        List<Product> selectedProducts;
         BL_Manager BL_manager;
         Person Member;
         ObservableCollection<string> zoneList = new ObservableCollection<string>(); // ariel
@@ -50,16 +51,16 @@ namespace PL
         }
         private void loadProductView(object sender, RoutedEventArgs e)
         {
-            List<Product> selectedProducts;
+
             BL_manager.updateBestSeller();
             
             if(types.SelectedValue=="All")
             {
-                selectedProducts = BL_manager.BL_product.getAllProductsList();
+                selectedProducts = BL_manager.BL_product.getAllProductsListInStock();
             }
             else
             {
-                selectedProducts = BL_manager.BL_product.getProductsListByType((Product.Type)Enum.Parse(typeof(Product.Type), (string)types.SelectedValue));
+                selectedProducts = BL_manager.BL_product.getProductsListByTypeInStock((Product.Type)Enum.Parse(typeof(Product.Type), (string)types.SelectedValue));
             }
            // ObservableCollection<Product> myCollection = new ObservableCollection<Product>(selectedProducts);
             ProductView.ItemsSource=selectedProducts;
@@ -119,6 +120,14 @@ namespace PL
                 if (t.Item1.inventoryID == p.inventoryID)
                 {
                     int newAmount = t.Item2 + int.Parse(amount.Text);
+                    if (newAmount > t.Item1.stockCount)
+                    {
+                        newAmount = t.Item1.stockCount;
+                        selectedProducts.Remove(t.Item1);
+                        int i = ProductView.Items.IndexOf(t.Item1);
+                        ProductView.ItemsSource = selectedProducts;
+                        ProductView.Items.Refresh();
+                    }
                     data= new Tuple<Product, int>(p, newAmount);
                     index = ShoppingCart.Items.IndexOf(t);
                     exist = true;
@@ -175,6 +184,16 @@ namespace PL
                 if(t.Item1.inventoryID==p.inventoryID)
                 {
                     int newAmount= t.Item2 + m;
+                    if(newAmount >t.Item1.stockCount)
+                    {
+                        newAmount = t.Item1.stockCount;
+                        selectedProducts.Remove(t.Item1);
+                        int i = ProductView.Items.IndexOf(t.Item1);
+                        ProductView.ItemsSource = selectedProducts;
+                        ProductView.Items.Refresh();
+
+                        
+                    }
                     item = new Tuple<Product, int>(p, newAmount);
                     index = ShoppingCart.Items.IndexOf(t);
                     exist = true;

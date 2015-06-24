@@ -31,7 +31,7 @@ namespace PL
             member = c;
             this.BL_manager = BL_manager;
             string text = "";
-            foreach (Backend.Receipt recipt in BL_manager.BL_transaction.itsDAL.receiptDB)
+            foreach (Backend.Receipt recipt in BL_manager.BL_transaction.getReciptList())
             {
                 if(recipt.ID==r)
                 {

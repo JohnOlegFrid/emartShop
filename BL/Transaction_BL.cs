@@ -92,5 +92,10 @@ namespace BL
         {
             itsDAL.addRecipt(r);
         }
+
+        public List<Receipt> getReciptList()
+        {
+            return itsDAL.receiptDB;
+        }
     }
 }
