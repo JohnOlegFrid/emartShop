@@ -9,6 +9,6 @@ namespace DAL
     interface IDAL
     {
         void Add(Object other);
-        void Remove(Object other);
+        Boolean Remove(Object other);
     }
 }

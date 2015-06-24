@@ -30,6 +30,7 @@
                     <Button Content="Edit my profile"  Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="EditClick" />
                     <Button Content="Change Password" Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="changePassClick" />
                     <Button Name="store" Content="Virtual Store" Background="White" BorderBrush="#FF00B9FF" Margin="5" Click="storeClick" />
+                    <Button Content="Location" Background="White" Margin="5"  BorderThickness="3,3,3,3" BorderBrush="#FF04EE2F" Click="locationClick" />
                     <Button Content="Log out" Background="White" Margin="5" Click="logoutClick" BorderThickness="3,3,3,3" BorderBrush="Red" />
 
                     <StackPanel Height="139" VerticalAlignment="Bottom">

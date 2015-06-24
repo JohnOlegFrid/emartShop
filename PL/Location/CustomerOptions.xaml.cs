@@ -13,31 +13,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
+using Backend;
 
 namespace PL.Location
 {
     /// <summary>
-    /// Interaction logic for Options.xaml
+    /// Interaction logic for CustomerOptions.xaml
     /// </summary>
-    public partial class Options : UserControl
+    public partial class CustomerOptions : UserControl
     {
         BL_Manager BL_manager;
-
-        public Options(BL_Manager BL_manager)
+        public CustomerOptions(BL_Manager BL_manager)
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
-        }
-
-
-        private void AddClick(object sender, RoutedEventArgs e)
-        {
-            frame.Navigate(new Location.Add(BL_manager));
-        }
-
-        private void Remove_Click(object sender, RoutedEventArgs e)
-        {
-            frame.Navigate(new Location.Remove(BL_manager));
         }
 
         private void printClick(object sender, RoutedEventArgs e)
@@ -49,8 +38,5 @@ namespace PL.Location
         {
             frame.Navigate(new Location.Search(BL_manager));
         }
-       
-
-        
     }
 }

@@ -41,7 +41,7 @@ namespace DAL
             sqlDB.SubmitChanges();
         }
 
-        public void Remove(Object us)
+        public Boolean Remove(Object us)
         {
             Backend.User user = (Backend.User)us;
             foreach (Backend.User u in DB)
@@ -52,9 +52,10 @@ namespace DAL
                     DAL.User toDelete = Change.UserBackendToDal(user);
                     sqlDB.Users.DeleteOnSubmit(toDelete);
                     sqlDB.SubmitChanges();
-                    return;
+                    return true;
                 }
             }
+            return false;
         }
 
         public Boolean Update(Backend.User toUpdate,String newPass)

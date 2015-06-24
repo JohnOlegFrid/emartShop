@@ -13,7 +13,6 @@
                 <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Add Employee" Click="addEmployeeClick" Margin="5,0"/>
                 <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Print all Employees" Click="printEmployeeClick" Margin="5,0"/>
                 <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Remove" Margin="5,0" Click="Remove_Click"/>
-                <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Edit" Margin="5,0" Click="Edit_Click"/>
                 <Button Height="25" Width="100" Background="White" BorderBrush="#FF00B9FF" Content="Search" Margin="5,0" Click="Search_Click"/>
             </StackPanel>
         </Border>

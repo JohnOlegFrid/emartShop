@@ -224,6 +224,30 @@ namespace DAL
             }
             return list;
         }
+
+        ///////////////////////////////////////////////// Location CONVERTION
+        public static List<Backend.StoreLocation> StoreLocationDalToBackendList(List<DAL.StoreLocation> StoreLocationSqlDB)
+        {
+            List<Backend.StoreLocation> list = new List<Backend.StoreLocation>();
+            Backend.StoreLocation temp;
+            foreach (DAL.StoreLocation d in StoreLocationSqlDB)
+            {
+                temp = new Backend.StoreLocation(d.country,d.city,d.street,d.latitude,d.longitude);
+                list.Add(temp);
+            }
+            return list;
+        }
+
+        public static DAL.StoreLocation StoreLocationBackendToDal(Backend.StoreLocation d)
+        {
+            DAL.StoreLocation ans = new DAL.StoreLocation();
+            ans.country = d.country;
+            ans.city = d.city;
+            ans.street = d.street;
+            ans.latitude = d.latitude;
+            ans.longitude = d.longitude;
+            return ans;
+        }
     }
 }
     

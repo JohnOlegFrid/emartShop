@@ -29,6 +29,10 @@ namespace PL.WorkerMenu
             this.emp = emp;
             this.BL_manager = BL_manager;
             InitializeComponent();
+            firstNametxt.Text = emp.firstName;
+            lastNametxt.Text = emp.lastName;
+            if (emp.gender.CompareTo("Man") == 0) gendertxt.SelectedIndex = 0;
+            else gendertxt.SelectedIndex = 1;
         }
 
         private void updateClick(object sender, RoutedEventArgs e)

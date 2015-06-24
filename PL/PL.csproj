@@ -159,6 +159,9 @@
     <Compile Include="Location\Add.xaml.cs">
       <DependentUpon>Add.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Location\CustomerOptions.xaml.cs">
+      <DependentUpon>CustomerOptions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Location\Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,12 @@
     </Compile>
     <Compile Include="Location\Remove.xaml.cs">
       <DependentUpon>Remove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Location\Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Location\ShowMap.xaml.cs">
+      <DependentUpon>ShowMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="Location\Weather.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -448,6 +457,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Location\CustomerOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Location\Map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -459,6 +472,14 @@
     <Page Include="Location\Remove.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Location\Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Location\ShowMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>

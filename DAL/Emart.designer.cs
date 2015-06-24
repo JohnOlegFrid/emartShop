@@ -220,17 +220,7 @@ namespace DAL
 			}
 		}
 
-        public override string ToString()
-        {
-            StringBuilder ans = new StringBuilder();
-            ans.Append(country);
-            ans.Append(", ");
-            ans.Append(city);
-            ans.Append(", ");
-            ans.Append(street);
-            return ans.ToString();
-
-        }
+        
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="VarChar(50)")]
 		public string city
 		{

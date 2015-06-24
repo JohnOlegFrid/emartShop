@@ -6,6 +6,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="600">
     <Grid>
-        <DataGrid Name="dataGrid" BorderBrush="#FF00B9FF" IsReadOnly="True" HorizontalGridLinesBrush="#FF00B9FF" VerticalGridLinesBrush="#FF00B9FF" MouseDoubleClick="doubleClick"  /> 
+        <DataGrid Name="dataGrid" BorderBrush="#FF00B9FF" IsReadOnly="True" HorizontalGridLinesBrush="#FF00B9FF" VerticalGridLinesBrush="#FF00B9FF"   /> 
     </Grid>
 </UserControl>

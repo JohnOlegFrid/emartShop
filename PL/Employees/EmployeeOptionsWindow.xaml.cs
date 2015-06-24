@@ -49,12 +49,7 @@ namespace PL.Employees
             r.Show();
         }
 
-        private void Edit_Click(object sender, RoutedEventArgs e)
-        {
-            EditEmployee edit = new EditEmployee(BL_manager);
-            edit.Show();
-
-        }
+        
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {

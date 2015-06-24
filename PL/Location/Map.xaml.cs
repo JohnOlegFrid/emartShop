@@ -16,7 +16,8 @@ using System.Globalization;
 using Microsoft.Maps.MapControl.WPF;
 using Microsoft.Maps.MapControl.WPF.Design;
 using BL;
-using DAL;
+using Backend;
+
 namespace PL.Location
 {
     /// <summary>

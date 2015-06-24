@@ -94,5 +94,12 @@ namespace PL
             this.Close();
         }
 
+        private void locationClick(object sender, RoutedEventArgs e)
+        {
+            Location.CustomerOptions co = new Location.CustomerOptions(BL_manager);
+            generalMenuPanel.Children.Clear();
+            generalMenuPanel.Children.Add(co);
+        }
+
     }
 }
