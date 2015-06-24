@@ -70,3 +70,12 @@ C:\Users\Gwainer\Desktop\emartwpf2\BL\bin\Debug\DAL.pdb
 C:\Users\Gwainer\Desktop\emartwpf2\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
 C:\Users\Gwainer\Desktop\emartwpf2\BL\obj\Debug\BL.dll
 C:\Users\Gwainer\Desktop\emartwpf2\BL\obj\Debug\BL.pdb
+C:\Users\Gwainer\Desktop\emartwpf3\BL\bin\Debug\BL.dll
+C:\Users\Gwainer\Desktop\emartwpf3\BL\bin\Debug\BL.pdb
+C:\Users\Gwainer\Desktop\emartwpf3\BL\bin\Debug\Backend.dll
+C:\Users\Gwainer\Desktop\emartwpf3\BL\bin\Debug\DAL.dll
+C:\Users\Gwainer\Desktop\emartwpf3\BL\bin\Debug\Backend.pdb
+C:\Users\Gwainer\Desktop\emartwpf3\BL\bin\Debug\DAL.pdb
+C:\Users\Gwainer\Desktop\emartwpf3\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\Gwainer\Desktop\emartwpf3\BL\obj\Debug\BL.dll
+C:\Users\Gwainer\Desktop\emartwpf3\BL\obj\Debug\BL.pdb

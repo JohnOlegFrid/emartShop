@@ -159,6 +159,23 @@ namespace BL
             return itsDAL.getPriceByProductID(id);
         }
 
-        
+
+
+        public List<Backend.Product> getAllProductsListInStock()
+        {
+            return itsDAL.getAllProductsListInStock();
+        }
+
+        public List<Backend.Product> getProductsListByTypeInStock(Backend.Product.Type type)
+        {
+            List<Backend.Product> list = itsDAL.getAllProductsList();
+            List<Backend.Product> ans = new List<Backend.Product>();
+            foreach (Backend.Product p in list)
+            {
+                if (p.type == type && p.inStock)
+                    ans.Add(p);
+            }
+            return ans;
+        }
     }
 }

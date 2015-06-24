@@ -56,7 +56,10 @@ namespace DAL
             List<Backend.Product> list = new List<Backend.Product>();
             foreach (Backend.Product p in DB)
             {
+                if(p.inStock)
+                {
                 list.Add(p);
+                }
             }
             return list;
         }
@@ -272,12 +275,22 @@ namespace DAL
             List < Backend.Product > list= new List<Backend.Product>();
             foreach(Backend.Product p in DB)
             {
-                if(p.type==type)
-                {
-                    list.Add(p);                
-                }
+                 list.Add(p);                
             }
 
+            return list;
+        }
+
+        public List<Backend.Product> getAllProductsListInStock()
+        {
+            List<Backend.Product> list = new List<Backend.Product>();
+            foreach (Backend.Product p in DB)
+            {
+                if (p.inStock)
+                {
+                    list.Add(p);
+                }
+            }
             return list;
         }
     }
