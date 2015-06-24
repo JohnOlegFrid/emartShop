@@ -41,12 +41,13 @@ namespace BL
         }
 
         //removes a user
-        public void Remove(Backend.User user)
+        public Boolean Remove(Backend.User user)
         {
             if (exist(user))
             {
-                itsDAL.Remove(user);
+                return itsDAL.Remove(user);
             }
+            return false;
         }
 
         public Boolean RemoveByUserName(String name)

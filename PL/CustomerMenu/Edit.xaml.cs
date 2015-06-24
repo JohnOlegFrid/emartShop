@@ -29,6 +29,11 @@ namespace PL.CustomerMenu
             this.cm = cm;
             this.BL_manager = BL_manager;
             InitializeComponent();
+            firstNametxt.Text = cm.firstName;
+            lastNametxt.Text = cm.lastName;
+            dateOdBirthtxt.Text = cm.dateOfBirth;
+            if (cm.gender.CompareTo("Man") == 0) gendertxt.SelectedIndex = 0;
+            else gendertxt.SelectedIndex = 1;
         }
 
         private void updateClick(object sender, RoutedEventArgs e)

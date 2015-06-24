@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
+using Backend;
 
 namespace PL.Departments
 {
@@ -26,17 +27,23 @@ namespace PL.Departments
         {
             this.BL_manager = BL_manager;
             InitializeComponent();
+            nametxt.ItemsSource = BL_manager.BL_department.getAllDepartments();
+            
         }
 
         private void removeClick(object sender, RoutedEventArgs e)
         {
-            String name = nametxt.Text;
+            String name = (nametxt.SelectedItem as Department).name;
             if (MainWindow.isWord(name))
             {
                 if (BL_manager.BL_department.isNameTaken(name))
                 {
-                    BL_manager.BL_department.RemoveByName(name);
-                    MessageBox.Show("The departmnet " + name + " Removed succefully.", "Removed succefully", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (MessageBoxResult.Yes == MessageBox.Show("Are you sure you want to remove " + name + " department?",
+                        "Remove Department", MessageBoxButton.YesNo, MessageBoxImage.Warning))
+                    {
+                        BL_manager.BL_department.RemoveByName(name);
+                        MessageBox.Show("The departmnet " + name + " Removed succefully.", "Removed succefully", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
 
                 }
                 else
@@ -49,6 +56,8 @@ namespace PL.Departments
                 MessageBox.Show("Incorrect name, please try other department name.", "Problem", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             }
+            nametxt.ItemsSource = BL_manager.BL_department.getAllDepartments();
+            nametxt.SelectedIndex = 0;
         }
 
         

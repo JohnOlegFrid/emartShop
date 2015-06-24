@@ -30,11 +30,6 @@ namespace PL.Products
 
         }
 
-        private void doubleClick(object sender, MouseButtonEventArgs e)
-        {
-            GeneralMenu gn = new GeneralMenu(null, null);
-            gn.Show();
-        }
 
        
     }

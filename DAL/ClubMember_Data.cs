@@ -39,27 +39,29 @@ namespace DAL
             sqlDB.SubmitChanges();
         }
 
-        public void Remove(string id)
+        public Boolean Remove(string id)
         {
-            var clubMember =
-                from c in DB
-                where c.memberID == id
-                select c;
-            foreach (Club_Member c in clubMember)
+            
+            foreach (Club_Member c in DB)
             {
-                DB.Remove(c);
-                DAL.Customer cus = Change.CustomerBackendToDal(c);
-                sqlDB.Customers.DeleteOnSubmit(cus);
-                sqlDB.SubmitChanges();
-                return;
+                if (c.ID == id)
+                {
+                    DB.Remove(c);
+                    DAL.Customer cus = Change.CustomerBackendToDal(c);
+                    sqlDB.Customers.DeleteOnSubmit(cus);
+                    sqlDB.SubmitChanges();
+                    return true;
+                }
+                
             }
+            return false;
         }
 
         public bool Contains(string id)
         {
-            foreach (Club_Member c in DB)
+            foreach (Customer c in sqlDB.Customers)
             {
-                if ((c.memberID).CompareTo((id)) == 0) return true;
+                if ((c.ID).CompareTo((id)) == 0) return true;
             }
             return false;
         }

@@ -36,12 +36,13 @@ namespace BL
         
 
         // removing club member from database
-        public void Remove(string memberID)
+        public Boolean Remove(string memberID)
         {
             if (exist(memberID))
             {
-                itsDAL.Remove(memberID);
+                return itsDAL.Remove(memberID);
             }
+            return false;
         }
 
         /*

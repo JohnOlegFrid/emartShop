@@ -159,6 +159,9 @@
     <Compile Include="Location\Add.xaml.cs">
       <DependentUpon>Add.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Location\CustomerOptions.xaml.cs">
+      <DependentUpon>CustomerOptions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Location\Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
@@ -453,6 +456,10 @@
     <Page Include="Location\Add.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Location\CustomerOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Location\Map.xaml">
       <SubType>Designer</SubType>
