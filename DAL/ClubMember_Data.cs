@@ -41,18 +41,24 @@ namespace DAL
 
         public Boolean Remove(string id)
         {
-            
+            Club_Member temp = new Club_Member();
             foreach (Club_Member c in DB)
             {
                 if (c.ID == id)
                 {
-                    DB.Remove(c);
-                    DAL.Customer cus = Change.CustomerBackendToDal(c);
-                    sqlDB.Customers.DeleteOnSubmit(cus);
+                    temp = c;
+                }
+                
+            }
+            DB.Remove(temp);
+            foreach (Customer c in sqlDB.Customers)
+            {
+                if (c.ID == id)
+                {
+                    sqlDB.Customers.DeleteOnSubmit(c);
                     sqlDB.SubmitChanges();
                     return true;
                 }
-                
             }
             return false;
         }
@@ -124,45 +130,27 @@ namespace DAL
             return list;
         }
 
-        public string getClubMemberByFirstName(string name)
+        public List<Club_Member> getClubMemberByFirstName(string name)
         {
-            StringBuilder ClubMemberByName = new StringBuilder("");
-            var firstName =
-                from i in DB
-                where i.firstName == name
-                select i;
-            if (firstName.Count() == 0)
+            List<Club_Member> list = new List<Club_Member>();
+            foreach (Club_Member m in DB)
             {
-                ClubMemberByName.Append("no club members by the first name ");
-                ClubMemberByName.Append(name);
+                if (m.firstName == name) list.Add(m);
+                
             }
-            foreach (Club_Member c in firstName)
-            {
-                ClubMemberByName.Append(c.ToString());
-                ClubMemberByName.Append("\r\n");
-            }
-            return ClubMemberByName.ToString();
+            return list;
         }
 
 
-        public string getClubMemberByLastName(string name)
+        public List<Club_Member> getClubMemberByLastName(string name)
         {
-            StringBuilder ClubMemberByName = new StringBuilder("");
-            var LastName =
-                from i in DB
-                where i.lastName == name
-                select i;
-            if (LastName.Count() == 0)
+            List<Club_Member> list = new List<Club_Member>();
+            foreach (Club_Member m in DB)
             {
-                ClubMemberByName.Append("no club members by the last name ");
-                ClubMemberByName.Append(name);
+                if (m.lastName == name) list.Add(m);
+                
             }
-            foreach (Club_Member c in LastName)
-            {
-                ClubMemberByName.Append(c.ToString());
-                ClubMemberByName.Append("\r\n");
-            }
-            return ClubMemberByName.ToString();
+            return list;
         }
 
 
@@ -187,18 +175,15 @@ namespace DAL
         }
 
 
-        public string getClubMemberByID(string id)
+        public List<Club_Member> getClubMemberByID(string id)
         {
-            StringBuilder ClubMemberByID = new StringBuilder("");
-            var clubMember =
-               from c in DB
-               where (c.ID == id)
-               select c;
-            foreach (Club_Member c in clubMember)
+            List<Club_Member> list = new List<Club_Member>();
+            foreach (Club_Member m in DB)
             {
-                ClubMemberByID.Append(c.ToString());
+                if (m.ID == id) list.Add(m);
+
             }
-            return ClubMemberByID.ToString();
+            return list;
         }
 
         public string getTrnsactionHistoryByMemberID(string memberID)

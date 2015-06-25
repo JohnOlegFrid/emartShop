@@ -58,19 +58,27 @@ namespace DAL
             emartDataContext.SubmitChanges();
         }
 
-        public void Remove(string id)
+        public Boolean Remove(string id)
         {
+            Backend.Department temp = new Backend.Department();
             foreach (Backend.Department d in DB)
             {
                 if (d.ID == id)
                 {
-                    DB.Remove(d);
-                    DAL.Department temp = Change.DepartmentBackendToDal(d);
-                    emartDataContext.Departments.DeleteOnSubmit(temp);
-                    emartDataContext.SubmitChanges();
-                    return;
+                    temp = d;
                 }
             }
+            DB.Remove(temp);
+            foreach (DAL.Department d in emartDataContext.Departments)
+            {
+                if (d.ID == id)
+                {
+                    emartDataContext.Departments.DeleteOnSubmit(d);
+                    emartDataContext.SubmitChanges();
+                    return true;
+                }
+            }
+            return false;
         }
         public void RemoveByName(String name)
         {

@@ -49,12 +49,13 @@ namespace BL
         }
 
         //removes a department
-        public void Remove(string id)
+        public Boolean Remove(string id)
         {
             if (exist(id))
             {
-                itsDAL.Remove(id);
+                return itsDAL.Remove(id);
             }
+            return false;
         }
 
         public void RemoveByName(string name)

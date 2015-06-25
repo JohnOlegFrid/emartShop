@@ -20,13 +20,22 @@ namespace PL.Customers
     /// <summary>
     /// Interaction logic for Edit.xaml
     /// </summary>
-    public partial class Edit : Page
+    public partial class Edit : Window
     {
+        Club_Member cus;
         BL_Manager BL_manager;
-        public Edit(BL_Manager BL_manager)
+        public Edit(BL_Manager BL_manager,Club_Member cus)
         {
+            this.cus = cus;
             this.BL_manager = BL_manager;
             InitializeComponent();
+            firstNametxt.Text = cus.firstName;
+            lastNametxt.Text = cus.lastName;
+            IDtxt.Text = cus.ID;
+            if (cus.gender.CompareTo("Man") == 0) gendertxt.SelectedIndex = 0;
+            else gendertxt.SelectedIndex = 1;
+            dateOdBirthtxt.Text = cus.dateOfBirth;
+
         }
 
         private void updateClick(object sender, RoutedEventArgs e)

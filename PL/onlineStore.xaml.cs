@@ -230,6 +230,7 @@ namespace PL
             {
                 MessageBox.Show("shopping Cart empty");
             }
+            ShoppingCart.Items.Clear();
         }
 
         private void increase_Click(object sender, RoutedEventArgs e)

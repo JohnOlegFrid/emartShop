@@ -66,6 +66,9 @@
     <Compile Include="CustomerMenu\Options.xaml.cs">
       <DependentUpon>Options.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomerMenu\Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Customers\Add.xaml.cs">
       <DependentUpon>Add.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,9 @@
     </Compile>
     <Compile Include="Customers\Remove.xaml.cs">
       <DependentUpon>Remove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
     <Compile Include="Customers\Table.xaml.cs">
       <DependentUpon>Table.xaml</DependentUpon>
@@ -315,10 +321,6 @@
       <Project>{1578e82d-7dee-482d-8f6c-32270d1427af}</Project>
       <Name>BL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{5e38e5b8-6774-43c7-9daa-2feff2692392}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="CustomerMenu\ChangePass.xaml">
@@ -330,6 +332,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="CustomerMenu\Options.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomerMenu\Search.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -350,6 +356,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Customers\Remove.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Customers\Search.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

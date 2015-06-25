@@ -60,7 +60,14 @@ namespace PL.Location
             //myMap.Children.Add(pin);
             txt.Text = "Current temperature\nnear the store";
             sign.Text = "0";
-            String temp= Weather.get(selected.city).Substring(0, 2) + " Celsius";
+            String temp1= Weather.get(selected.city);
+            int i = 0;
+            String temp="";
+            while (i < temp1.Length && i<2)
+            {
+                temp = temp + temp1[i];
+                i++;
+            }
             if (temp != null) temptxt.Text = temp;
             else
                 MessageBox.Show("There where an Internet Error.Could not get the weather information.", "Connection problem", MessageBoxButton.OK, MessageBoxImage.Information);

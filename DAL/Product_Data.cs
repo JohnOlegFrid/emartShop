@@ -58,7 +58,7 @@ namespace DAL
             {
                 if(p.inStock)
                 {
-                list.Add(p);
+                     list.Add(p);
                 }
             }
             return list;
@@ -66,17 +66,24 @@ namespace DAL
 
         public void Remove(string id)
         {
+            Backend.Product temp = new Backend.Product();
             foreach (Backend.Product p in DB)
             {
                 if (p.inventoryID == id)
                 {
-                    DB.Remove(p);
-                    DAL.Product temp = Change.ProductBackendToDal(p);
-                    emartDataContext.Products.DeleteOnSubmit(temp);
-                    emartDataContext.SubmitChanges();
-                    return;          
+                    temp = p;
+                           
                 }
-                
+            }
+            DB.Remove(temp);
+            foreach (DAL.Product p in emartDataContext.Products)
+            {
+                if (p.inventoryID == id)
+                {
+                    emartDataContext.Products.DeleteOnSubmit(p);
+                    emartDataContext.SubmitChanges();
+                    return;  
+                }
             }
         }
 

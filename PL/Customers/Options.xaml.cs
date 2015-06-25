@@ -41,14 +41,15 @@ namespace PL.Customers
             frame.Navigate(new Remove(BL_manager));
         }
 
-        private void Edit_Click(object sender, RoutedEventArgs e)
-        {
-            frame.Navigate(new Edit(BL_manager));
-        }
 
         private void AddClick(object sender, RoutedEventArgs e)
         {
             frame.Navigate(new Add(BL_manager));
+        }
+
+        private void serachClick(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new Search(BL_manager));
         }
 
        

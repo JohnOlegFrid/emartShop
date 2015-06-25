@@ -16,90 +16,150 @@ namespace nUnit
     public class Tests
     {
         [Test] // #1
-        public void checkExistsUser()
-        //@ Add a user and check if he existing
-        {
-            Backend.User us = new Backend.User("israel", "pw", "020202020202");
-            User_Data ud = new User_Data();
-            ud.Add(us);
-            Assert.IsTrue(ud.Remove(us));
+        public void a()
+        { //@ Add a deparment and check if it existing
+            Backend.Department dp = new Backend.Department("Computers", "123123");
+            Department_Data dt = new Department_Data();
+            dt.Add(dp);
+            Assert.IsTrue(dt.contains(dp.ID));
         }
 
-
-        [Test] //#2
-        public void checkExistsProduct()
-        //@ Add a product, remove it and check if he not existing anymore
-        {
-            Product_Data pd = new Product_Data();
-            Backend.Product p = new Backend.Product("creme", Backend.Product.Type.cloths, "1234", "456", true, 10, 50);
-            pd.Add(p); // we add pd to the list
-            pd.Remove("1234"); // we remove him from the list
-            Assert.IsTrue(!pd.Contains("1234")); // we're checking that is inventoryId is not existing
+        [Test] // #2
+        public void b()
+        { //@ Add a deparment and check if it existing
+            Backend.Department dp = new Backend.Department("Games", "12341234");
+            Department_Data dt = new Department_Data();
+            dt.Add(dp);
+            Assert.IsTrue(dt.contains(dp.ID));
         }
 
         [Test] // #3
-        public void checkExistsUser2()
-        //@ Add a user and check if he existing
-        {
-            Backend.User us = new Backend.User("boli", "pw2", "67891");
-            User_Data ud = new User_Data();
-            ud.Add(us);
-            Assert.IsTrue(ud.Remove(us));
-        }
-
-        [Test] //#4
-        public void checkUpdateCM()
-        //@ Add a ClubMember, and check if we can update him
-        {
-            Club_Member cm = new Club_Member("12121212", "avi", "dahan", "male", "12121212", "2105");
-            ClubMember_Data cd = new ClubMember_Data();
-            cd.Add(cm);
-            Assert.IsTrue(cd.Remove(cm.ID));
-        }
-
-
-         [Test] // #5
-        public void checkDepartment()
-        { //@ Add a deparment and check if he existing
-            Backend.Department dp = new Backend.Department("bilou", "5874");
-            Department_Data dt = new Department_Data();
+        public void c()
+        { //@ Add a product and check if it existing
+            Backend.Product dp = new Backend.Product("pentium",Backend.Product.Type.electronics,"1","123123",true,200,200.0);
+            Product_Data dt = new Product_Data();
             dt.Add(dp);
-            dt.Remove(dp.ID);
-            Assert.IsTrue(dt.contains(dp.ID));
+            Assert.IsTrue(dt.Contains(dp.inventoryID));
+        }
+
+        [Test] // #4
+        public void d()
+        { //@ Add a product and check if it existing
+            Backend.Product dp = new Backend.Product("GTA", Backend.Product.Type.toys, "3", "12341234", true, 200, 200.0);
+            Product_Data dt = new Product_Data();
+            dt.Add(dp);
+            Assert.IsTrue(dt.Contains(dp.inventoryID));
+        }
+
+        [Test] // #5
+        public void e()
+        { //@ Add a product and check if he existing
+            Backend.Product dp = new Backend.Product("Soldiers", Backend.Product.Type.toys, "4", "12341234", true, 200, 200.0);
+            Product_Data dt = new Product_Data();
+            dt.Add(dp);
+            Assert.IsTrue(dt.Contains(dp.inventoryID));
         }
 
         [Test] // #6
-        public void checkClubMember()
-        { //@ Add a clubMember and check if he existing
-            Club_Member cm = new Club_Member("1234123412341234", "avi", "dahan", "male", "5618", "2105");
-            ClubMember_Data cd = new ClubMember_Data();
-            cd.Add(cm);
-            cd.Remove(cm.ID);
-            Assert.IsTrue(cd.Contains(cm.ID));
+        public void f()
+        { //@ Remove a product and check if removed
+            Product_Data dt = new Product_Data();
+            dt.Remove("1");
+            Assert.IsTrue(!dt.Contains("1"));
         }
 
+
         [Test] // #7
-        public void checkDepartment2()
-        { //@ Add a department and check if he existing
-            Backend.Department dp = new Backend.Department("food", "1212");
-            Department_Data dt = new Department_Data();
-            dt.Add(dp);
-            dt.Remove(dp.ID);
-            Assert.IsTrue(dt.contains(dp.ID));
+        public void g()
+        { //@ Remove a product and check if removed
+            Product_Data dt = new Product_Data();
+            dt.Remove("2");
+            Assert.IsTrue(!dt.Contains("1"));
         }
 
         [Test] // #8
-        public void checkLocation()
-        { //@ Add a location and check if it exists
-            Backend.StoreLocation s = new Backend.StoreLocation("Israel", "Eilat", "Mall ha yam", "13772983", "112444342");
-            DAL.StoreLocation sl = Change.StoreLocationBackendToDal(s);
-            Location_Data ld = new Location_Data();
-            ld.Add(sl);
-            Assert.IsTrue(ld.Remove(sl));
+        public void h()
+        { //@ Remove a product and check if removed
+            Product_Data dt = new Product_Data();
+            dt.Remove("3");
+            Assert.IsTrue(!dt.Contains("1"));
         }
 
+        [Test] // #9
+        public void i()
+        { //@ Remove a product and check if removed
+            Product_Data dt = new Product_Data();
+            dt.Remove("4");
+            Assert.IsTrue(!dt.Contains("1"));
+        }
 
+        [Test] // #10
+        public void j()
+        { //@ Remove a Department and check if removed
+            Department_Data dt = new Department_Data();
+            dt.Remove("123123");
+            Assert.IsTrue(!dt.contains("123123"));
+        }
 
+        [Test] // #11
+        public void k()
+        { //@ Remove a Department and check if removed
+            Department_Data dt = new Department_Data();
+            dt.Remove("12341234");
+            Assert.IsTrue(!dt.contains("12341234"));
+        }
+
+        [Test] // #12
+        public void l()
+        { //@ Add a deparment and check if he existing
+            ClubMember_Data cd = new ClubMember_Data();
+            Backend.Club_Member c = new Club_Member("12", "a", "a", "Man", "12", "01.03.1988");
+            cd.Add(c);
+            Assert.IsTrue(cd.Contains("12"));
+        }
+        
+
+        [Test] // #13
+        public void m()
+        { //@ Add a deparment and check if he existing
+            ClubMember_Data cd = new ClubMember_Data();
+            cd.Remove("12");
+            Assert.IsTrue(!cd.Contains("12"));
+        }
+
+        [Test] // #14
+        public void n()
+        { //@ Add a deparment and check if it existing
+            Backend.Department dp = new Backend.Department("Music", "3434");
+            Department_Data dt = new Department_Data();
+            dt.Add(dp);
+            Assert.IsTrue(dt.contains(dp.ID));
+        }
+
+        [Test] // #15
+        public void o()
+        { //@ Add a worker and check if he existing
+            Employee_Data ed = new Employee_Data();
+            Backend.Employee c = new Backend.Employee("14", "adam", "bon", "Man", "3434", 20000.0, "0", "Worker");
+            ed.Add(c);
+            Assert.IsTrue(ed.Contains("14"));
+        }
+
+        [Test] // #16
+        public void p()
+        { //@ Add a deparment and check if he existing
+            Employee_Data ed = new Employee_Data();
+            ed.Remove("14");
+            Assert.IsTrue(!ed.Contains("14"));
+        }
+
+        [Test] // #17
+        public void q()
+        { //@ Remove a Department and check if removed
+            Department_Data dt = new Department_Data();
+            dt.Remove("3434");
+            Assert.IsTrue(!dt.contains("3434"));
+        }
 
     }
 }

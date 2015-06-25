@@ -50,20 +50,28 @@ namespace DAL
             emartDataContext.SubmitChanges();
         }
 
-        public void Remove(string id)
+        public Boolean Remove(string id)
         {
-            var employee =
-                from e in DB
-                where e.ID == id
-                select e;
-            foreach (Backend.Employee e in employee)
+            Backend.Employee temp = new Backend.Employee();
+            foreach (Backend.Employee e in DB)
             {
-                DB.Remove(e);
-                DAL.Employee temp = Change.EmployeeBackendToDal(e);
-                emartDataContext.Employees.DeleteOnSubmit(temp);
-                emartDataContext.SubmitChanges();
-                return;
+                if (e.ID == id)
+                {
+                    temp = e;
+                }
             }
+            DB.Remove(temp);
+            foreach(DAL.Employee e in emartDataContext.Employees)
+            {
+                if(e.ID==id)
+                {
+                    emartDataContext.Employees.DeleteOnSubmit(e);
+                    emartDataContext.SubmitChanges();
+                    return true;
+                }
+                
+            }
+            return false;
         }
 
         public string getEmployeeByIDString(string id)

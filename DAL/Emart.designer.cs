@@ -20,7 +20,6 @@ namespace DAL
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-    using System.Text;
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="EmartDataBase")]
@@ -31,9 +30,6 @@ namespace DAL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertStoreLocation(StoreLocation instance);
-    partial void UpdateStoreLocation(StoreLocation instance);
-    partial void DeleteStoreLocation(StoreLocation instance);
     partial void InsertCustomer(Customer instance);
     partial void UpdateCustomer(Customer instance);
     partial void DeleteCustomer(Customer instance);
@@ -52,6 +48,9 @@ namespace DAL
     partial void InsertRecipt_Transaction(Recipt_Transaction instance);
     partial void UpdateRecipt_Transaction(Recipt_Transaction instance);
     partial void DeleteRecipt_Transaction(Recipt_Transaction instance);
+    partial void InsertStoreLocation(StoreLocation instance);
+    partial void UpdateStoreLocation(StoreLocation instance);
+    partial void DeleteStoreLocation(StoreLocation instance);
     partial void InsertTransaction(Transaction instance);
     partial void UpdateTransaction(Transaction instance);
     partial void DeleteTransaction(Transaction instance);
@@ -88,14 +87,6 @@ namespace DAL
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<StoreLocation> StoreLocations
-		{
-			get
-			{
-				return this.GetTable<StoreLocation>();
-			}
 		}
 		
 		public System.Data.Linq.Table<Customer> Customers
@@ -146,6 +137,14 @@ namespace DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<StoreLocation> StoreLocations
+		{
+			get
+			{
+				return this.GetTable<StoreLocation>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Transaction> Transactions
 		{
 			get
@@ -159,165 +158,6 @@ namespace DAL
 			get
 			{
 				return this.GetTable<User>();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StoreLocation")]
-	public partial class StoreLocation : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _country;
-		
-		private string _city;
-		
-		private string _street;
-		
-		private string _latitude;
-		
-		private string _longitude;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OncountryChanging(string value);
-    partial void OncountryChanged();
-    partial void OncityChanging(string value);
-    partial void OncityChanged();
-    partial void OnstreetChanging(string value);
-    partial void OnstreetChanged();
-    partial void OnlatitudeChanging(string value);
-    partial void OnlatitudeChanged();
-    partial void OnlongitudeChanging(string value);
-    partial void OnlongitudeChanged();
-    #endregion
-		
-		public StoreLocation()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_country", DbType="VarChar(50)")]
-		public string country
-		{
-			get
-			{
-				return this._country;
-			}
-			set
-			{
-				if ((this._country != value))
-				{
-					this.OncountryChanging(value);
-					this.SendPropertyChanging();
-					this._country = value;
-					this.SendPropertyChanged("country");
-					this.OncountryChanged();
-				}
-			}
-		}
-
-        
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="VarChar(50)")]
-		public string city
-		{
-			get
-			{
-				return this._city;
-			}
-			set
-			{
-				if ((this._city != value))
-				{
-					this.OncityChanging(value);
-					this.SendPropertyChanging();
-					this._city = value;
-					this.SendPropertyChanged("city");
-					this.OncityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_street", DbType="VarChar(50)")]
-		public string street
-		{
-			get
-			{
-				return this._street;
-			}
-			set
-			{
-				if ((this._street != value))
-				{
-					this.OnstreetChanging(value);
-					this.SendPropertyChanging();
-					this._street = value;
-					this.SendPropertyChanged("street");
-					this.OnstreetChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_latitude", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string latitude
-		{
-			get
-			{
-				return this._latitude;
-			}
-			set
-			{
-				if ((this._latitude != value))
-				{
-					this.OnlatitudeChanging(value);
-					this.SendPropertyChanging();
-					this._latitude = value;
-					this.SendPropertyChanged("latitude");
-					this.OnlatitudeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_longitude", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string longitude
-		{
-			get
-			{
-				return this._longitude;
-			}
-			set
-			{
-				if ((this._longitude != value))
-				{
-					this.OnlongitudeChanging(value);
-					this.SendPropertyChanging();
-					this._longitude = value;
-					this.SendPropertyChanged("longitude");
-					this.OnlongitudeChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1404,6 +1244,8 @@ namespace DAL
 		
 		private string _transactionID;
 		
+		private EntityRef<Transaction> _Transaction;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1416,6 +1258,7 @@ namespace DAL
 		
 		public Recipt_Transaction()
 		{
+			this._Transaction = default(EntityRef<Transaction>);
 			OnCreated();
 		}
 		
@@ -1450,11 +1293,207 @@ namespace DAL
 			{
 				if ((this._transactionID != value))
 				{
+					if (this._Transaction.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OntransactionIDChanging(value);
 					this.SendPropertyChanging();
 					this._transactionID = value;
 					this.SendPropertyChanged("transactionID");
 					this.OntransactionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transaction_Recipt_Transaction", Storage="_Transaction", ThisKey="transactionID", OtherKey="ID", IsForeignKey=true)]
+		public Transaction Transaction
+		{
+			get
+			{
+				return this._Transaction.Entity;
+			}
+			set
+			{
+				Transaction previousValue = this._Transaction.Entity;
+				if (((previousValue != value) 
+							|| (this._Transaction.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Transaction.Entity = null;
+						previousValue.Recipt_Transactions.Remove(this);
+					}
+					this._Transaction.Entity = value;
+					if ((value != null))
+					{
+						value.Recipt_Transactions.Add(this);
+						this._transactionID = value.ID;
+					}
+					else
+					{
+						this._transactionID = default(string);
+					}
+					this.SendPropertyChanged("Transaction");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StoreLocation")]
+	public partial class StoreLocation : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _country;
+		
+		private string _city;
+		
+		private string _street;
+		
+		private string _latitude;
+		
+		private string _longitude;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OncountryChanging(string value);
+    partial void OncountryChanged();
+    partial void OncityChanging(string value);
+    partial void OncityChanged();
+    partial void OnstreetChanging(string value);
+    partial void OnstreetChanged();
+    partial void OnlatitudeChanging(string value);
+    partial void OnlatitudeChanged();
+    partial void OnlongitudeChanging(string value);
+    partial void OnlongitudeChanged();
+    #endregion
+		
+		public StoreLocation()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_country", DbType="VarChar(50)")]
+		public string country
+		{
+			get
+			{
+				return this._country;
+			}
+			set
+			{
+				if ((this._country != value))
+				{
+					this.OncountryChanging(value);
+					this.SendPropertyChanging();
+					this._country = value;
+					this.SendPropertyChanged("country");
+					this.OncountryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="VarChar(50)")]
+		public string city
+		{
+			get
+			{
+				return this._city;
+			}
+			set
+			{
+				if ((this._city != value))
+				{
+					this.OncityChanging(value);
+					this.SendPropertyChanging();
+					this._city = value;
+					this.SendPropertyChanged("city");
+					this.OncityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_street", DbType="VarChar(50)")]
+		public string street
+		{
+			get
+			{
+				return this._street;
+			}
+			set
+			{
+				if ((this._street != value))
+				{
+					this.OnstreetChanging(value);
+					this.SendPropertyChanging();
+					this._street = value;
+					this.SendPropertyChanged("street");
+					this.OnstreetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_latitude", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string latitude
+		{
+			get
+			{
+				return this._latitude;
+			}
+			set
+			{
+				if ((this._latitude != value))
+				{
+					this.OnlatitudeChanging(value);
+					this.SendPropertyChanging();
+					this._latitude = value;
+					this.SendPropertyChanged("latitude");
+					this.OnlatitudeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_longitude", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string longitude
+		{
+			get
+			{
+				return this._longitude;
+			}
+			set
+			{
+				if ((this._longitude != value))
+				{
+					this.OnlongitudeChanging(value);
+					this.SendPropertyChanging();
+					this._longitude = value;
+					this.SendPropertyChanged("longitude");
+					this.OnlongitudeChanged();
 				}
 			}
 		}
@@ -1498,6 +1537,12 @@ namespace DAL
 		
 		private string _reciptID;
 		
+		private EntitySet<Recipt_Transaction> _Recipt_Transactions;
+		
+		private EntityRef<Transaction> _Transaction2;
+		
+		private EntityRef<Transaction> _Transaction1;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1518,6 +1563,9 @@ namespace DAL
 		
 		public Transaction()
 		{
+			this._Recipt_Transactions = new EntitySet<Recipt_Transaction>(new Action<Recipt_Transaction>(this.attach_Recipt_Transactions), new Action<Recipt_Transaction>(this.detach_Recipt_Transactions));
+			this._Transaction2 = default(EntityRef<Transaction>);
+			this._Transaction1 = default(EntityRef<Transaction>);
 			OnCreated();
 		}
 		
@@ -1532,6 +1580,10 @@ namespace DAL
 			{
 				if ((this._ID != value))
 				{
+					if (this._Transaction1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnIDChanging(value);
 					this.SendPropertyChanging();
 					this._ID = value;
@@ -1641,6 +1693,82 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transaction_Recipt_Transaction", Storage="_Recipt_Transactions", ThisKey="ID", OtherKey="transactionID")]
+		public EntitySet<Recipt_Transaction> Recipt_Transactions
+		{
+			get
+			{
+				return this._Recipt_Transactions;
+			}
+			set
+			{
+				this._Recipt_Transactions.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transaction_Transaction", Storage="_Transaction2", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
+		public Transaction Transaction2
+		{
+			get
+			{
+				return this._Transaction2.Entity;
+			}
+			set
+			{
+				Transaction previousValue = this._Transaction2.Entity;
+				if (((previousValue != value) 
+							|| (this._Transaction2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Transaction2.Entity = null;
+						previousValue.Transaction1 = null;
+					}
+					this._Transaction2.Entity = value;
+					if ((value != null))
+					{
+						value.Transaction1 = this;
+					}
+					this.SendPropertyChanged("Transaction2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transaction_Transaction", Storage="_Transaction1", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
+		public Transaction Transaction1
+		{
+			get
+			{
+				return this._Transaction1.Entity;
+			}
+			set
+			{
+				Transaction previousValue = this._Transaction1.Entity;
+				if (((previousValue != value) 
+							|| (this._Transaction1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Transaction1.Entity = null;
+						previousValue.Transaction2 = null;
+					}
+					this._Transaction1.Entity = value;
+					if ((value != null))
+					{
+						value.Transaction2 = this;
+						this._ID = value.ID;
+					}
+					else
+					{
+						this._ID = default(string);
+					}
+					this.SendPropertyChanged("Transaction1");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1659,6 +1787,18 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Recipt_Transactions(Recipt_Transaction entity)
+		{
+			this.SendPropertyChanging();
+			entity.Transaction = this;
+		}
+		
+		private void detach_Recipt_Transactions(Recipt_Transaction entity)
+		{
+			this.SendPropertyChanging();
+			entity.Transaction = null;
 		}
 	}
 	

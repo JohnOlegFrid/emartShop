@@ -39,7 +39,7 @@ namespace PL.CustomerMenu
       
         private void SearchClick(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new Products.Search(BL_manager));
+            frame.Navigate(new CustomerMenu.Search(BL_manager));
         }
        
     }

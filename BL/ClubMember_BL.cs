@@ -69,12 +69,12 @@ namespace BL
         }
 
 
-        public string getClubMemberByFirstName(string name)
+        public List<Club_Member> getClubMemberByFirstName(string name)
         {
             return itsDAL.getClubMemberByFirstName(name);
         }
 
-        public string getClubMemberByLastname(string name)
+        public List<Club_Member> getClubMemberByLastname(string name)
         {
             return itsDAL.getClubMemberByLastName(name);
         }
@@ -84,7 +84,7 @@ namespace BL
             return itsDAL.getClubMemberByFullName(fname, lname);
         }
 
-        public string getClubMemberByID(string id)
+        public List<Club_Member> getClubMemberByID(string id)
         {
             return itsDAL.getClubMemberByID(id);
         }
