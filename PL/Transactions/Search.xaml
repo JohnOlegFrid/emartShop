@@ -11,19 +11,16 @@
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" Height="400">
 
         <StackPanel Height="50" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock TextWrapping="Wrap" Text="Search Product" Width="353" Margin="0" VerticalAlignment="Bottom" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
+            <TextBlock TextWrapping="Wrap" Text="Search Transaction" Width="353" Margin="0" VerticalAlignment="Bottom" FontSize="30" TextAlignment="Center" FontWeight="Bold"/>
 
         </StackPanel>
         <Grid Height="291" >
             <TextBox x:Name="searchtxt" HorizontalAlignment="Left" Height="25"  TextWrapping="Wrap" VerticalAlignment="Top" Width="374" Margin="47,21,0,0" />
             <Button Content="Search" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="124" Height="25" Margin="466,0,10,245" Click="Search_Click"/>
-
-            <ComboBox Name="typeCombo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="124" Margin="466,99,0,0" SelectionChanged="typeCombo_SelectionChanged" />
-            <Label Content="Filter by type :" HorizontalAlignment="Left" Height="20" Margin="368,99,0,0" VerticalAlignment="Top" Width="93" FontWeight="Bold" FontStretch="Condensed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0"/>
             <Button Content="Show all" HorizontalAlignment="Left" Height="20" Margin="10,99,0,0" VerticalAlignment="Top" Width="121" FontWeight="Bold" FontStretch="Condensed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Click="showAllClick"/>
 
-            <RadioButton Name="byIDradio" Content="by ID" GroupName="search"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,51,0,0" />
-            <RadioButton Name="byNameradio" Content="By name" GroupName="search" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,50,0,0"/>
+            <RadioButton Name="byIDradio" Content="by ID" GroupName="search"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,51,0,0" />
+            <RadioButton Name="byCusIDradio" Content="By customer ID" GroupName="search" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,50,0,0"/>
             <DataGrid Name="searchResult" GridLinesVisibility="None"  Margin="0,124,0,0" />
         </Grid>
     </StackPanel>

@@ -8,7 +8,7 @@ namespace DAL
 {
     //data base class. this class holds refrences to all databases for each entities
     [Serializable]
-    public class DAL_Manager
+    public class DAL_Manager : IDAL
     {
         public User_Data userData;
         public ClubMember_Data ClubMemberData;
@@ -17,6 +17,8 @@ namespace DAL
         public Product_Data productData;
         public Transaction_Data transactionData;
         public Location_Data locationData;
+        public void Add(object o){}
+        public Boolean Remove(object o){return true;}
 
         public DAL_Manager(User_Data userData, ClubMember_Data ClubMemberData, Department_Data departmentData, Employee_Data employeeData, Product_Data productData, Transaction_Data transactionData,Location_Data LocationData)
         {
@@ -28,6 +30,8 @@ namespace DAL
             this.transactionData = transactionData;
             this.locationData=LocationData;
         }
+        
+        
 
     }
 }

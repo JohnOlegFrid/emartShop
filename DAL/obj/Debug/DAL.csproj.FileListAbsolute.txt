@@ -59,3 +59,11 @@ C:\Users\Gwainer\Desktop\emartwpf2\DAL\bin\Debug\Backend.pdb
 C:\Users\Gwainer\Desktop\emartwpf2\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Gwainer\Desktop\emartwpf2\DAL\obj\Debug\DAL.dll
 C:\Users\Gwainer\Desktop\emartwpf2\DAL\obj\Debug\DAL.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\DAL\bin\Debug\DAL.dll.config
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\DAL\bin\Debug\DAL.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\DAL\bin\Debug\DAL.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\DAL\bin\Debug\Backend.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\DAL\bin\Debug\Backend.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\DAL\obj\Debug\DAL.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\DAL\obj\Debug\DAL.pdb

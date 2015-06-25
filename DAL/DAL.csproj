@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Emart.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Emart.designer.cs</LastGenOutput>

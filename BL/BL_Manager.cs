@@ -12,7 +12,7 @@ namespace BL
      * this class represents the bl layer and its diffrent parts
      **/
     [Serializable]
-    public class BL_Manager
+    public class BL_Manager:IBL
     {
         public User_BL BL_user;
         public ClubMember_BL BL_clubMember;
@@ -21,6 +21,8 @@ namespace BL
         public Product_BL BL_product;
         public Transaction_BL BL_transaction;
         public Location_BL BL_location;
+        public void Add(object o) { }
+        public Boolean Remove(object o) { return true; }
         //constructor
         public BL_Manager(DAL_Manager dal_manager)
         {

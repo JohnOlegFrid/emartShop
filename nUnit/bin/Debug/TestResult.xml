@@ -1,21 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\nUnit.dll" total="7" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-06-04" time="16:38:44">
+<test-results name="C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\nUnit.dll" total="20" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-06-25" time="20:25:39">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="OLEJKA-PC" user="Olejka" user-domain="Olejka-PC" />
   <culture-info current-culture="he-IL" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\nUnit.dll" executed="True" result="Success" success="True" time="0.310" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\nUnit.dll" executed="True" result="Success" success="True" time="1.838" asserts="0">
     <results>
-      <test-suite type="Namespace" name="nUnit" executed="True" result="Success" success="True" time="0.283" asserts="0">
+      <test-suite type="Namespace" name="nUnit" executed="True" result="Success" success="True" time="1.771" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="Tests" executed="True" result="Success" success="True" time="0.280" asserts="0">
+          <test-suite type="TestFixture" name="Tests" executed="True" result="Success" success="True" time="1.720" asserts="0">
             <results>
-              <test-case name="nUnit.Tests.checkClubMember" executed="True" result="Success" success="True" time="0.140" asserts="0" />
-              <test-case name="nUnit.Tests.checkDepartment" executed="True" result="Success" success="True" time="0.004" asserts="0" />
-              <test-case name="nUnit.Tests.checkDepartment2" executed="True" result="Success" success="True" time="0.002" asserts="0" />
-              <test-case name="nUnit.Tests.checkExistsProduct" executed="True" result="Success" success="True" time="0.009" asserts="0" />
-              <test-case name="nUnit.Tests.checkExistsUser" executed="True" result="Success" success="True" time="0.005" asserts="0" />
-              <test-case name="nUnit.Tests.checkExistsUser2" executed="True" result="Success" success="True" time="0.006" asserts="0" />
-              <test-case name="nUnit.Tests.checkUpdateCM" executed="True" result="Success" success="True" time="0.027" asserts="0" />
+              <test-case name="nUnit.Tests.a" executed="True" result="Success" success="True" time="1.218" asserts="1" />
+              <test-case name="nUnit.Tests.b" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+              <test-case name="nUnit.Tests.c" executed="True" result="Success" success="True" time="0.025" asserts="1" />
+              <test-case name="nUnit.Tests.d" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+              <test-case name="nUnit.Tests.e" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+              <test-case name="nUnit.Tests.f" executed="True" result="Success" success="True" time="0.108" asserts="1" />
+              <test-case name="nUnit.Tests.g" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+              <test-case name="nUnit.Tests.h" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+              <test-case name="nUnit.Tests.i" executed="True" result="Success" success="True" time="0.033" asserts="1" />
+              <test-case name="nUnit.Tests.j" executed="True" result="Success" success="True" time="0.020" asserts="1" />
+              <test-case name="nUnit.Tests.k" executed="True" result="Success" success="True" time="0.004" asserts="1" />
+              <test-case name="nUnit.Tests.l" executed="True" result="Success" success="True" time="0.027" asserts="1" />
+              <test-case name="nUnit.Tests.m" executed="True" result="Success" success="True" time="0.017" asserts="1" />
+              <test-case name="nUnit.Tests.n" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+              <test-case name="nUnit.Tests.o" executed="True" result="Success" success="True" time="0.022" asserts="1" />
+              <test-case name="nUnit.Tests.p" executed="True" result="Success" success="True" time="0.041" asserts="1" />
+              <test-case name="nUnit.Tests.q" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+              <test-case name="nUnit.Tests.r" executed="True" result="Success" success="True" time="0.063" asserts="1" />
+              <test-case name="nUnit.Tests.s" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+              <test-case name="nUnit.Tests.t" executed="True" result="Success" success="True" time="0.012" asserts="1" />
             </results>
           </test-suite>
         </results>

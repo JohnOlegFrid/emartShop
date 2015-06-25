@@ -13,3 +13,41 @@ C:\Users\Gwainer\Desktop\emartwpf1\nUnit\bin\Debug\PL.pdb
 C:\Users\Gwainer\Desktop\emartwpf1\nUnit\obj\Debug\nUnit.csprojResolveAssemblyReference.cache
 C:\Users\Gwainer\Desktop\emartwpf1\nUnit\obj\Debug\nUnit.dll
 C:\Users\Gwainer\Desktop\emartwpf1\nUnit\obj\Debug\nUnit.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\nUnit.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\nUnit.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\Backend.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\BL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\DAL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\MainProg.exe
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\nunit.framework.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\PL.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\Backend.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\BL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\DAL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\MainProg.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\PL.pdb
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\nunit.framework.xml
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\obj\Debug\nUnit.csprojResolveAssemblyReference.cache
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\obj\Debug\nUnit.dll
+C:\Users\Olejka\Desktop\projects\EmartWPF\nUnit\obj\Debug\nUnit.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\obj\Debug\nUnit.csprojResolveAssemblyReference.cache
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\obj\Debug\nUnit.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\obj\Debug\nUnit.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\nUnit.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\nUnit.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\Backend.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\BL.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\DAL.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\MainProg.exe
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\nunit.framework.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\PL.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\Backend.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\BL.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\DAL.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\MainProg.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\PL.pdb
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\nunit.framework.xml
+C:\Users\Olejka\Desktop\לימודים\year2\SemesterB\מבוא להנדסת תוכנה\milstone3\code\nUnit\bin\Debug\Microsoft.Maps.MapControl.WPF.xml

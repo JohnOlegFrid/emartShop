@@ -20,6 +20,7 @@ namespace DAL
             DB = new List<Backend.User>();
             DB.Add(new Backend.User("admin", "admin", "admin"));
             sqlDB = new EmartDataContext();
+      
         }
 
         public User_Data(List<Backend.User> UDB)
@@ -48,9 +49,16 @@ namespace DAL
             {
                 if ((u.userName).CompareTo((user.userName)) == 0 && (u.password).CompareTo((user.password)) == 0)
                 {
-                    DB.Remove(u);
-                    DAL.User toDelete = Change.UserBackendToDal(user);
-                    sqlDB.Users.DeleteOnSubmit(toDelete);
+                    user = u;
+
+                }
+            }
+            DB.Remove(user);
+            foreach (DAL.User u in sqlDB.Users)
+            {
+                if ((u.userName).CompareTo((user.userName)) == 0 && (u.password).CompareTo((user.password)) == 0)
+                {
+                    sqlDB.Users.DeleteOnSubmit(u);
                     sqlDB.SubmitChanges();
                     return true;
                 }
@@ -94,7 +102,7 @@ namespace DAL
 
         public bool isUserNameTaken(string userName)
         {
-            foreach (Backend.User u in DB)
+            foreach (DAL.User u in sqlDB.Users)
             {
                 if ((u.userName).CompareTo(userName) == 0) return true;
             }

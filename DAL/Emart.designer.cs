@@ -30,6 +30,9 @@ namespace DAL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
     partial void InsertCustomer(Customer instance);
     partial void UpdateCustomer(Customer instance);
     partial void DeleteCustomer(Customer instance);
@@ -54,9 +57,6 @@ namespace DAL
     partial void InsertTransaction(Transaction instance);
     partial void UpdateTransaction(Transaction instance);
     partial void DeleteTransaction(Transaction instance);
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
     #endregion
 		
 		public EmartDataContext() : 
@@ -87,6 +87,14 @@ namespace DAL
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<User> Users
+		{
+			get
+			{
+				return this.GetTable<User>();
+			}
 		}
 		
 		public System.Data.Linq.Table<Customer> Customers
@@ -152,12 +160,114 @@ namespace DAL
 				return this.GetTable<Transaction>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<User> Users
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _userName;
+		
+		private string _password;
+		
+		private string _ID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnuserNameChanging(string value);
+    partial void OnuserNameChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OnIDChanging(string value);
+    partial void OnIDChanged();
+    #endregion
+		
+		public User()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userName", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string userName
 		{
 			get
 			{
-				return this.GetTable<User>();
+				return this._userName;
+			}
+			set
+			{
+				if ((this._userName != value))
+				{
+					this.OnuserNameChanging(value);
+					this.SendPropertyChanging();
+					this._userName = value;
+					this.SendPropertyChanged("userName");
+					this.OnuserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1539,10 +1649,6 @@ namespace DAL
 		
 		private EntitySet<Recipt_Transaction> _Recipt_Transactions;
 		
-		private EntityRef<Transaction> _Transaction2;
-		
-		private EntityRef<Transaction> _Transaction1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1564,8 +1670,6 @@ namespace DAL
 		public Transaction()
 		{
 			this._Recipt_Transactions = new EntitySet<Recipt_Transaction>(new Action<Recipt_Transaction>(this.attach_Recipt_Transactions), new Action<Recipt_Transaction>(this.detach_Recipt_Transactions));
-			this._Transaction2 = default(EntityRef<Transaction>);
-			this._Transaction1 = default(EntityRef<Transaction>);
 			OnCreated();
 		}
 		
@@ -1580,10 +1684,6 @@ namespace DAL
 			{
 				if ((this._ID != value))
 				{
-					if (this._Transaction1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnIDChanging(value);
 					this.SendPropertyChanging();
 					this._ID = value;
@@ -1706,69 +1806,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transaction_Transaction", Storage="_Transaction2", ThisKey="ID", OtherKey="ID", IsUnique=true, IsForeignKey=false)]
-		public Transaction Transaction2
-		{
-			get
-			{
-				return this._Transaction2.Entity;
-			}
-			set
-			{
-				Transaction previousValue = this._Transaction2.Entity;
-				if (((previousValue != value) 
-							|| (this._Transaction2.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Transaction2.Entity = null;
-						previousValue.Transaction1 = null;
-					}
-					this._Transaction2.Entity = value;
-					if ((value != null))
-					{
-						value.Transaction1 = this;
-					}
-					this.SendPropertyChanged("Transaction2");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transaction_Transaction", Storage="_Transaction1", ThisKey="ID", OtherKey="ID", IsForeignKey=true)]
-		public Transaction Transaction1
-		{
-			get
-			{
-				return this._Transaction1.Entity;
-			}
-			set
-			{
-				Transaction previousValue = this._Transaction1.Entity;
-				if (((previousValue != value) 
-							|| (this._Transaction1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Transaction1.Entity = null;
-						previousValue.Transaction2 = null;
-					}
-					this._Transaction1.Entity = value;
-					if ((value != null))
-					{
-						value.Transaction2 = this;
-						this._ID = value.ID;
-					}
-					else
-					{
-						this._ID = default(string);
-					}
-					this.SendPropertyChanged("Transaction1");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1799,116 +1836,6 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.Transaction = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _userName;
-		
-		private string _password;
-		
-		private string _ID;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnuserNameChanging(string value);
-    partial void OnuserNameChanged();
-    partial void OnpasswordChanging(string value);
-    partial void OnpasswordChanged();
-    partial void OnIDChanging(string value);
-    partial void OnIDChanged();
-    #endregion
-		
-		public User()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userName", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string userName
-		{
-			get
-			{
-				return this._userName;
-			}
-			set
-			{
-				if ((this._userName != value))
-				{
-					this.OnuserNameChanging(value);
-					this.SendPropertyChanging();
-					this._userName = value;
-					this.SendPropertyChanged("userName");
-					this.OnuserNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string password
-		{
-			get
-			{
-				return this._password;
-			}
-			set
-			{
-				if ((this._password != value))
-				{
-					this.OnpasswordChanging(value);
-					this.SendPropertyChanging();
-					this._password = value;
-					this.SendPropertyChanged("password");
-					this.OnpasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }

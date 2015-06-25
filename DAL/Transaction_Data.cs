@@ -172,5 +172,25 @@ namespace DAL
             }
             return recipt as Backend.Receipt;
         }
+
+        public List<Backend.Transaction> getTransactionsByCustomerID(String cusid)
+        {
+            List <Backend.Transaction> list=new List<Backend.Transaction>();
+            foreach (Backend.Transaction t in DB)
+            {
+                if (t.customerID == cusid) list.Add(t);
+            }
+            return list;
+        }
+
+        public List<Backend.Transaction> getTransactionsByID(String transID)
+        {
+            List<Backend.Transaction> list = new List<Backend.Transaction>();
+            foreach (Backend.Transaction t in DB)
+            {
+                if (t.transactionID == transID) list.Add(t);
+            }
+            return list;
+        }
     }
 }

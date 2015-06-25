@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DAL.Change" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQhAAACEAAgAAAAgABAIAAAAAAAgAGAQAABQAAA=</HashCode>
+      <FileName>Change.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.ClubMember_Data" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEIAAIAAgAAAQAIAgAIQBAGAAAABBCAAAAAAAAAQABA=</HashCode>
+      <FileName>ClubMember_Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.DAL_Manager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AA4AAgAAAAAAAAAAAAAABAQAAAAAAAAAABAABAAAABA=</HashCode>
+      <FileName>DAL_Manager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Department_Data" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIAQEAAAAABAAAAAAAABAAAAAggAAAAAABAAAAAIBA=</HashCode>
+      <FileName>Department_Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.EmartDataContext" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAGQACBEBSISAAAMBCAAIJmACSAgQAEIABqABIAAAAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.User" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAABAAAAgAAAQAEEAAARiCAABAAAABIAAgEEEAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Customer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAkgEAgRAgBAgARAwBEkoAABiCAJAAEACFQACAAUAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Department" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiIAABAAAAgEAAQAENAAABiiAEQAEAABAAAAAEAAQ=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Employee" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAEgEAgRAoBggQRAYJEEoAABmCALAAFACFQCDAUEAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Product" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgAjIAEJBgAAAIVDwIEAAAAhmCEFwAAGgBACRgAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Recipt" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAhABABAAAAgEUAQAEEAAABiCCAgCAkABBAAAAEAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Recipt_Transaction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACkAAEhAAACAAgAQAEAAAARiCAAAAQAAAAAACAAAAE=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.StoreLocation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgQAATAIBAAAAAQMEACAABiCACAhACgAAIACAiEAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Transaction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAkAAERAAgAgAAJVAUECIABjCCAAAUAAhAIICAEEQE=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Employee_Data" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIICAMIAAAADBAAoAAAABQAAAWAAAQAAAQAAAEAQABA=</HashCode>
+      <FileName>Employee_Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Encryption" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAACAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Encryption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Location_Data" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAEAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Location_Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Product_Data" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAAECAAIAAAAQAAAAIBQAAQAAABAAAAAAAAAAQATA=</HashCode>
+      <FileName>Product_Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Transaction_Data" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oQIAAEACABAAAAAAAAACZgAAABAAAAAAAAAAAAAQABE=</HashCode>
+      <FileName>Transaction_Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.User_Data" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAABAEBIABAQAAAAAAAAAAQABA=</HashCode>
+      <FileName>User_Data.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DAL.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DAL.IDAL" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDAL.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

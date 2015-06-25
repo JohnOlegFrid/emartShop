@@ -161,5 +161,29 @@ namespace nUnit
             Assert.IsTrue(!dt.contains("3434"));
         }
 
+        [Test] // #18
+        public void r()
+        { //@ check user creation
+            User_Data ud = new User_Data();
+            Backend.User u = new Backend.User("a", "a", "112233");
+            ud.Add(u);
+            Assert.IsTrue(ud.Contains(u));
+        }
+
+        [Test] // #19
+        public void s()
+        { //@ check taken function
+            User_Data ud = new User_Data();
+            Assert.IsTrue(ud.isUserNameTaken("a"));
+        }
+
+        [Test] // #20
+        public void t()
+        { //@ check delete user
+            User_Data ud = new User_Data();
+            Backend.User u = new Backend.User("a", "a", "112233");
+            ud.Remove(u);
+            Assert.IsTrue(!ud.Contains(u));
+        }
     }
 }

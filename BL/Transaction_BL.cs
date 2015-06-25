@@ -97,5 +97,16 @@ namespace BL
         {
             return itsDAL.receiptDB;
         }
+
+        public List<Backend.Transaction> getTransactionsByCustomerID(String id)
+        {
+            return itsDAL.getTransactionsByCustomerID(id);
+        }
+
+        public List<Backend.Transaction> getTransactionsByID(String transID)
+        {
+            return itsDAL.getTransactionsByID(transID);
+        }
+
     }
 }
